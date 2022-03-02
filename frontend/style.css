@@ -66,6 +66,10 @@ body {
   width: 100%;
 }
 
+body{
+  color: #000;
+}
+
 
 .w-40 {
   width: 40%;
