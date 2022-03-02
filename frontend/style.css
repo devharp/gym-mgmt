@@ -1,0 +1,120 @@
+@media only screen and (min-width: 992px) {
+  /* Desktop View */
+
+  .h1-lg {
+    font-size: calc(1.375rem + 1.5vw);
+  }
+  .h2-lg {
+    font-size: calc(1.325rem + 0.9vw);
+  }
+  .w-lg-100 {
+    width: 100%;
+  }
+  .w-lg-75 {
+    width: 75%;
+  }
+
+  .w-lg-800px {
+    width: 800px !important;
+  }
+
+  .hvw-lg-25 {
+    height: 25vw;
+  }
+
+  .p-lg-0 {
+    padding: 0px;
+  }
+  .p-lg-2 {
+    padding: 2px;
+  }
+}
+@media only screen and (max-width: 992px) {
+  /* Mobile View */
+
+  .h1-md {
+    font-size: calc(1.375rem + 1.5vw);
+  }
+  .h2-md {
+    font-size: calc(1.325rem + 0.9vw);
+  }
+  .w-md-50 {
+    width: 50% !important;
+  }
+  .w-md-75 {
+    width: 75vw;
+  }
+  .w-md-40 {
+    width: 40%;
+  }
+
+  .hvw-md-25 {
+    height: 25vw;
+  }
+
+  .p-md-2 {
+    padding: 2px;
+  }
+  .p-md-0 {
+    padding: 0px;
+  }
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+}
+
+
+.w-40 {
+  width: 40%;
+}
+
+.w-400px {
+  width: 400px;
+}
+
+.hvh-10 {
+  height: 10vh;
+}
+
+.wvh-10 {
+  width: 10vh;
+}
+
+.hvh-15 {
+  height: 15vh;
+}
+
+.wvh-15 {
+  width: 15vh;
+}
+
+.hvh-20 {
+  height: 20vh;
+}
+
+.wvh-20 {
+  width: 20vh;
+}
+
+.hvh-30 {
+  height: 30vh;
+}
+
+.wvh-30 {
+  width: 30vh;
+}
+
+.hvh-40 {
+  height: 40vh;
+}
+
+.wvh-40 {
+  width: 40vh;
+}
+
+.hvh-50 {
+  height: 50vh;
+}
