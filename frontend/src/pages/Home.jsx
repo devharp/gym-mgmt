@@ -14,8 +14,8 @@ function Home(props) {
                 <NavBar position="fixed" brand="GymFit" minHeight='50px' />
                 <div style={{ backgroundColor: 'white', height: `${props.bheight}`}}><Block1 bheight={props.bheight} /></div>
                 <div style={{ backgroundColor: 'white', height: `${props. bheight}`}}><Block2 bheight={props.bheight} /></div>
-                <div style={{ backgroundColor: '#fbe551', height: `${props. bheight}`}}><Block3 bheight={props.bheight} /></div>
-                <div style={{ backgroundColor: 'yellow', height: `${props.bheight}`}}>Text here</div>
+                <div style={{ backgroundColor: '#FBE551', height: `${props. bheight}`}}><Block3 bheight={props.bheight} /></div>
+                <div style={{ backgroundColor: 'white', height: `${props.bheight}`}}>Text here</div>
             </div>
         </>
     );

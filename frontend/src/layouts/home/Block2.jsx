@@ -22,7 +22,7 @@ function Block2(props) {
                             }
                         } alt="" />
                     </div>
-                    <div class="bg-dark1 d-flex flex-column justify-content-around" style={{ height: '100%' }}>
+                    <div className="bg-dark1 d-flex flex-column justify-content-around" style={{ height: '100%' }}>
                         <div className='d-flex flex-column align-items-center'>
                             <div className='mb-3' style={{ fontSize: `calc(36/1080 * ${props.bheight})`, letterSpacing: `calc(3.6/1080 * ${props.bheight})`, fontWeight: '500' }}>How do you get fit with us?</div>
                             <div style={{ height: '2px', width: `calc(0.16 * ${props.bheight})`, backgroundColor: '#04C7F4' }}></div>
