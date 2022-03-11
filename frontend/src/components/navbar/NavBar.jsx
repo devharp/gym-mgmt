@@ -11,6 +11,7 @@ import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
+import { Slide, useScrollTrigger } from '@mui/material';
 
 const pages = ['Get a Coach', 'Tools', 'Become a Coach', 'About us', 'Contact us', 'Join us'];
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
@@ -33,8 +34,10 @@ function ResponsiveAppBar(props) {
   const handleCloseUserMenu = () => {
     setAnchorElUser(null);
   };
+  const trigger = useScrollTrigger();
 
   return (
+    <Slide appear={false} direction='down' in={!trigger}>
     <AppBar position={props.position} style={{backgroundColor: '#fbe551', color: 'black', minHeight: props.minHeight}}>
       <Container maxWidth="xl">
         <div className='d-flex flex-row align-items-center justify-content-around'>
@@ -86,7 +89,10 @@ function ResponsiveAppBar(props) {
             >
               {pages.map((page) => (
                 <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center" sx={{ textTransform: 'none', color: 'black'}}>{page}</Typography>
+                  <Typography textAlign="center" 
+                  sx={{ textTransform: 'none', 
+                  color: 'black', 
+                  letterSpacing: '2.4px', fontSize: '16px', fontWeight: '500'}}>{page}</Typography>
                 </MenuItem>
               ))}
             </Menu>
@@ -96,7 +102,7 @@ function ResponsiveAppBar(props) {
               <div
                 key={i}
                 onClick={handleCloseNavMenu}
-                style={{ my: 2, color: 'white', display: 'block', textTransform: 'none', color: 'black', 
+                style={{ my: 2, display: 'block', textTransform: 'none', color: 'black', 
                     fontSize: 'max(1.6vh, 9px)', letterSpacing: 'calc(0.14vw)', margin: '0', backgroundColor: 'none',
                     fontFamily: 'Roboto', fontWeight: '500' }}
               >
@@ -109,6 +115,7 @@ function ResponsiveAppBar(props) {
         </div>
       </Container>
     </AppBar>
+    </Slide>
   );
 };
 export default ResponsiveAppBar;
