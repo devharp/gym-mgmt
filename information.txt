@@ -1,0 +1,29 @@
+PHASE I - 12 Days
+Home Page:
+    Buttons - Become a coach, Tools, About Us, Contact Us, Join
+    #1 Brief Info
+    #2 About Us
+    #3 Tools
+    #4 Get A coach
+    #5 Become A coach
+
+Database:
+    SQLite3
+
+ForntEnd
+    React
+
+Backend Language:
+    NodeJs
+
+Additional:
+    Bootstrap,
+    Font Awesome Icons,
+
+
+Account Verification/Validation:
+    OTP (over email)
+
+Must be secure, quick development, exact copy of the XD UI
+
+MERN
