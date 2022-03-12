@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import './App.css'
 import Home from './pages/Home'
+import GetACoach from './pages/GetACoach'
 import PageNotFound from "./pages/PageNotFound";
 
 function App() {
@@ -29,7 +30,7 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Home bheight={bheight} />} />
-          <Route path="/getacoach" element={<Home />} />
+          <Route path="/getacoach" element={<GetACoach bheight={bheight} />} />
           <Route path="/tools" element={<Home />} />
           <Route path="/becomeacoach" element={<Home />} />
           <Route path="/aboutus" element={<Home />} />
