@@ -11,8 +11,8 @@ function Block3(props) {
                     <div className='d-flex flex-column align-items-center'>
                         <div className='mb-2' style={
                             {
-                                fontSize: `calc(18/640 * ${props.bheight})`,
-                                letterSpacing: `calc(1.8/640 * ${props.bheight})`,
+                                fontSize: `calc(36/1080 * ${props.bheight})`,
+                                letterSpacing: `calc(3.6/1080 * ${props.bheight})`,
                                 fontWeight: '500'
                             }
                         }>How do we differ ?</div>
@@ -26,7 +26,7 @@ function Block3(props) {
 
                         </div>
                     </div>
-                    <div className='d-flex flex-column align-items-center' style={{ fontSize: `calc(14/640 * ${props.bheight})` }}>
+                    <div className='d-flex flex-column align-items-center' style={{ fontSize: `calc(28/1080 * ${props.bheight})` }}>
                         <div>Whatever life throws at you, whether it's societal barriers, hormonal</div>
                         <div>imbalance like PCOD, pregnancy, postpartum, breastfeeding, or a tight work</div>
                         <div>schedule, we understand! That's why we made <b>India's first women-only</b></div>
