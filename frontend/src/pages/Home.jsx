@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import Footer from "../components/footer/Footer";
 import NavBar from "../components/navbar/NavBar";
 import Block1 from "../layouts/home/Block1";
 import Block2 from "../layouts/home/Block2";
@@ -17,6 +18,7 @@ function Home(props) {
                 <div style={{ backgroundColor: 'white', height: `${props. bheight}`}}><Block2 bheight={props.bheight} /></div>
                 <div style={{ backgroundColor: '#FBE551', height: `${props. bheight}`}}><Block3 bheight={props.bheight} /></div>
                 <div style={{ backgroundColor: 'white', height: `${props.bheight}`}}><Block4 bheight={props.bheight} /></div>
+                <div style={{ backgroundColor: 'black'}}><Footer bheight={props.bheight} /></div>
             </div>
         </>
     );
