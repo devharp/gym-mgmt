@@ -7,23 +7,23 @@ import PageNotFound from "./pages/PageNotFound";
 
 function App() {
   const [bheight, setBHeight] = useState('100vh')
-    const minheight = 500;
-    function handleResize() {
-        if(window.screen.height > minheight){
-            setBHeight('100vh');
-            // console.log('100vh');
-        }
-        else{
-            setBHeight(`${minheight}px`);
-            // console.log(`${minheight}px`);
-        }
-
+  const minheight = 500;
+  function handleResize() {
+    if (window.screen.height > minheight) {
+      setBHeight('100vh');
+      console.log('100vh');
     }
-    useEffect(() => {
+    else {
+      setBHeight(`${minheight}px`);
+      // console.log(`${minheight}px`);
+    }
 
-        window.addEventListener('resize', handleResize);
-        console.log('once')
-    }, []);
+  }
+  useEffect(() => {
+
+    window.addEventListener('resize', handleResize);
+    console.log('once')
+  }, []);
 
   return (
     <>

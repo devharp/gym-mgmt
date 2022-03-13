@@ -105,6 +105,7 @@ function ResponsiveAppBar(props) {
                         letterSpacing: '2.4px', fontSize: '16px', fontWeight: '500'
                       }}>
                         <Link style={{color: 'black', textDecoration: 'none'}} to={page.link}>{page.name}</Link>
+                        {/* {page.name} */}
                       </Typography>
                   </MenuItem>
                 ))}
@@ -122,7 +123,7 @@ function ResponsiveAppBar(props) {
                   }}
                 >
                   <Link style={{color: 'black', textDecoration: 'none'}} to={page.link}>{page.name}</Link>
-                  {/* {page} */}
+                  {/* {page.name} */}
                   
                 </div>
               ))}
