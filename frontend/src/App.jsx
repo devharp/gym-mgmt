@@ -31,11 +31,11 @@ function App() {
         <Routes>
           <Route path="/" element={<Home bheight={bheight} />} />
           <Route path="/getacoach" element={<GetACoach bheight={bheight} />} />
-          <Route path="/tools" element={<Home />} />
-          <Route path="/becomeacoach" element={<Home />} />
-          <Route path="/aboutus" element={<Home />} />
-          <Route path="/contactus" element={<Home />} />
-          <Route path="/joinus" element={<Home />} />
+          <Route path="/tools" element={<PageNotFound />} />
+          <Route path="/becomeacoach" element={<PageNotFound />} />
+          <Route path="/aboutus" element={<PageNotFound />} />
+          <Route path="/contactus" element={<PageNotFound />} />
+          <Route path="/joinus" element={<PageNotFound />} />
           <Route path="/*" element={<PageNotFound />} />
         </Routes>
       </BrowserRouter>

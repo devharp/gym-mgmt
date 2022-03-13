@@ -615,7 +615,7 @@ function GetACoach(props) {
                                         </div>
                                     </div>
                                 </div>
-                                <div classname='' style={{ backgroundColor: 'white' }}>
+                                <div className='' style={{ backgroundColor: 'white' }}>
                                     <div className="my-5 d-flex justify-content-center">
                                         <div style={{ height: `calc(477/1080 * ${props.bheight})`, borderRadius: `calc(20/1080 * ${props.bheight})`, width: `calc(477/1080 * ${props.bheight} * 0.79)`, backgroundColor: '#FFF5CC', boxShadow: `0px 0px calc(10/640 * ${props.bheight}) rgba(0, 0, 0, 0.3)` }}>
                                             <div className='d-flex flex-column px-3 py-3 justify-content-between' style={{ height: '100%' }}>
