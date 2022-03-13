@@ -16,12 +16,12 @@ import { Slide, useScrollTrigger } from '@mui/material';
 import { Link } from 'react-router-dom';
 
 const pages = [
-  {name: 'Get a Coach', link: '/getacoach'},
-  {name: 'Tools', link: '/tools'},
-  {name: 'Become a Coach', link: '/becomeacoach'},
-  {name: 'About us', link: '/aboutus'},
-  {name: 'Contact us', link: '/contactus'},
-  {name: 'Join us', link: '/joinus'},
+  { name: 'Get a Coach', link: '/getacoach' },
+  { name: 'Tools', link: '/tools' },
+  { name: 'Become a Coach', link: '/becomeacoach' },
+  { name: 'About us', link: '/aboutus' },
+  { name: 'Contact us', link: '/contactus' },
+  { name: 'Join us', link: '/joinus' },
 ];
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
@@ -56,7 +56,8 @@ function ResponsiveAppBar(props) {
               component="div"
               sx={{ my: 'max(1vh, 10px)', display: { xs: 'none', md: 'flex' }, textTransform: 'none', fontFamily: "'Felona st'", fontSize: 'max(3.5vh, 19px)' }}
             >
-              {props.brand}
+              <Link style={{ color: 'black', textDecoration: 'none' }} to='/'>{props.brand}</Link>
+              
             </Typography>
 
             <Typography
@@ -65,7 +66,7 @@ function ResponsiveAppBar(props) {
               component="div"
               sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none', textTransform: 'none' }, fontFamily: "'Felona st'" }}
             >
-              {props.brand}
+              <Link style={{ color: 'black', textDecoration: 'none' }} to='/'>{props.brand}</Link>
             </Typography>
             <Box sx={{ flexGrow: 0, display: { xs: 'flex', md: 'none' } }}>
               <IconButton
@@ -104,9 +105,9 @@ function ResponsiveAppBar(props) {
                         color: 'black',
                         letterSpacing: '2.4px', fontSize: '16px', fontWeight: '500'
                       }}>
-                        <Link style={{color: 'black', textDecoration: 'none'}} to={page.link}>{page.name}</Link>
-                        {/* {page.name} */}
-                      </Typography>
+                      <Link style={{ color: 'black', textDecoration: 'none' }} to={page.link}>{page.name}</Link>
+                      {/* {page.name} */}
+                    </Typography>
                   </MenuItem>
                 ))}
               </Menu>
@@ -122,9 +123,9 @@ function ResponsiveAppBar(props) {
                     fontFamily: 'Roboto', fontWeight: '500', cursor: 'pointer', userSelect: 'none'
                   }}
                 >
-                  <Link style={{color: 'black', textDecoration: 'none'}} to={page.link}>{page.name}</Link>
+                  <Link style={{ color: 'black', textDecoration: 'none' }} to={page.link}>{page.name}</Link>
                   {/* {page.name} */}
-                  
+
                 </div>
               ))}
             </Box>
