@@ -24,7 +24,7 @@ function Tools(props) {
 
                     {/* Mobile Screen */}
                     <Box sx={{ display: { xs: 'flex', sm: 'flex', md: 'none', lg: 'none', xl: 'none' }, width: '100%', height: '100%' }}>
-                        <Mobile className='pt-3 flex-grow-1' bheight={props.bheight} style={{ height: '100%', width: '100vw' }} />
+                        <Mobile className='py-3 flex-grow-1' bheight={props.bheight} style={{ height: '100%', width: '100vw' }} />
                     </Box>
                 </div>
 
@@ -34,13 +34,13 @@ function Tools(props) {
 }
 
 function Desktop(props) {
-    const[calc, setCalc] = useState(0);
+    const [calc, setCalc] = useState(0);
     function CalculatorsButtons(props) {
         return (
             <div className={props.className}>
-                <div className={props.eClassName} style={props.eStyle}>BMR Calculator</div>
-                <div className={props.eClassName} style={props.eStyle}>Body Fat Calculator</div>
-                <div className={props.eClassName} style={props.eStyle}>Ideal Weight Calculator</div>
+                <button style={{ ...props.eStyle, backgroundColor: `${(calc != 0) ? '#FBE551' : 'rgba(180, 180, 180, 0.2)'}`, color: `${(calc != 0) ? 'black' : 'rgba(0, 0, 0, 0.5)'}` }} variant='contained' className={props.eClassName} disabled={(calc != 0) ? false : true} onClick={() => { setCalc(0) }}>BMR Calculator</button>
+                <button style={{ ...props.eStyle, backgroundColor: `${(calc != 1) ? '#FBE551' : 'rgba(180, 180, 180, 0.2)'}`, color: `${(calc != 1) ? 'black' : 'rgba(0, 0, 0, 0.5)'}` }} variant='contained' className={props.eClassName} disabled={(calc != 1) ? false : true} onClick={() => { setCalc(1) }}>Body Fat Calculator</button>
+                <button style={{ ...props.eStyle, backgroundColor: `${(calc != 2) ? '#FBE551' : 'rgba(180, 180, 180, 0.2)'}`, color: `${(calc != 2) ? 'black' : 'rgba(0, 0, 0, 0.5)'}` }} variant='contained' className={props.eClassName} disabled={(calc != 2) ? false : true} onClick={() => { setCalc(2) }}>Ideal Weight Calculator</button>
             </div>
         );
     }
@@ -105,13 +105,13 @@ function Desktop(props) {
             );
         }
         return (
-            <div className={`flex-column ${(calc == 0) ? 'd-flex' : 'd-none' }`} style={{width: 'max-content'}}>
+            <div className={`flex-column ${(calc == 0) ? 'd-flex' : 'd-none'}`} style={{ width: 'max-content' }}>
                 <CalculatorTitle />
                 <div className="d-flex my-5">
                     <InputValues />
                     <OutputResult />
                 </div>
-                <div className="d-flex justify-content-center"><Button variant="contained"  size="small">Calculate BMR</Button></div>
+                <div className="d-flex justify-content-center"><Button variant="contained" size="small">Calculate BMR</Button></div>
             </div>
         );
     }
@@ -177,13 +177,13 @@ function Desktop(props) {
             );
         }
         return (
-            <div className={`flex-column ${(calc == 1) ? 'd-flex' : 'd-none' }`} style={{width: 'max-content'}}>
+            <div className={`flex-column ${(calc == 1) ? 'd-flex' : 'd-none'}`} style={{ width: 'max-content' }}>
                 <CalculatorTitle />
                 <div className="d-flex my-5">
                     <InputValues />
                     <OutputResult />
                 </div>
-                <div className="d-flex justify-content-center"><Button variant="contained"  size="small">Calculate Body Fat</Button></div>
+                <div className="d-flex justify-content-center"><Button variant="contained" size="small">Calculate Body Fat</Button></div>
             </div>
         );
     }
@@ -246,21 +246,28 @@ function Desktop(props) {
             );
         }
         return (
-            <div className={`flex-column ${(calc == 2) ? 'd-flex' : 'd-none' }`} style={{width: 'max-content'}}>
+            <div className={`flex-column ${(calc == 2) ? 'd-flex' : 'd-none'}`} style={{ width: 'max-content' }}>
                 <CalculatorTitle />
                 <div className="d-flex my-5">
                     <InputValues />
                     <OutputResult />
                 </div>
-                <div className="d-flex justify-content-center"><Button variant="contained"  size="small">Calculate Ideal Weight</Button></div>
+                <div className="d-flex justify-content-center"><Button variant="contained" size="small">Calculate Ideal Weight</Button></div>
             </div>
         );
     }
 
     return (
         <div className={props.className} style={props.style}>
-            <CalculatorsButtons bheight={props.bheight} className='d-flex flex-row justify-content-center py-2' eClassName='mx-3 mt-4 p-2' eStyle={{ fontSize: `calc(20/1080 * ${props.bheight})`, backgroundColor: '#FBE551', borderRadius: `calc(5/1080 * ${props.bheight})` }} />
-            <div className="d-flex flex-row flex-grow-1 bg-dar">
+            <CalculatorsButtons bheight={props.bheight} className='d-flex flex-row justify-content-center py-2'
+                eClassName='mx-3 mt-4 p-2'
+                eStyle={{
+                    fontSize: `calc(20/1080 * ${props.bheight})`, fontWeight: '500',
+                    cursor: 'pointer', userSelect: 'none', boxShadow: '0px 1px 5px 1px rgba(0,0,0,0.2)',
+                    color: 'black', borderRadius: `calc(5/1080 * ${props.bheight})`,
+                    border: 'none'
+                }} />
+            <div className="d-flex flex-row justify-content-center align-items-center flex-grow-1 bg-dar">
                 <BMRCalculator />
                 <BodyFatCalculator />
                 <IWCalculator />
@@ -270,29 +277,200 @@ function Desktop(props) {
 }
 
 function Mobile(props) {
+    const [calc, setCalc] = useState(-1);
+
     function CalculatorsButtons(props) {
         return (
             <div className={props.className} style={props.style}>
-                <div className={props.eClassName} style={props.eStyle}>BMR Calculator</div>
-                <div className={props.eClassName} style={props.eStyle}>Body Fat Calculator</div>
-                <div className={props.eClassName} style={props.eStyle}>Ideal Weight Calculator</div>
+                <div className={props.eClassName} style={props.eStyle} onClick={() => { setCalc(0) }}>BMR Calculator</div>
+                <div className={props.eClassName} style={props.eStyle} onClick={() => { setCalc(1) }}>Body Fat Calculator</div>
+                <div className={props.eClassName} style={props.eStyle} onClick={() => { setCalc(2) }}>Ideal Weight Calculator</div>
             </div>
         );
     }
-    return (
-        <div>
+    function BMRCalculator(props) {
+        function CalculatorTitle() {
+            return (
+                <>
+                    <div className="d-flex flex-row align-items-center">
+                        <div style={{ fontSize: `calc(18/640 * ${props.bheight})`, letterSpacing: `calc(1.8/640 * ${props.bheight})`, fontWeight: '500' }}>BMR Calculator</div>
+                        <div className="ms-2">i</div>
+                    </div>
+                </>
+            );
+        }
+        function GenderSelector() {
+            const [age, setAge] = useState('');
+
+            const handleChange = (event) => {
+                setAge(event.target.value);
+            };
+
+            return (
+                <Box sx={{ width: `calc(27/640 * ${props.bheight} * 129/27)` }}>
+                    <FormControl size='small' fullWidth>
+                        <InputLabel id="demo-simple-select-label" sx={{ fontSize: `calc(12/640 * ${props.bheight})` }}>Gender</InputLabel>
+                        <Select
+                            labelId="demo-simple-select-label"
+                            id="demo-simple-select"
+                            value={age}
+                            label="Gender"
+                            onChange={handleChange}
+                        >
+                            <MenuItem value={'Male'} sx={{ fontSize: `calc(12/640 * ${props.bheight})` }}>Male</MenuItem>
+                            <MenuItem value={'Female'} sx={{ fontSize: `calc(12/640 * ${props.bheight})` }}>Female</MenuItem>
+                            <MenuItem value={'Other'} sx={{ fontSize: `calc(12/640 * ${props.bheight})` }}>Other</MenuItem>
+                        </Select>
+                    </FormControl>
+                </Box>
+            );
+        }
+        function OutputResult() {
+            return (
+                <div className="w-100 d-flex flex-column align-items-center">
+                    <div className='mb-3' style={{ fontSize: `calc(18/640 * ${props.bheight})` }}>Your BMR is</div>
+                    <div style={{ fontSize: `calc(28/640 * ${props.bheight})`, fontWeight: '500' }}>1,540</div>
+                    <div style={{ fontSize: `calc(11/640 * ${props.bheight})`, fontWeight: '300' }}>Calories/day</div>
+                </div>
+            );
+        }
+        return (
             <div className={props.className} style={props.style}>
-                <CalculatorsButtons bheight={props.bheight} style={{ height: '100%' }}
-                    className='d-flex flex-column justify-content-around align-items-center py-2'
-                    eClassName='mx-3 mt-4 p-2 d-flex justify-content-center align-items-center'
-                    eStyle={{
-                        fontSize: `calc(20/640 * 100vw)`,
-                        backgroundColor: '#FBE551',
-                        borderRadius: `calc(5/640 * ${props.bheight})`,
-                        height: `calc(50/640 * 100vw)`,
-                        width: `calc(265/640 * 100vw)`
-                    }} />
+                <CalculatorTitle />
+                <div style={{ width: `calc(27/640 * ${props.bheight} * 129/27)` }}><GenderSelector /></div>
+                <div style={{ width: `calc(27/640 * ${props.bheight} * 129/27)` }}><TextField className="me-5" type='number' label="Age" variant="outlined" size="small" inputProps={{ style: { fontSize: `calc(12/640 * ${props.bheight})` } }} InputLabelProps={{ style: { fontSize: `calc(12/640 * ${props.bheight})` } }} sx={{ width: `calc(27/640 * ${props.bheight} * 128/27)` }} /></div>
+                <div style={{ width: `calc(27/640 * ${props.bheight} * 129/27)` }}><TextField className="me-5" type='number' label="Height" variant="outlined" size="small" inputProps={{ style: { fontSize: `calc(12/640 * ${props.bheight})` } }} InputLabelProps={{ style: { fontSize: `calc(12/640 * ${props.bheight})` } }} sx={{ width: `calc(27/640 * ${props.bheight} * 128/27)` }} /></div>
+                <div style={{ width: `calc(27/640 * ${props.bheight} * 129/27)` }}><TextField className="me-5" type='number' label="Weight" variant="outlined" size="small" inputProps={{ style: { fontSize: `calc(12/640 * ${props.bheight})` } }} InputLabelProps={{ style: { fontSize: `calc(12/640 * ${props.bheight})` } }} sx={{ width: `calc(27/640 * ${props.bheight} * 128/27)` }} /></div>
+                <div className="d-flex justify-content-center"><Button variant="contained" size="small">Calculate BMR</Button></div>
+                <OutputResult />
+                <div className="d-flex justify-content-center"><Button variant="contained" size="small" onClick={() =>{ setCalc(-1) }}>More Tools</Button></div>
             </div>
+        );
+    }
+    function BodyFatCalculator(props) {
+        function CalculatorTitle() {
+            return (
+                <>
+                    <div className="d-flex flex-row align-items-center">
+                        <div style={{ fontSize: `calc(18/640 * ${props.bheight})`, letterSpacing: `calc(1.8/640 * ${props.bheight})`, fontWeight: '500' }}>Body Fat Calculator</div>
+                        <div className="ms-2">i</div>
+                    </div>
+                </>
+            );
+        }
+        function GenderSelector() {
+            const [age, setAge] = useState('');
+
+            const handleChange = (event) => {
+                setAge(event.target.value);
+            };
+
+            return (
+                <Box sx={{ width: `calc(27/640 * ${props.bheight} * 129/27)` }}>
+                    <FormControl size='small' fullWidth>
+                        <InputLabel id="demo-simple-select-label" sx={{ fontSize: `calc(12/640 * ${props.bheight})` }}>Gender</InputLabel>
+                        <Select
+                            labelId="demo-simple-select-label"
+                            id="demo-simple-select"
+                            value={age}
+                            label="Gender"
+                            onChange={handleChange}
+                        >
+                            <MenuItem value={'Male'} sx={{ fontSize: `calc(12/640 * ${props.bheight})` }}>Male</MenuItem>
+                            <MenuItem value={'Female'} sx={{ fontSize: `calc(12/640 * ${props.bheight})` }}>Female</MenuItem>
+                            <MenuItem value={'Other'} sx={{ fontSize: `calc(12/640 * ${props.bheight})` }}>Other</MenuItem>
+                        </Select>
+                    </FormControl>
+                </Box>
+            );
+        }
+        function OutputResult() {
+            return (
+                <div className="w-100 d-flex flex-column align-items-center">
+                    <div className='mb-3' style={{ fontSize: `calc(18/640 * ${props.bheight})` }}>Your Body Fat is</div>
+                    <div style={{ fontSize: `calc(28/640 * ${props.bheight})`, fontWeight: '500' }}>15%</div>
+                </div>
+            );
+        }
+        return (
+            <div className={props.className} style={props.style}>
+                <CalculatorTitle />
+                <div style={{ width: `calc(27/640 * ${props.bheight} * 129/27)` }}><GenderSelector /></div>
+                <div style={{ width: `calc(27/640 * ${props.bheight} * 129/27)` }}><TextField className="me-5" type='number' label="Age" variant="outlined" size="small" inputProps={{ style: { fontSize: `calc(12/640 * ${props.bheight})` } }} InputLabelProps={{ style: { fontSize: `calc(12/640 * ${props.bheight})` } }} sx={{ width: `calc(27/640 * ${props.bheight} * 128/27)` }} /></div>
+                <div style={{ width: `calc(27/640 * ${props.bheight} * 129/27)` }}><TextField className="me-5" type='number' label="Height" variant="outlined" size="small" inputProps={{ style: { fontSize: `calc(12/640 * ${props.bheight})` } }} InputLabelProps={{ style: { fontSize: `calc(12/640 * ${props.bheight})` } }} sx={{ width: `calc(27/640 * ${props.bheight} * 128/27)` }} /></div>
+                <div style={{ width: `calc(27/640 * ${props.bheight} * 129/27)` }}><TextField className="me-5" type='number' label="Weight" variant="outlined" size="small" inputProps={{ style: { fontSize: `calc(12/640 * ${props.bheight})` } }} InputLabelProps={{ style: { fontSize: `calc(12/640 * ${props.bheight})` } }} sx={{ width: `calc(27/640 * ${props.bheight} * 128/27)` }} /></div>
+                <div style={{ width: `calc(27/640 * ${props.bheight} * 129/27)` }}><TextField className="me-5" type='number' label="Neck" variant="outlined" size="small" inputProps={{ style: { fontSize: `calc(12/640 * ${props.bheight})` } }} InputLabelProps={{ style: { fontSize: `calc(12/640 * ${props.bheight})` } }} sx={{ width: `calc(27/640 * ${props.bheight} * 128/27)` }} /></div>
+                <div style={{ width: `calc(27/640 * ${props.bheight} * 129/27)` }}><TextField className="me-5" type='number' label="Waist" variant="outlined" size="small" inputProps={{ style: { fontSize: `calc(12/640 * ${props.bheight})` } }} InputLabelProps={{ style: { fontSize: `calc(12/640 * ${props.bheight})` } }} sx={{ width: `calc(27/640 * ${props.bheight} * 128/27)` }} /></div>
+                <div className="d-flex justify-content-center"><Button variant="contained" size="small">Calculate Body Fat</Button></div>
+                <OutputResult />
+                <div className="d-flex justify-content-center"><Button variant="contained" size="small" onClick={() =>{ setCalc(-1) }}>More Tools</Button></div>
+            </div>
+        );
+    }
+    function IWCalculator(props) {
+        function CalculatorTitle() {
+            return (
+                <>
+                    <div className="d-flex flex-row align-items-center">
+                        <div style={{ fontSize: `calc(18/640 * ${props.bheight})`, letterSpacing: `calc(1.8/640 * ${props.bheight})`, fontWeight: '500' }}>Ideal Weight Calculator</div>
+                        <div className="ms-2">i</div>
+                    </div>
+                </>
+            );
+        }
+        function GenderSelector() {
+            const [age, setAge] = useState('');
+
+            const handleChange = (event) => {
+                setAge(event.target.value);
+            };
+
+            return (
+                <Box sx={{ width: `calc(27/640 * ${props.bheight} * 129/27)` }}>
+                    <FormControl size='small' fullWidth>
+                        <InputLabel id="demo-simple-select-label" sx={{ fontSize: `calc(12/640 * ${props.bheight})` }}>Gender</InputLabel>
+                        <Select
+                            labelId="demo-simple-select-label"
+                            id="demo-simple-select"
+                            value={age}
+                            label="Gender"
+                            onChange={handleChange}
+                        >
+                            <MenuItem value={'Male'} sx={{ fontSize: `calc(12/640 * ${props.bheight})` }}>Male</MenuItem>
+                            <MenuItem value={'Female'} sx={{ fontSize: `calc(12/640 * ${props.bheight})` }}>Female</MenuItem>
+                            <MenuItem value={'Other'} sx={{ fontSize: `calc(12/640 * ${props.bheight})` }}>Other</MenuItem>
+                        </Select>
+                    </FormControl>
+                </Box>
+            );
+        }
+        function OutputResult() {
+            return (
+                <div className="w-100 d-flex flex-column align-items-center">
+                    <div className='mb-3' style={{ fontSize: `calc(18/640 * ${props.bheight})` }}>Your Ideal Weight is</div>
+                    <div style={{ fontSize: `calc(28/640 * ${props.bheight})`, fontWeight: '500' }}>75.5Kg</div>
+                </div>
+            );
+        }
+        return (
+            <div className={props.className} style={props.style}>
+                <CalculatorTitle />
+                <div style={{ width: `calc(27/640 * ${props.bheight} * 129/27)` }}><GenderSelector /></div>
+                <div style={{ width: `calc(27/640 * ${props.bheight} * 129/27)` }}><TextField className="me-5" type='number' label="Age" variant="outlined" size="small" inputProps={{ style: { fontSize: `calc(12/640 * ${props.bheight})` } }} InputLabelProps={{ style: { fontSize: `calc(12/640 * ${props.bheight})` } }} sx={{ width: `calc(27/640 * ${props.bheight} * 128/27)` }} /></div>
+                <div style={{ width: `calc(27/640 * ${props.bheight} * 129/27)` }}><TextField className="me-5" type='number' label="Height" variant="outlined" size="small" inputProps={{ style: { fontSize: `calc(12/640 * ${props.bheight})` } }} InputLabelProps={{ style: { fontSize: `calc(12/640 * ${props.bheight})` } }} sx={{ width: `calc(27/640 * ${props.bheight} * 128/27)` }} /></div>
+                <div className="d-flex justify-content-center"><Button variant="contained" size="small">Calculate Ideal Weight</Button></div>
+                <OutputResult />
+                <div className="d-flex justify-content-center"><Button variant="contained" size="small" onClick={() =>{ setCalc(-1) }}>More Tools</Button></div>
+            </div>
+        );
+    }
+
+    return (
+        <div className={props.className} style={props.style}>
+            <CalculatorsButtons bheight={props.bheight} style={{ height: '100%' }} className={`${(calc == -1 ) ? 'd-flex' : 'd-none' } flex-column justify-content-around align-items-center`} eClassName='mx-3 mt-4 p-2 d-flex justify-content-center align-items-center' eStyle={{ fontSize: `calc(20/640 * 100vw)`, fontWeight: '500', backgroundColor: '#FBE551', boxShadow: '0px 1px 5px 1px rgba(0,0,0,0.2)', borderRadius: `calc(5/640 * ${props.bheight})`, height: `calc(50/640 * 100vw)`, width: `calc(265/640 * 100vw)` }} />
+            <BMRCalculator bheight={props.bheight} className={`${(calc == 0 ) ? 'd-flex' : 'd-none' } flex-column justify-content-around align-items-center`} style={{ height: '100%' }} />
+            <BodyFatCalculator bheight={props.bheight} className={`${(calc == 1 ) ? 'd-flex' : 'd-none' } flex-column justify-content-around align-items-center`} style={{ height: '100%' }} />
+            <IWCalculator bheight={props.bheight} className={`${(calc == 2 ) ? 'd-flex' : 'd-none' } flex-column justify-content-around align-items-center`} style={{ height: '100%' }} />
         </div>
     );
 }
