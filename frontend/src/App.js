@@ -4,6 +4,7 @@ import './App.css'
 import Home from './pages/Home'
 import GetACoach from './pages/GetACoach'
 import PageNotFound from "./pages/PageNotFound";
+import Tools from "./pages/Tools";
 
 function App() {
   const [bheight, setBHeight] = useState('100vh')
@@ -11,7 +12,7 @@ function App() {
   function handleResize() {
     if (window.screen.height > minheight) {
       setBHeight('100vh');
-      console.log('100vh');
+      // console.log('100vh');
     }
     else {
       setBHeight(`${minheight}px`);
@@ -31,7 +32,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home bheight={bheight} />} />
           <Route path="/getacoach" element={<GetACoach bheight={bheight} />} />
-          <Route path="/tools" element={<PageNotFound />} />
+          <Route path="/tools" element={<Tools bheight={bheight} />} />
           <Route path="/becomeacoach" element={<PageNotFound />} />
           <Route path="/aboutus" element={<PageNotFound />} />
           <Route path="/contactus" element={<PageNotFound />} />
