@@ -11,10 +11,14 @@ import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 import { TextField, Button } from '@mui/material/';
 
+import AdapterDateFns from '@mui/lab/AdapterDateFns';
+import LocalizationProvider from '@mui/lab/LocalizationProvider';
+import MobileDatePicker from '@mui/lab/MobileDatePicker';
 
 import img00 from '../assets/becomeacoach/00.svg';
 import img01 from '../assets/becomeacoach/01.svg';
 import img02 from '../assets/becomeacoach/02.svg';
+import img03 from '../assets/becomeacoach/03.svg';
 
 
 function BecomeACoach(props) {
@@ -62,7 +66,7 @@ function Desktop(props) {
 
         function FrontContent() {
             return (
-                <div className="position-absolute" style={{ top: `calc(200/1080 * ${props.bheight})`, left: `calc(324.5/1920 * 100vw)`, height: '100%' }}>
+                <div className="position-absolute" style={{ top: `calc(200/1080 * ${props.bheight})`, left: `calc(324.5/1920 * 100vw)` }}>
 
                     <div className='position-relative' style={{ fontSize: `calc(48/1080 * ${props.bheight})`, letterSpacing: `calc(14.4/1080 * ${props.bheight})` }}>WORK WITH US</div>
                     <div className='position-relative my-3' >
@@ -99,16 +103,16 @@ function Desktop(props) {
     function Block2() {
         function BackgroundImages() {
             return (
-                <div className="position-absolute" style={{right: '0'}}>
-                    <img className='position-relative' src={img01} style={{top: `calc(198/1080 * ${props.bheight})`, height: `calc(760/1080 * ${props.bheight})`, width: `calc(760/1920 * 100vw * 1613/760)`}} alt="" />
+                <div className="position-absolute" style={{ right: '0' }}>
+                    <img className='position-relative' src={img01} style={{ top: `calc(198/1080 * ${props.bheight})`, height: `calc(760/1080 * ${props.bheight})`, width: `calc(760/1920 * 100vw * 1613/760)` }} alt="" />
                 </div>
             );
         }
         function FrontContent() {
             return (
-                <div className="pt-5 position-absolute d-flex flex-column align-items-center" style={{left: `calc(763/1920 * 100vw)`}}>
-                    <div className='my-5' style={{ fontWeight: '500', fontSize: `calc(36/1080 * ${props.bheight})`, letterSpacing: `calc(3.6/1080 * ${props.bheight})`}}>We Achieve this by Offering:</div>
-                    <div className='d-flex flex-column align-items-center' style={{fontSize: `calc(28/1080 * ${props.bheight})`}}>
+                <div className="pt-5 position-absolute d-flex flex-column align-items-center" style={{ left: `calc(763/1920 * 100vw)` }}>
+                    <div className='my-5' style={{ fontWeight: '500', fontSize: `calc(36/1080 * ${props.bheight})`, letterSpacing: `calc(3.6/1080 * ${props.bheight})` }}>We Achieve this by Offering:</div>
+                    <div className='d-flex flex-column align-items-center' style={{ fontSize: `calc(28/1080 * ${props.bheight})` }}>
                         <div style={{ whiteSpace: 'nowrap' }}>With Go Girl, You have a lot of flexibility in terms of your</div>
                         <div style={{ whiteSpace: 'nowrap' }}>work schedule and timing. We let you communicate</div>
                         <div style={{ whiteSpace: 'nowrap' }}>directly with your clients and fix the timings that work for</div>
@@ -140,9 +144,9 @@ function Desktop(props) {
                     <img src={img02} style={{ width: `calc(985/1920 * 100vw)`, height: `calc(560/1080 * ${props.bheight})` }} alt="" />
                     <div className="d-flex flex-column align-items-center flex-grow-1">
                         <div className="mb-5" style={{
-                            fontSize: `calc(36/1080 * ${props.bheight})`, 
+                            fontSize: `calc(36/1080 * ${props.bheight})`,
                             letterSpacing: `calc(3.6/1080 * ${props.bheight})`,
-                            fontWeight: '500'    
+                            fontWeight: '500'
                         }}>Exposure to a Range of People</div>
                         <div className="d-flex flex-column align-items-center" style={{ fontSize: `calc(28/1080 * ${props.bheight})` }}>
                             <div>You can get the freedom to explore</div>
@@ -170,14 +174,22 @@ function Desktop(props) {
         function BackgroundImages() {
             return (
                 <div className="position-absolute">
-                    Desktop View1gmkdfk
+                    {/* Desktop View1gmkdfk */}
                 </div>
             );
         }
         function FrontContent() {
             return (
-                <div className="position-absolute">
-                    Desktop View0
+                <div className="position-absolute d-flex flex-column align-items-center justify-content-evenly w-100" style={{ height: props.bheight }}>
+                    <img className='' style={{ height: `calc(449/1080 * ${props.bheight})`, width: `calc(449/1080 * ${props.bheight} * 553/449)` }} src={img03} alt="" />
+                    <div className='' style={{ fontSize: `calc(36/1080 * ${props.bheight})`, letterSpacing: `calc(3.6/1080 * ${props.bheight})`, fontWeight: '500' }}>Attractive Packages</div>
+                    <div className='d-flex flex-column align-items-center' style={{ fontSize: `calc(28/1080 * ${props.bheight})` }}>
+                        <div>You will earn the highest salary in the industry with Go Girl. We also offer professional</div>
+                        <div>development opportunities. And we'll make sure you have tremendous support both</div>
+                        <div>personally and financially. We do our best not only to enhance your skills but also to enhance</div>
+                        <div>your career goals.</div>
+                    </div>
+                    <div className=''><Button variant='contained' size='small' sx={{ fontSize: `calc(18/1080 * ${props.bheight})` }}>Fill the form</Button></div>
                 </div>
             );
         }
@@ -197,11 +209,11 @@ function Desktop(props) {
             <div className="" style={{ height: props.bheight, backgroundColor: '#FBE551' }}>
                 <Block2 />
             </div>
-            <div className="bg-info" style={{ height: props.bheight }}>
+            <div className="" style={{ height: props.bheight }}>
                 <Block3 />
 
             </div>
-            <div className="bg-danger1" style={{ height: props.bheight }}>
+            <div className="" style={{ height: props.bheight }}>
                 <Block4 />
 
             </div>
@@ -273,16 +285,16 @@ function Mobile(props) {
         function BackgroundImages() {
             return (
                 <div className="position-absolute">
-                    <img className='mt-3' src={img01} style={{height: `calc(160/640 * ${props.bheight})`, width: `calc(340/360 * 100vw)`}} alt="" />
+                    <img className='mt-3' src={img01} style={{ height: `calc(160/640 * ${props.bheight})`, width: `calc(340/360 * 100vw)` }} alt="" />
                 </div>
             );
         }
         function FrontContent() {
             return (
-                <div className="position-absolute d-flex flex-column justify-content-center" style={{width: '100vw', height: props.bheight}}>
-                    <div className='d-flex justify-content-center my-5' style={{ fontWeight: '500', fontSize: `calc(18/640 * ${props.bheight})`, letterSpacing: `calc(1.8/640 * ${props.bheight})`}}>We Achieve this by Offering:</div>
-                    <div className='d-flex justify-content-center' style={{fontSize: `calc(14/640 * ${props.bheight})`}}>
-                        <div className='' style={{textAlign: 'center', maxWidth: 'calc(320px)'}}>With Go Girl, You have a lot of flexibility in terms of your work schedule and timing. We let you communicate directly with your clients and fix the timings that work for you both. In addition, you won't face any peer pressure at Go Girl so that you will have a fun and self-motivated work environment.</div>
+                <div className="position-absolute d-flex flex-column justify-content-center" style={{ width: '100vw', height: props.bheight }}>
+                    <div className='d-flex justify-content-center my-5' style={{ fontWeight: '500', fontSize: `calc(18/640 * ${props.bheight})`, letterSpacing: `calc(1.8/640 * ${props.bheight})` }}>We Achieve this by Offering:</div>
+                    <div className='d-flex justify-content-center' style={{ fontSize: `calc(14/640 * ${props.bheight})` }}>
+                        <div className='' style={{ textAlign: 'center', maxWidth: 'calc(320px)' }}>With Go Girl, You have a lot of flexibility in terms of your work schedule and timing. We let you communicate directly with your clients and fix the timings that work for you both. In addition, you won't face any peer pressure at Go Girl so that you will have a fun and self-motivated work environment.</div>
                     </div>
                 </div>
             );
@@ -304,12 +316,12 @@ function Mobile(props) {
         }
         function FrontContent() {
             return (
-                <div className="position-absolute" style={{width: '100%'}}>
+                <div className="position-absolute d-flex flex-column justify-content-around" style={{ width: '100%', height: props.bheight }}>
                     <div className="d-flex justify-content-center"><img style={{ width: `calc(287/360 * 100vw)`, height: `calc(264/640 * ${props.bheight})` }} src={img02} alt="" /></div>
                     <div className="d-flex flex-column align-items-center bg-">
                         <div className='my-4' style={{ fontSize: `calc(18/640 * ${props.bheight})`, letterSpacing: `calc(1.8/640 * ${props.bheight})`, fontWeight: '500' }}>Exposure to a Range of People</div>
-                        <div className="" style={{ fontSize: `calc(14/640 * ${props.bheight})`, maxWidth: '320px', textAlignLast: 'center', textAlign: 'justify' }}>
-                        You can get the freedom to explore yourself as an independent coach. Also, you’ll get the opportunity to work along with industry experts, nutritionists, and skilled trainers. You can always avail of guidance and support from experienced trainers. Thus Go Girl works on you to make you more proficient.
+                        <div className="" style={{ fontSize: `calc(14/640 * ${props.bheight})`, maxWidth: '320px', textAlignLast: 'center', textAlign: 'center' }}>
+                            You can get the freedom to explore yourself as an independent coach. Also, you’ll get the opportunity to work along with industry experts, nutritionists, and skilled trainers. You can always avail of guidance and support from experienced trainers. Thus Go Girl works on you to make you more proficient.
                         </div>
                     </div>
                 </div>
@@ -326,14 +338,17 @@ function Mobile(props) {
         function BackgroundImages() {
             return (
                 <div className="position-absolute">
-                    Desktop View1gmkdfk
+                    {/* Desktop View1gmkdfk */}
                 </div>
             );
         }
         function FrontContent() {
             return (
-                <div className="position-absolute">
-                    Desktop View0
+                <div className="position-absolute d-flex flex-column align-items-center justify-content-evenly w-100" style={{ height: props.bheight }}>
+                    <img className='' style={{ height: `calc(187/640 * ${props.bheight})`, width: `calc(230/360 * 100vw)` }} src={img03} alt="" />
+                    <div className='' style={{ fontSize: `calc(18/640 * ${props.bheight})`, letterSpacing: `calc(1.8/640 * ${props.bheight})`, fontWeight: '500' }}>Attractive Packages</div>
+                    <div className='d-flex flex-column align-items-center' style={{ fontSize: `calc(14/640 * ${props.bheight})`, maxWidth: '320px', textAlign: 'center', textAlignLast: 'center' }}>You will earn the highest salary in the industry with Go Girl. We also offer professional development opportunities. And we'll make sure you have tremendous support both personally and financially. We do our best not only to enhance your skills but also to enhance your career goals.</div>
+                    <div className=''><Button variant='contained' size='small' sx={{ fontSize: `calc(18/640 * ${props.bheight})` }}>Fill the form</Button></div>
                 </div>
             );
         }
@@ -341,6 +356,27 @@ function Mobile(props) {
             <>
                 <BackgroundImages />
                 <FrontContent />
+            </>
+        );
+    }
+
+    function FillFormBlock() {
+        const [value, setValue] = useState(new Date('2014-08-18T21:11:54'));
+        const handleChange = (newValue) => {
+            setValue(newValue);
+        };
+        return (
+            <>
+                <LocalizationProvider dateAdapter={AdapterDateFns}>
+
+                    <MobileDatePicker
+                        label="Date mobile"
+                        inputFormat="MM/dd/yyyy"
+                        value={value}
+                        onChange={handleChange}
+                        renderInput={(params) => <TextField {...params} />}
+                    />
+                </LocalizationProvider>
             </>
         );
     }
@@ -353,13 +389,15 @@ function Mobile(props) {
             <div className="" style={{ height: props.bheight, backgroundColor: '#FBE551' }}>
                 <Block2 />
             </div>
-            <div className="bg-info" style={{ height: props.bheight }}>
+            <div className="" style={{ height: props.bheight }}>
                 <Block3 />
 
             </div>
-            <div className="bg-danger1" style={{ height: props.bheight }}>
+            <div className="" style={{ height: props.bheight }}>
                 <Block4 />
-
+            </div>
+            <div>
+                <FillFormBlock />
             </div>
         </div>
     );
