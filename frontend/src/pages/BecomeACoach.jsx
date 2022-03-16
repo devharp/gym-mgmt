@@ -59,6 +59,8 @@ function BecomeACoach(props) {
 
 function Desktop(props) {
 
+    const [blockstate, setBlockState] = useState(0);
+
     function Block1() {
         function BackgroundImages() {
             return (
@@ -200,7 +202,7 @@ function Desktop(props) {
                         <div>personally and financially. We do our best not only to enhance your skills but also to enhance</div>
                         <div>your career goals.</div>
                     </div>
-                    <div className=''><Button variant='contained' size='small' sx={{ fontSize: `calc(18/1080 * ${props.bheight})` }}>Fill the form</Button></div>
+                    <div className=''><Button onClick={() => {setBlockState(1)}} variant='contained' size='small' sx={{ fontSize: `calc(18/1080 * ${props.bheight})` }}>Fill the form</Button></div>
                 </div>
             );
         }
@@ -338,7 +340,7 @@ function Desktop(props) {
                 <div className={props.className} style={props.style}>
                     <Heading bheight={props.bheight} />
                     <MidSection bheight={props.bheight} className="d-flex flex-column justify-content-aroun flex-grow-1" />
-                    <div className='d-flex justify-content-center mt-3'><Button sx={{ width: `calc(35vw)` }} variant="contained">Helo</Button></div>
+                    <div className='d-flex justify-content-center mt-3'><Button onClick={() => { setBlockState(2) }} sx={{ width: `calc(35vw)` }} variant="contained">Next</Button></div>
                 </div>
             );
 
@@ -354,23 +356,123 @@ function Desktop(props) {
 
         );
     }
+    function JobInformationSkillsTrainingBlock(props) {
+        function InformationSection() {
+            return (
+                <div className="d-flex flex-column px-3" style={{ height: props.bheight, width: '50vw' }}>
+                    <div className="d-flex flex-column">
+                        <div className="" style={{ fontFamily: 'Helvetica Neue', fontSize: `calc(18/640 * ${props.bheight})` }}>Job Information</div>
+                        <div className="" style={{ fontFamily: 'Helvetica Neue 45 Light', fontSize: `calc(14/640 * ${props.bheight})`, }}>We need some details about you</div>
+                    </div>
+                    <div className="d-flex flex-column justify-content-around flex-grow-1">
+
+                        <div className="d-flex flex-column flex-grow-1 justify-content-start" >
+                            <div className="mt-5 mb-3" style={{ fontSize: `calc(14/640 * ${props.bheight})` }}>How were you referred to us?</div>
+                            <div className="mb-3 d-flex flex-row">
+                                <div className="d-flex flex-column">
+                                    <FormControlLabel className="mb-3" control={<Checkbox />} label={<Typography style={{ fontFamily: 'Helvetica Neue 45 Light', fontSize: `calc(14/640 * ${props.bheight})`, }}>Walk-In</Typography>} />
+                                    <FormControlLabel className="mb-3" control={<Checkbox />} label={<Typography style={{ fontFamily: 'Helvetica Neue 45 Light', fontSize: `calc(14/640 * ${props.bheight})`, }}>Newspaper Ad</Typography>} />
+                                    <FormControlLabel className="mb-3" control={<Checkbox />} label={<Typography style={{ fontFamily: 'Helvetica Neue 45 Light', fontSize: `calc(14/640 * ${props.bheight})`, }}>Twitter</Typography>} />
+                                    <FormControlLabel className="mb-3" control={<Checkbox />} label={<Typography style={{ fontFamily: 'Helvetica Neue 45 Light', fontSize: `calc(14/640 * ${props.bheight})`, }}>Other (please specify)</Typography>} />
+
+                                </div>
+                                <div className="d-flex flex-column">
+                                    <FormControlLabel className="mb-3" control={<Checkbox />} label={<Typography style={{ fontFamily: 'Helvetica Neue 45 Light', fontSize: `calc(14/640 * ${props.bheight})`, }}>Employee</Typography>} />
+                                    <FormControlLabel className="mb-3" control={<Checkbox />} label={<Typography style={{ fontFamily: 'Helvetica Neue 45 Light', fontSize: `calc(14/640 * ${props.bheight})`, }}>Facebook</Typography>} />
+                                    <FormControlLabel className="mb-3" control={<Checkbox />} label={<Typography style={{ fontFamily: 'Helvetica Neue 45 Light', fontSize: `calc(14/640 * ${props.bheight})`, }}>Craigslist</Typography>} />
+                                </div>
+
+                            </div>
+                            <TextField className="mt-3 mb-3" type='text' label="Other" variant="outlined" size="small" inputProps={{ style: { fontSize: `calc(12/640 * ${props.bheight})` } }} InputLabelProps={{ style: { fontSize: `calc(12/640 * ${props.bheight})` } }} />
+                            <div className="mt-4 d-flex flex-column"><TextField InputProps={{ endAdornment: (<InputAdornment position="start"><AttachFileIcon /></InputAdornment>) }} InputLabelProps={{ style: { fontSize: `calc(12/640 * ${props.bheight})` } }} inputProps={{ style: { fontSize: `calc(12/640 * ${props.bheight})`, width: '100%' } }} id="standard-basic" label="Upload Your Resume" size='small' variant="outlined" disabled={true} /></div>
+                        </div>
+                    </div>
+                </div>
+            );
+        }
+        function SkillsTrainingSection() {
+
+            function Heading() {
+                return (
+                    <div className="d-flex flex-column">
+                        <div className="" style={{ fontFamily: 'Helvetica Neue', fontSize: `calc(18/640 * ${props.bheight})` }}>Job Skills &amp; Training</div>
+                        <div className="" style={{ fontFamily: 'Helvetica Neue 45 Light', fontSize: `calc(14/640 * ${props.bheight})`, }}>We need details regarding your skills and experience</div>
+                    </div>
+                );
+            }
+
+            function UploadBox() {
+                function UploadPhoto() {
+                    return (
+                        <Box className="d-flex justify-content-center align-items-center" sx={{ border: 1, borderColor: 'text.primary', width: `calc(90/640 * ${props.bheight})`, height: `calc(90/640 * ${props.bheight})` }}>
+                            <FileUploadIcon />
+                        </Box>
+
+                    );
+                }
+                return (
+                    <>
+                        <div className="d-flex flex-column">
+                            <div className="mb-3" style={{ fontFamily: 'Helvetica Neue 45 Light', fontSize: `calc(14/640 * ${props.bheight})` }}>Upload Your Photos</div>
+                            <div className="d-flex flex-row justify-content-between">
+                                <UploadPhoto />
+                                <UploadPhoto />
+                                <UploadPhoto />
+                            </div>
+                        </div>
+                        <div className="d-flex flex-row align-items-center">
+                            <Checkbox />
+                            <div style={{ fontFamily: 'Helvetica Neue 45 Light', fontSize: `calc(14/640 * ${props.bheight})`, }}>
+                                I accept the
+                            </div>
+                            <Typography sx={{ color: 'primary.main' }}>&nbsp;terms &amp; conditions</Typography>
+                        </div>
+                    </>
+                );
+            }
+            return (
+                <div className="d-flex flex-column px-3" style={{ height: props.bheight, width: `50vw` }}>
+                    <Heading />
+                    <div className="d-flex flex-column justify-content-around flex-grow-1">
+
+                        <TextField className="" size="small" label="Describe Your Skills" variant="outlined" type='text' multiline rows={5} inputProps={{ style: { fontSize: `calc(12/640 * ${props.bheight})` } }} InputLabelProps={{ style: { fontSize: `calc(12/640 * ${props.bheight})` } }} />
+                        <div className="mt-4 d-flex flex-column"><TextField InputProps={{ endAdornment: (<InputAdornment position="start"><AttachFileIcon /></InputAdornment>) }} InputLabelProps={{ style: { fontSize: `calc(12/640 * ${props.bheight})` } }} inputProps={{ style: { fontSize: `calc(12/640 * ${props.bheight})`, width: '100%' } }} id="standard-basic" label="Upload Your Resume" size='small' variant="outlined" disabled={true} /></div>
+                        <UploadBox />
+                    </div>
+                </div>
+            );
+        }
+        return (
+            <div className='d-flex flex-row px-3'>
+                <InformationSection />
+                <SkillsTrainingSection />
+            </div>
+
+        );
+    }
 
     return (
         <div className={props.className} style={props.style}>
-            <div className="" style={{ height: props.bheight }}>
+            <div className={(blockstate == 0) ? 'd-flex' : 'd-none'} style={{ height: props.bheight }}>
                 <Block1 />
             </div>
-            <div className="" style={{ height: props.bheight, backgroundColor: '#FBE551' }}>
+            <div className={(blockstate == 0) ? 'd-flex' : 'd-none'} style={{ height: props.bheight, backgroundColor: '#FBE551' }}>
                 <Block2 />
             </div>
-            <div className="" style={{ height: props.bheight }}>
+            <div className={(blockstate == 0) ? 'd-flex' : 'd-none'} style={{ height: props.bheight }}>
                 <Block3 />
             </div>
-            <div className="" style={{ height: props.bheight }}>
+            <div className={(blockstate == 0) ? 'd-flex' : 'd-none'} style={{ height: props.bheight }}>
                 <Block4 />
             </div>
-            <div className="bg-info px-3" style={{ height: props.bheight }}>
+            <div className={`${(blockstate == 1) ? 'd-flex' : 'd-none'} flex-column px-3 pt-5 mt-3`} style={{ height: props.bheight }}>
                 <FillFormAddressBlock bheight={props.bheight} />
+            </div>
+            <div className={`${(blockstate == 2) ? 'd-flex' : 'd-none'} flex-column pt-5 mt-3`}>
+                <JobInformationSkillsTrainingBlock bheight={props.bheight} />
+                <div className="my-5 d-flex justify-content-center">
+                    <ButtonModal variant='contained' size='small' sx={{ fontSize: `calc(20/1080 * ${props.bheight})`, width: '35vw' }}>Submit</ButtonModal>
+                </div>
             </div>
         </div>
     );
