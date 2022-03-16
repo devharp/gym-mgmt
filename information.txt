@@ -27,3 +27,9 @@ Account Verification/Validation:
 Must be secure, quick development, exact copy of the XD UI
 
 MERN
+
+
+Remaining:
+	GetACoach - (Until Plan Selection) incomplete
+	BecomeACoach - Add Container class
+	

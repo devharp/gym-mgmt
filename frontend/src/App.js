@@ -6,6 +6,7 @@ import GetACoach from './pages/GetACoach'
 import PageNotFound from "./pages/PageNotFound";
 import Tools from "./pages/Tools";
 import BecomeACoach from "./pages/BecomeACoach";
+import Trainers from "./pages/Trainers";
 
 function App() {
   const [bheight, setBHeight] = useState('100vh')
@@ -33,6 +34,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home bheight={bheight} />} />
           <Route path="/getacoach" element={<GetACoach bheight={bheight} />} />
+          <Route path="/trainers" element={<Trainers bheight={bheight} />} />
           <Route path="/tools" element={<Tools bheight={bheight} />} />
           <Route path="/becomeacoach" element={<BecomeACoach bheight={bheight} />} />
           <Route path="/aboutus" element={<PageNotFound />} />
