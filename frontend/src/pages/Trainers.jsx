@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import NavBar from "../components/navbar/NavBar";
 import { Box, FormControl, InputLabel, Select, MenuItem, Button } from "@mui/material"
 
@@ -9,8 +9,18 @@ import trainerimg00 from '../assets/trainers/trainer00.png'
 import trainerimg01 from '../assets/trainers/trainer01.webp'
 import trainerimg02 from '../assets/trainers/trainer02.png'
 import trainerimg03 from '../assets/trainers/trainer03.jpg'
+import { Link } from 'react-router-dom';
 
 function Trainers(props) {
+
+
+    useEffect(() => {
+        window.scroll(0, 0);
+    
+      
+    }, [])
+    
+
 
     function Desktop() {
         function BackgroundImages() {
@@ -141,7 +151,7 @@ function Trainers(props) {
                                     <div style={{ fontSize: `calc( 14/1080 * ${props.bheight})` }}>Trained 6 people</div>
                                     <div style={{ fontSize: `calc( 14/1080 * ${props.bheight})` }}>3 slots available</div>
                                     <div>
-                                        <Button variant='contained' size='small' sx={{ fontSize: `calc( 18/1080 * ${props.bheight})` }}>Enroll</Button>
+                                        <Link to='/register'><Button variant='contained' size='small' sx={{ fontSize: `calc( 18/1080 * ${props.bheight})` }}>Enroll</Button></Link>
                                     </div>
                                 </div>
                             </div>
@@ -153,25 +163,25 @@ function Trainers(props) {
                         <div className='d-flex flex-column'>
                             <ContentInfo />
                             <TrainerFilter />
-                            <div className='d-flex justify-content-between' style={{ width: `calc(1205/1920 * 100vw)` }}>
+                            <div className='d-flex justify-content-between' >
                                 <TrainerProfile name='Sean Sydall' className='me-3 my-3 d-flex' bheight={props.bheight} src={trainerimg00} borderRadius='20' />
                                 <TrainerProfile name='Prathmesh Jaware' className='mx-2 my-3 d-flex' bheight={props.bheight} src={trainerimg01} borderRadius='20' />
                                 <TrainerProfile name='Ramu Bhai' className='mx-2 my-3 d-flex' bheight={props.bheight} src={trainerimg02} borderRadius='20' />
                                 <TrainerProfile name='Sarika Mishra' className='ms-3 my-3 d-flex' bheight={props.bheight} src={trainerimg03} borderRadius='20' />
                             </div>
-                            <div className='d-flex justify-content-between' style={{ width: `calc(1205/1920 * 100vw)` }}>
+                            <div className='d-flex justify-content-between' >
                                 <TrainerProfile name='Sean Sydall' className='me-3 my-3 d-flex' bheight={props.bheight} src={trainerimg00} borderRadius='20' />
                                 <TrainerProfile name='Prathmesh Jaware' className='mx-2 my-3 d-flex' bheight={props.bheight} src={trainerimg01} borderRadius='20' />
                                 <TrainerProfile name='Ramu Bhai' className='mx-2 my-3 d-flex' bheight={props.bheight} src={trainerimg02} borderRadius='20' />
                                 <TrainerProfile name='Sarika Mishra' className='ms-3 my-3 d-flex' bheight={props.bheight} src={trainerimg03} borderRadius='20' />
                             </div>
-                            <div className='d-flex justify-content-between' style={{ width: `calc(1205/1920 * 100vw)` }}>
+                            <div className='d-flex justify-content-between' >
                                 <TrainerProfile name='Sean Sydall' className='me-3 my-3 d-flex' bheight={props.bheight} src={trainerimg00} borderRadius='20' />
                                 <TrainerProfile name='Prathmesh Jaware' className='mx-2 my-3 d-flex' bheight={props.bheight} src={trainerimg01} borderRadius='20' />
                                 <TrainerProfile name='Ramu Bhai' className='mx-2 my-3 d-flex' bheight={props.bheight} src={trainerimg02} borderRadius='20' />
                                 <TrainerProfile name='Sarika Mishra' className='ms-3 my-3 d-flex' bheight={props.bheight} src={trainerimg03} borderRadius='20' />
                             </div>
-                            <div className='d-flex justify-content-between' style={{ width: `calc(1205/1920 * 100vw)` }}>
+                            <div className='d-flex justify-content-between' >
                                 <TrainerProfile name='Sean Sydall' className='me-3 my-3 d-flex' bheight={props.bheight} src={trainerimg00} borderRadius='20' />
                                 <TrainerProfile name='Prathmesh Jaware' className='mx-2 my-3 d-flex' bheight={props.bheight} src={trainerimg01} borderRadius='20' />
                                 <TrainerProfile name='Ramu Bhai' className='mx-2 my-3 d-flex' bheight={props.bheight} src={trainerimg02} borderRadius='20' />
@@ -203,12 +213,14 @@ function Trainers(props) {
         function BackgroundImages() {
             function Image0() {
                 return (
-                    <img className="position-absolute" src={img00} style={{
-                        transform: `translate(calc(-392/1080 * ${props.bheight}), calc(-264/1080 * ${props.bheight} * 1920/1080))`,
-                        width: `calc(1321/1080 * ${props.bheight} * 1906/1321)`,
-                        height: `calc(1321/1080 * ${props.bheight})`
-                    }} alt=""
-                    />
+                    <div className='position-absolute' style={{ width: '100vw', overflow: 'hidden' }}>
+                        <img className="position-relative" src={img00} style={{
+                            transform: `translate(calc(-392/1080 * ${props.bheight}), calc(-264/1080 * ${props.bheight} * 1920/1080))`,
+                            width: `calc(1321/1080 * ${props.bheight} * 1906/1321)`,
+                            height: `calc(1321/1080 * ${props.bheight})`
+                        }} alt=""
+                        />
+                    </div>
                 );
             }
 
@@ -332,7 +344,7 @@ function Trainers(props) {
                                     <div style={{ fontSize: `calc( 14/1080 * ${props.bheight})` }}>Trained 6 people</div>
                                     <div style={{ fontSize: `calc( 14/1080 * ${props.bheight})` }}>3 slots available</div>
                                     <div>
-                                        <Button variant='contained' size='small' sx={{ fontSize: `calc( 18/1080 * ${props.bheight})` }}>Enroll</Button>
+                                        <Link to='/register'><Button variant='contained' size='small' sx={{ fontSize: `calc( 18/1080 * ${props.bheight})` }}>Enroll</Button></Link>
                                     </div>
                                 </div>
                             </div>
@@ -409,7 +421,7 @@ function Trainers(props) {
         return (
 
             <>
-                {/* <BackgroundImages /> */}
+                <BackgroundImages />
                 <FrontBody />
                 {/* <Image1/> */}
             </>

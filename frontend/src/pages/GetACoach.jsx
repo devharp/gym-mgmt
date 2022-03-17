@@ -555,14 +555,15 @@ function GetACoach(props) {
                     </div>
 
                     <div className="position-absolute" style={{
-                        left: `calc(-350/1920 * ${props.bheight})`,
+                        left: `calc(-350/1920 * ${props.bheight} * 360/1920 * 1.1)`,
                         height: props.bheight,
+                        width: '100vw',
                         overflow: 'hidden'
                     }}>
                         <img src={img00} style={{
-                            height: `calc(1156/1080 * ${props.bheight})`,
-                            width: `calc(1156/1080 * ${props.bheight}) * 0.669`,
-                            transform: `translateY(calc(400/1080 * ${props.bheight}))`
+                            height: `calc(1156/1080 * ${props.bheight} * 0.5)`,
+                            width: `calc(1156/1080 * ${props.bheight} * 0.669 * 0.5)`,
+                            transform: `translateY(calc(${props.bheight} - calc(1156/1080 * ${props.bheight} * 0.5 * 0.5)))`
                         }} alt="" />
                     </div>
                     <div className="position-absolute" style={{
@@ -664,8 +665,8 @@ function GetACoach(props) {
                                 </div>
                             </div>
                         </div>
-                        <div className='' style={{ backgroundColor: 'red' }}>
-                            <PlanTablet name='Bssic' bheight={props.bheight} />
+                        <div className='' style={{ backgroundColor: 'none' }}>
+                            <PlanTablet name='Basic' bheight={props.bheight} />
                             <PlanTablet name='Intermediate' bheight={props.bheight} />
                             <PlanTablet name='Advanced' bheight={props.bheight} />
                         </div>
