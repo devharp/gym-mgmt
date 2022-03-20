@@ -1,11 +1,12 @@
 {
   "files": {
     "main.css": "/static/css/main.073c9b0a.css",
-    "main.js": "/static/js/main.d334e70c.js",
+    "main.js": "/static/js/main.306d9484.js",
     "static/js/787.cda612ba.chunk.js": "/static/js/787.cda612ba.chunk.js",
     "static/media/30.svg": "/static/media/30.c8abf734218a7cb4a3792f3c7d9fa2c3.svg",
-    "static/media/1.png": "/static/media/1.7a5ed2c1bd002ba15e85.png",
+    "static/media/1.png": "/static/media/1.ad9bf93e7ece8b2e936c.png",
     "static/media/trainer00.png": "/static/media/trainer00.aaf3cd101dfceae2f291.png",
+    "static/media/0.png": "/static/media/0.d7b5788df1c03e3121fd.png",
     "static/media/10.svg": "/static/media/10.4adbf1a00cb3c3356e86e2255a14b4fd.svg",
     "static/media/01.svg": "/static/media/01.3ba0cedf37f6748adc253d4372446bed.svg",
     "static/media/02.svg": "/static/media/02.58cbccb2afce54510e4a60778b80f400.svg",
@@ -21,6 +22,7 @@
     "static/media/32.svg": "/static/media/32.104adb376c9d845bbb0e8e348ec5b076.svg",
     "static/media/13.svg": "/static/media/13.cec6d0ccb3bcc427e643afe2989549a5.svg",
     "static/media/12.svg": "/static/media/12.030839b641b3e70dc07ce77457b4c5be.svg",
+    "static/media/0.svg": "/static/media/0.1c6205b22956e1a4efb70858854b4c17.svg",
     "static/media/22.svg": "/static/media/22.c8e6bc40a2f4415f0428a427ff99aaef.svg",
     "static/media/23.svg": "/static/media/23.4220df257f58e1c971da048bd63074bc.svg",
     "static/media/21.svg": "/static/media/21.f09aad3f6784a5a13d98bc4eff88d386.svg",
@@ -29,11 +31,11 @@
     "static/media/25.svg": "/static/media/25.827113489146ffae3c0cf4807b04438b.svg",
     "static/media/20.svg": "/static/media/20.e1450673cd39230c8a5542a23c1fea52.svg",
     "main.073c9b0a.css.map": "/static/css/main.073c9b0a.css.map",
-    "main.d334e70c.js.map": "/static/js/main.d334e70c.js.map",
+    "main.306d9484.js.map": "/static/js/main.306d9484.js.map",
     "787.cda612ba.chunk.js.map": "/static/js/787.cda612ba.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.073c9b0a.css",
-    "static/js/main.d334e70c.js"
+    "static/js/main.306d9484.js"
   ]
 }
