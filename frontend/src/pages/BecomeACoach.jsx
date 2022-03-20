@@ -28,6 +28,8 @@ import img00 from '../assets/becomeacoach/00.svg';
 import img01 from '../assets/becomeacoach/01.svg';
 import img02 from '../assets/becomeacoach/02.svg';
 import img03 from '../assets/becomeacoach/03.svg';
+import img04 from '../assets/becomeacoach/04.png';
+import img05 from '../assets/becomeacoach/05.png';
 
 
 function BecomeACoach(props) {
@@ -116,9 +118,17 @@ function Desktop(props) {
     function Block2() {
         function BackgroundImages() {
             return (
-                <div className="position-absolute" style={{ right: '0' }}>
-                    <img className='position-relative' src={img01} style={{ top: `calc(198/1080 * ${props.bheight})`, height: `calc(760/1080 * ${props.bheight})`, width: `calc(760/1920 * 100vw * 1613/760)` }} alt="" />
-                </div>
+                <>
+                    <div className="position-absolute" style={{ right: '0', zIndex: '1' }}>
+                        <img className='position-relative' src={img01} style={{ top: `calc(198/1080 * ${props.bheight})`, height: `calc(760/1080 * ${props.bheight})`, width: `calc(760/1920 * 100vw * 1613/760)` }} alt="" />
+                    </div>
+                    <div className="position-absolute" style={{ }}>
+                        <img className='position-relative' src={img04} style={{ width: `calc(450/1080 * ${props.bheight})`, transform: `translateY(calc(-100/1080 * ${props.bheight}))`}} alt="" />
+                    </div>
+                    <div className="position-absolute" style={{ right: '0', transform: `translate(0px, calc(500/1080 * ${props.bheight}))`, overflow: 'hidden'}}>
+                        <img className='position-relative' src={img05} style={{ width: `calc(1200/1080 * ${props.bheight})`, height: `calc(500/1080 * ${props.bheight})`, transform: `translate(calc(300/1080 * ${props.bheight}), 0px)` }} alt="" />
+                    </div>
+                </>
             );
         }
         function FrontContent() {
@@ -202,7 +212,7 @@ function Desktop(props) {
                         <div>personally and financially. We do our best not only to enhance your skills but also to enhance</div>
                         <div>your career goals.</div>
                     </div>
-                    <div className=''><Button onClick={() => {setBlockState(1)}} variant='contained' size='small' sx={{ fontSize: `calc(18/1080 * ${props.bheight})` }}>Fill the form</Button></div>
+                    <div className=''><Button onClick={() => { setBlockState(1) }} variant='contained' size='small' sx={{ fontSize: `calc(18/1080 * ${props.bheight})` }}>Fill the form</Button></div>
                 </div>
             );
         }
@@ -466,7 +476,7 @@ function Desktop(props) {
                 <Block4 />
             </div>
             <div className={`${(blockstate == 1) ? 'd-flex' : 'd-none'} flex-column align-items-center pt-5 mt-3`} style={{ height: props.bheight }}>
-                <div className='d-flex flex-column' style={ { minWidth: '600px', width: '50vw' }}>
+                <div className='d-flex flex-column' style={{ minWidth: '600px', width: '50vw' }}>
                     <FillFormAddressBlock bheight={props.bheight} />
                 </div>
             </div>

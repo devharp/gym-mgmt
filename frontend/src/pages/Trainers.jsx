@@ -4,6 +4,7 @@ import { Box, FormControl, InputLabel, Select, MenuItem, Button } from "@mui/mat
 
 import img00 from '../assets/trainers/00.svg'
 import img01 from '../assets/trainers/01.svg'
+import img02 from '../assets/trainers/02.svg'
 
 import trainerimg00 from '../assets/trainers/trainer00.png'
 import trainerimg01 from '../assets/trainers/trainer01.webp'
@@ -16,10 +17,10 @@ function Trainers(props) {
 
     useEffect(() => {
         window.scroll(0, 0);
-    
-      
+
+
     }, [])
-    
+
 
 
     function Desktop() {
@@ -29,7 +30,8 @@ function Trainers(props) {
                     <img className="position-absolute" src={img00} style={{
                         transform: `translate(calc(-392/1080 * ${props.bheight}), calc(-264/1080 * ${props.bheight} * 1920/1080))`,
                         width: `calc(1321/1080 * ${props.bheight} * 1906/1321)`,
-                        height: `calc(1321/1080 * ${props.bheight})`
+                        height: `calc(1321/1080 * ${props.bheight})`,
+                        zIndex: '-2'
                     }} alt=""
                     />
                 );
@@ -44,10 +46,27 @@ function Trainers(props) {
                     />
                 );
             }
+            function Image2() {
+                return (
+
+                    <>
+                        <div className='position-absolute bg-dar' style={{ overflow: 'hidden', height: `calc(600/1080 * ${props.bheight})`, width: '100%', zIndex: '-1'}}>
+                            <img className="" src={img02} style={{
+                                transform: `translate(calc(900/1920 * 100vw), calc(-200/1080 * ${props.bheight}))`,
+                                // width: `calc(600/1080 * ${props.bheight} * 500/600)`,
+                                height: `calc(1000/1080 * ${props.bheight})`
+                            }} alt=""
+                            />
+                        </div>
+                    </>
+                );
+            }
             return (
-                <div className="position-absolute">
+                <div className="position-absolute" style={{ width: '100%' }}>
                     <Image0 />
                     <Image1 />
+                    <Image2 />
+
 
                 </div>
             );
@@ -230,7 +249,7 @@ function Trainers(props) {
                 </div>
             );
         }
-        
+
         function FrontBody() {
             function Heading() {
                 function Image1() {
