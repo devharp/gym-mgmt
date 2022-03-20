@@ -30,6 +30,11 @@ import img02 from '../assets/becomeacoach/02.svg';
 import img03 from '../assets/becomeacoach/03.svg';
 import img04 from '../assets/becomeacoach/04.png';
 import img05 from '../assets/becomeacoach/05.png';
+import img06 from '../assets/becomeacoach/06.png';
+import lines from '../assets/becomeacoach/lines.svg';
+import girllines from '../assets/becomeacoach/girllines.svg';
+import shape0 from '../assets/becomeacoach/shape0.png';
+import shape from '../assets/becomeacoach/shape.png';
 
 
 function BecomeACoach(props) {
@@ -38,7 +43,7 @@ function BecomeACoach(props) {
             <div>
                 <NavBar position="fixed" brand="GymFit" minHeight='50px' />
 
-                <div className="w-100 d-block position-absolute" style={{ backgroundColor: 'none' }}>
+                <div className="w-100 d-block position-relative" style={{ backgroundColor: 'none' }}>
 
                     {/* Desktop Screen */}
                     <Box sx={{ display: { xs: 'none', sm: 'none', md: 'flex', lg: 'flex', xl: 'flex' }, width: '100%', height: '100%' }}>
@@ -51,6 +56,7 @@ function BecomeACoach(props) {
                     </Box>
                     {/* <div style={{ backgroundColor: 'black' }}><Footer bheight={props.bheight} /></div> */}
                 </div>
+                <div style={{ backgroundColor: 'black' }}><Footer bheight={props.bheight} /></div>
                 <div className="w-100 d-block position-absolute" style={{ backgroundColor: 'none' }}>
                 </div>
 
@@ -122,10 +128,10 @@ function Desktop(props) {
                     <div className="position-absolute" style={{ right: '0', zIndex: '1' }}>
                         <img className='position-relative' src={img01} style={{ top: `calc(198/1080 * ${props.bheight})`, height: `calc(760/1080 * ${props.bheight})`, width: `calc(760/1920 * 100vw * 1613/760)` }} alt="" />
                     </div>
-                    <div className="position-absolute" style={{ }}>
-                        <img className='position-relative' src={img04} style={{ width: `calc(450/1080 * ${props.bheight})`, transform: `translateY(calc(-100/1080 * ${props.bheight}))`}} alt="" />
+                    <div className="position-absolute" style={{}}>
+                        <img className='position-relative' src={img04} style={{ width: `calc(450/1080 * ${props.bheight})`, transform: `translateY(calc(-100/1080 * ${props.bheight}))` }} alt="" />
                     </div>
-                    <div className="position-absolute" style={{ right: '0', transform: `translate(0px, calc(500/1080 * ${props.bheight}))`, overflow: 'hidden'}}>
+                    <div className="position-absolute" style={{ right: '0', transform: `translate(0px, calc(500/1080 * ${props.bheight}))`, overflow: 'hidden' }}>
                         <img className='position-relative' src={img05} style={{ width: `calc(1200/1080 * ${props.bheight})`, height: `calc(500/1080 * ${props.bheight})`, transform: `translate(calc(300/1080 * ${props.bheight}), 0px)` }} alt="" />
                     </div>
                 </>
@@ -156,9 +162,14 @@ function Desktop(props) {
     function Block3() {
         function BackgroundImages() {
             return (
-                <div className="position-absolute">
-                    {/* Desktop View1gmkdfk */}
-                </div>
+                <>
+                    <div className="position-absolute" style={{ zIndex: '1' }}>
+                        <img src={girllines} style={{ transform: `translateY(calc(250/1080 * ${props.bheight}))`, width: `calc(1000/1080 * ${props.bheight})` }} alt="" />
+                    </div>
+                    <div className="position-absolute bg-dar" style={{ right: '0', width: `calc(600/1080 * ${props.bheight})`, overflow: 'hidden' }}>
+                        <img src={lines} style={{ width: `calc(1200/1080 * ${props.bheight})` }} alt="" />
+                    </div>
+                </>
             );
         }
         function FrontContent() {
@@ -196,9 +207,14 @@ function Desktop(props) {
     function Block4() {
         function BackgroundImages() {
             return (
-                <div className="position-absolute">
-                    {/* Desktop View1gmkdfk */}
-                </div>
+                <>
+                    <div className="position-absolute" style={{ transform: `translateY(calc(${props.bheight} - calc(600/1080 * ${props.bheight})))`, height: 'max-content', width: 'max-content', overflow: 'hidden' }}>
+                        <img src={shape} style={{ transform: `translate(-30%, 0%)`, height: `calc(600/1080 * ${props.bheight})`, width: `calc(500/1080 * ${props.bheight})` }} alt="" />
+                    </div>
+                    <div className="position-absolute bg-dar" style={{ right: '0', height: `calc(${props.bheight})`, overflow: 'hidden'}}>
+                        <img src={shape0} style={{ transform: `translate(60%, -0%)`, height: `calc(${props.bheight} * 1.4)`, width: `calc(800/1080 * ${props.bheight})` }} alt="" />
+                    </div>
+                </>
             );
         }
         function FrontContent() {
@@ -559,9 +575,26 @@ function Mobile(props) {
     function Block2() {
         function BackgroundImages() {
             return (
-                <div className="position-absolute">
-                    <img className='mt-3' src={img01} style={{ height: `calc(160/640 * ${props.bheight})`, width: `calc(340/360 * 100vw)` }} alt="" />
-                </div>
+                <>
+                    <div className="position-absolute" style={{ zIndex: '1' }}>
+                        <img className='mt-3' src={img01} style={{ height: `calc(160/640 * ${props.bheight})`, width: `calc(340/360 * 100vw)` }} alt="" />
+                    </div>
+                    <div className="position-absolute bg-" style={{ height: 'max-content', width: 'max-content' }}>
+                        <img src={img06} style={{ width: `calc(80/1080 * ${props.bheight})`, height: `calc(200/1080 * ${props.bheight})` }} alt="" />
+                    </div>
+                    <div className="position-absolute" style={{
+                        transform: `translate(calc(100vw - calc(300/1080 * ${props.bheight})), calc(${props.bheight} - calc(300/1080 * ${props.bheight})))`,
+                        height: 'max-content',
+                        width: `calc(300/1080 * ${props.bheight})`,
+                        overflow: 'hidden'
+                    }}>
+                        <img src={img05} style={{
+                            width: `calc(400/1080 * ${props.bheight})`,
+                            height: `calc(300/1080 * ${props.bheight})`,
+                            transform: `translate(0, calc(120/1080 * ${props.bheight}))`
+                        }} alt="" />
+                    </div>
+                </>
             );
         }
         function FrontContent() {
@@ -584,8 +617,8 @@ function Mobile(props) {
     function Block3() {
         function BackgroundImages() {
             return (
-                <div className="position-absolute">
-                    {/* Desktop View1gmkdfk */}
+                <div className="position-absolute d-flex justify-content-center bg-dar" style={{ transform: `translateY(calc(50/640 * ${props.bheight}))`, zIndex: '1', width: '100vw', maxWidth: '100vw', overflow: 'hidden' }}>
+                    <img src={girllines} style={{ width: `calc(200/360 * ${props.bheight})` }} alt="" />
                 </div>
             );
         }
@@ -612,8 +645,8 @@ function Mobile(props) {
     function Block4() {
         function BackgroundImages() {
             return (
-                <div className="position-absolute">
-                    {/* Desktop View1gmkdfk */}
+                <div className="position-absolute" style={{ right: '0', width: `calc(300/640 * ${props.bheight})`, overflow: 'hidden' }}>
+                    <img src={lines} style={{ transform: `translate(0, calc(-70/640 * ${props.bheight}))`, width: `calc(500/640 * ${props.bheight})` }} alt="" />
                 </div>
             );
         }
