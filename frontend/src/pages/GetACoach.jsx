@@ -1,15 +1,28 @@
 import NavBar from "../components/navbar/NavBar";
 
-import { Box, Button } from '@mui/material'
-import { ArrowBack, ArrowForward } from '@mui/icons-material/';
+import { Box, Button, TextField } from '@mui/material'
+import { ArrowBack, ArrowForward, NavigateNext, NavigateBefore } from '@mui/icons-material/';
 
 
 import img00 from '../assets/getacoach/00.svg'
 import img01 from '../assets/getacoach/01.svg'
+import img02 from '../assets/getacoach/02.svg'
 import img10 from '../assets/getacoach/10.svg'
 import img11 from '../assets/getacoach/11.svg'
 import img12 from '../assets/getacoach/12.svg'
 import img13 from '../assets/getacoach/13.svg'
+import img14 from '../assets/getacoach/14.svg'
+import img15 from '../assets/getacoach/15.svg'
+import img16 from '../assets/getacoach/16.svg'
+import img17 from '../assets/getacoach/17.svg'
+import img18 from '../assets/getacoach/18.svg'
+import img19 from '../assets/getacoach/19.svg'
+import img110 from '../assets/getacoach/110.svg'
+import img111 from '../assets/getacoach/111.svg'
+
+import imgtrans00 from '../assets/getacoach/trans-00.svg'
+import imgtranslines from '../assets/getacoach/trans-lines.png'
+
 import arrowltr from '../assets/getacoach/arrow.png'
 import badge from '../assets/getacoach/badge.svg'
 import oldlady from '../assets/getacoach/oldlady.svg'
@@ -55,8 +68,31 @@ function GetACoach(props) {
     }
 
     function Desktop() {
-
+        function ImageBlock(props) {
+            return (
+                <>
+                    <div className='d-flex flex-column align-items-center mx-3' style={{
+                        backgroundColor: 'white',
+                        width: 'max-content',
+                        padding: `calc(0.8/100 * ${props.bheight})`,
+                        boxShadow: '0px 14px 8px #00000029'
+                    }}>
+                        <div className='d-flex justify-content-center w-100' style={{
+                            backgroundColor: '#FFF5CC',
+                            maxHeight: `calc(10vw)`,
+                            maxWidth: `calc(10vw)`,
+                            height: `calc(150/1080 * ${props.bheight})`, flexShrink: '0'
+                        }}>
+                            <img src={props.src} style={{ width: `calc(150/1080 * ${props.bheight})` }} alt="" />
+                        </div>
+                        {/* <div className="d-flex align-items-center flex-grow-1" style={{ fontSize: `calc(22/1080 * ${props.bheight})`, fontWeight: '500', marginTop: `calc(0.5/100 * ${props.bheight})` }}>India's First Woman Only</div> */}
+                        <div className="d-flex align-items-center flex-grow-1" style={{ fontSize: `calc(20/1920 * 100vw)`, fontWeight: '500', marginTop: `calc(0.5/100 * ${props.bheight})` }}>{props.label}</div>
+                    </div>
+                </>
+            );
+        }
         function Block0() {
+
             return (
                 <>
                     <div className={`position-absolute ${block0} flex-column justify-content-center align-items-center w-100`} style={{ height: props.bheight, zIndex: '1' }}>
@@ -157,6 +193,7 @@ function GetACoach(props) {
         }
 
         function Block1() {
+            const [optionpane, setOptionPane] = useState(0);
             return (
                 <>
                     <div className={`position-absolute ${block1} flex-column justify-content-center align-items-center w-100`} style={{ height: props.bheight, zIndex: '1' }}>
@@ -179,78 +216,32 @@ function GetACoach(props) {
 
                         </div>
                         <div className="d-flex flex-column mb-2">
-                            <div className="d-flex mb-3">
-                                <div className='d-flex flex-column align-items-center mx-3' style={{
-                                    backgroundColor: 'white',
-                                    width: 'max-content',
-                                    padding: `calc(0.8/100 * ${props.bheight})`,
-                                    boxShadow: '0px 14px 8px #00000029'
-                                }}>
-                                    <div className='d-flex justify-content-center w-100' style={{
-                                        backgroundColor: '#FFF5CC',
-                                        maxHeight: `calc(10vw)`,
-                                        maxWidth: `calc(10vw)`,
-                                        height: `calc(150/1080 * ${props.bheight})`, flexShrink: '0'
-                                    }}>
-                                        <img src={img10} style={{ width: `calc(150/1080 * ${props.bheight})` }} alt="" />
-                                    </div>
-                                    {/* <div className="d-flex align-items-center flex-grow-1" style={{ fontSize: `calc(22/1080 * ${props.bheight})`, fontWeight: '500', marginTop: `calc(0.5/100 * ${props.bheight})` }}>India's First Woman Only</div> */}
-                                    <div className="d-flex align-items-center flex-grow-1" style={{ fontSize: `calc(20/1920 * 100vw)`, fontWeight: '500', marginTop: `calc(0.5/100 * ${props.bheight})` }}>Weight Loss</div>
+                            <div className="d-flex">
+                                <div className="d-flex align-items-center">
+                                    <div onClick={() => { setOptionPane(0) }} style={{ borderRadius: '50%', cursor: 'pointer', backgroundColor: ((optionpane === 0) ? '#FBE551' : '#DCDCDC') }}><NavigateBefore /></div>
                                 </div>
-                                <div className='d-flex flex-column align-items-center mx-3' style={{
-                                    backgroundColor: 'white',
-                                    width: 'max-content',
-                                    padding: `calc(0.8/100 * ${props.bheight})`,
-                                    boxShadow: '0px 14px 8px #00000029'
-                                }}>
-                                    <div className='d-flex justify-content-center w-100' style={{
-                                        backgroundColor: '#FFF5CC',
-                                        maxHeight: `calc(10vw)`,
-                                        maxWidth: `calc(10vw)`,
-                                        height: `calc(150/1080 * ${props.bheight})`, flexShrink: '0'
-                                    }}>
-                                        <img src={img11} style={{ width: `calc(150/1080 * ${props.bheight})` }} alt="" />
-                                    </div>
-                                    {/* <div className="d-flex align-items-center flex-grow-1" style={{ fontSize: `calc(22/1080 * ${props.bheight})`, fontWeight: '500', marginTop: `calc(0.5/100 * ${props.bheight})` }}>India's First Woman Only</div> */}
-                                    <div className="d-flex align-items-center flex-grow-1" style={{ fontSize: `calc(20/1920 * 100vw)`, fontWeight: '500', marginTop: `calc(0.5/100 * ${props.bheight})` }}>Weight Gain</div>
+                                <div className={`${((optionpane === 0) ? 'd-flex' : 'd-none')} flex-row mb-3`}>
+                                    <ImageBlock src={img14} bheight={props.bheight} label='PCOD' />
+                                    <ImageBlock src={img15} bheight={props.bheight} label='Diabetes' />
+                                    <ImageBlock src={img16} bheight={props.bheight} label='Thyroid' />
+                                    <ImageBlock src={img17} bheight={props.bheight} label='Osteoporosis' />
                                 </div>
-                                <div className='d-flex flex-column align-items-center mx-3' style={{
-                                    backgroundColor: 'white',
-                                    width: 'max-content',
-                                    padding: `calc(0.8/100 * ${props.bheight})`,
-                                    boxShadow: '0px 14px 8px #00000029'
-                                }}>
-                                    <div className='d-flex justify-content-center w-100' style={{
-                                        backgroundColor: '#FFF5CC',
-                                        maxHeight: `calc(10vw)`,
-                                        maxWidth: `calc(10vw)`,
-                                        height: `calc(150/1080 * ${props.bheight})`, flexShrink: '0'
-                                    }}>
-                                        <img src={img12} style={{ width: `calc(150/1080 * ${props.bheight})` }} alt="" />
-                                    </div>
-                                    {/* <div className="d-flex align-items-center flex-grow-1" style={{ fontSize: `calc(22/1080 * ${props.bheight})`, fontWeight: '500', marginTop: `calc(0.5/100 * ${props.bheight})` }}>India's First Woman Only</div> */}
-                                    <div className="d-flex align-items-center flex-grow-1" style={{ fontSize: `calc(20/1920 * 100vw)`, fontWeight: '500', marginTop: `calc(0.5/100 * ${props.bheight})` }}>Body Toning</div>
+                                <div className={`${((optionpane === 1) ? 'd-flex' : 'd-none')} flex-row mb-3`}>
+                                    <ImageBlock src={img18} bheight={props.bheight} label='Pre-Pregnancy' />
+                                    <ImageBlock src={img19} bheight={props.bheight} label='Trimster' />
+                                    <ImageBlock src={img110} bheight={props.bheight} label='Post-Pregnancy' />
+                                    <ImageBlock src={img111} bheight={props.bheight} label='Teen' />
                                 </div>
-                                <div className='d-flex flex-column align-items-center mx-3' style={{
-                                    backgroundColor: 'white',
-                                    width: 'max-content',
-                                    padding: `calc(0.8/100 * ${props.bheight})`,
-                                    boxShadow: '0px 14px 8px #00000029'
-                                }}>
-                                    <div className='d-flex justify-content-center w-100' style={{
-                                        backgroundColor: '#FFF5CC',
-                                        maxHeight: `calc(10vw)`,
-                                        maxWidth: `calc(10vw)`,
-                                        height: `calc(150/1080 * ${props.bheight})`, flexShrink: '0'
-                                    }}>
-                                        <img src={img13} style={{ width: `calc(150/1080 * ${props.bheight})` }} alt="" />
-                                    </div>
-                                    {/* <div className="d-flex align-items-center flex-grow-1" style={{ fontSize: `calc(22/1080 * ${props.bheight})`, fontWeight: '500', marginTop: `calc(0.5/100 * ${props.bheight})` }}>India's First Woman Only</div> */}
-                                    <div className="d-flex align-items-center flex-grow-1" style={{ fontSize: `calc(20/1920 * 100vw)`, fontWeight: '500', marginTop: `calc(0.5/100 * ${props.bheight})` }}>General Fitness</div>
+                                <div className="d-flex align-items-center">
+                                    <div onClick={() => { setOptionPane(1) }} style={{ borderRadius: '50%', cursor: 'pointer', backgroundColor: ((optionpane === 1) ? '#FBE551' : '#DCDCDC') }}><NavigateNext /></div>
                                 </div>
+
+
                             </div>
                             <div className="d-flex justify-content-between mx-3">
                                 <Button onClick={() => { handleClick('block1Back') }} startIcon={<ArrowBack />} variant="contained">Back</Button>
+                                <TextField size='small' InputProps={{ style: { fontSize: `calc(20/1080 * ${props.bheight})` } }} InputLabelProps={{ style: { fontSize: `calc(20/1080 * ${props.bheight})` } }} variant='standard' label='other' />
+
                                 <Button onClick={() => { handleClick('block1Next') }} endIcon={<ArrowForward />} variant="contained">Next</Button>
                             </div>
                         </div>
@@ -353,9 +344,18 @@ function GetACoach(props) {
             return (
                 <>
                     <div className={`${block2} position-absolute w-100`}>
-                        <div className="mt-5 d-flex flex-column justify-content-around" style={{ height: props.bheight }}>
-                            <TopSection />
-                            <BottomSection />
+                        <div className="position-absolute" style={{ zIndex: '-1', height: props.bheight, width: '100vw', overflow: 'hidden' }}>
+                            <img src={imgtrans00} style={{ height: `calc(1618/1080 * ${props.bheight})`, width: `calc(1618/1080 * ${props.bheight} * 2316/1618)`, transform: `translate(calc(-600/1920 * 100vw), calc(-600/1080 * ${props.bheight}))` }} alt="" />
+                        </div>
+                        <div className="position-absolute w-100 d-flex justify-content-center" style={{ bottom: '0', zIndex: '-1' }}>
+                            <img src={imgtranslines} style={{ height: `calc(310/1080 * ${props.bheight})`, width: `calc(310/1080 * ${props.bheight} * 1000/310)` }} alt="" />
+                        </div>
+                        <div className='pt-3' style={{ height: props.bheight, overflowY: 'scroll' }}>
+
+                            <div className="mt-5 d-flex flex-column justify-content-around">
+                                <TopSection />
+                                <BottomSection />
+                            </div>
                         </div>
                     </div>
                 </>
@@ -366,6 +366,14 @@ function GetACoach(props) {
 
             return (
                 <>
+                    <div className="position-absolute" style={{ height: props.bheight, width: '100vw', overflow: 'hidden', zIndex: '0' }}>
+                        <img src={img02} style={{
+                            transform: `translate(calc(839/1920 * 100vw), calc(653/1080 * ${props.bheight}))`,
+                            height: `calc(578/1080 * ${props.bheight})`,
+                            width: `calc(578/1080 * ${props.bheight} * 953/578)`
+                        }} alt="" />
+                    </div>
+
                     <div className="position-absolute" style={{
                         left: `calc(-350/1920 * ${props.bheight})`,
                         height: props.bheight,
@@ -411,6 +419,22 @@ function GetACoach(props) {
     }
 
     function Mobile() {
+        function ImageBlock(props) {
+            return (
+                <>
+                    <div className="d-flex flex-column p-2 m-3"
+                        style={{ width: 'max-content', backgroundColor: 'white', boxShadow: '0px 14px 8px #00000029' }}>
+                        <div className='d-flex justify-content-center' style={{
+                            width: `calc(75/640 * ${props.bheight} * 1.4)`,
+                            backgroundColor: '#FFF5CC'
+                        }}>
+                            <img src={props.src} style={{ height: `calc(63.5/640 * ${props.bheight})` }} alt="" />
+                        </div>
+                        <div className="d-flex justify-content-center" style={{ fontSize: `calc(14/640 * ${props.bheight})` }}>{props.label}</div>
+                    </div>
+                </>
+            );
+        }
         function Block0() {
             return (
                 <div className={`${firstblock} position-absolute w-100`}>
@@ -479,8 +503,8 @@ function GetACoach(props) {
                         </div>
 
                     </div>
-                    <div className={`position-absolute ${block1} flex-column justify-content-center align-items-center w-100`} style={{ height: props.bheight, zIndex: '1' }}>
-                        <div className="mb-4">
+                    <div className={`position-absolute ${block1} flex-column align-items-center w-100 pt-5 bg-dar`} style={{ height: props.bheight, overflow: 'scroll', zIndex: '1' }}>
+                        <div className="mt-5 mb-4">
                             <div className="mb-3 d-flex flex-column align-items-center" style={{
                                 fontSize: `calc(20/640 * ${props.bheight})`,
                                 letterSpacing: `calc(0.5/640 * ${props.bheight})`,
@@ -503,52 +527,30 @@ function GetACoach(props) {
                             <div className="d-flex flex-column mb-2">
                                 <div className='d-flex flex-column align-items-center'>
                                     <div className="d-flex flex-row">
-                                        <div className="d-flex flex-column p-2 m-3" style={{ width: 'max-content', backgroundColor: 'white', boxShadow: '0px 14px 8px #00000029' }}>
-                                            <div className='d-flex justify-content-center' style={{
-                                                width: `calc(75/640 * ${props.bheight} * 1.4)`,
-                                                backgroundColor: '#FFF5CC'
-                                            }}>
-                                                <img src={img10} style={{ height: `calc(63.5/640 * ${props.bheight})` }} alt="" />
-                                            </div>
-                                            <div style={{ fontSize: `calc(14/640 * ${props.bheight})` }}>Weight Loss</div>
-                                        </div>
-                                        <div className="d-flex flex-column p-2 m-3" style={{ width: 'max-content', backgroundColor: 'white', boxShadow: '0px 14px 8px #00000029' }}>
-                                            <div className='d-flex justify-content-center' style={{
-                                                width: `calc(75/640 * ${props.bheight} * 1.4)`,
-                                                backgroundColor: '#FFF5CC'
-                                            }}>
-                                                <img src={img10} style={{ height: `calc(63.5/640 * ${props.bheight})` }} alt="" />
-                                            </div>
-                                            <div style={{ fontSize: `calc(14/640 * ${props.bheight})` }}>Weight Loss</div>
-                                        </div>
+                                        <ImageBlock bheight={props.bheight} src={img14} label='PCOD' />
+                                        <ImageBlock bheight={props.bheight} src={img15} label='Diabetes' />
                                     </div>
                                     <div className="d-flex flex-row">
-                                        <div className="d-flex flex-column p-2 m-3" style={{ width: 'max-content', backgroundColor: 'white', boxShadow: '0px 14px 8px #00000029' }}>
-                                            <div className='d-flex justify-content-center' style={{
-                                                width: `calc(75/640 * ${props.bheight} * 1.4)`,
-                                                backgroundColor: '#FFF5CC'
-                                            }}>
-                                                <img src={img10} style={{ height: `calc(63.5/640 * ${props.bheight})` }} alt="" />
-                                            </div>
-                                            <div style={{ fontSize: `calc(14/640 * ${props.bheight})` }}>Weight Loss</div>
-                                        </div>
-                                        <div className="d-flex flex-column p-2 m-3" style={{ width: 'max-content', backgroundColor: 'white', boxShadow: '0px 14px 8px #00000029' }}>
-                                            <div className='d-flex justify-content-center' style={{
-                                                width: `calc(75/640 * ${props.bheight} * 1.4)`,
-                                                backgroundColor: '#FFF5CC'
-                                            }}>
-                                                <img src={img10} style={{ height: `calc(63.5/640 * ${props.bheight})` }} alt="" />
-                                            </div>
-                                            <div style={{ fontSize: `calc(14/640 * ${props.bheight})` }}>Weight Loss</div>
-                                        </div>
+                                        <ImageBlock bheight={props.bheight} src={img16} label='Thyroid' />
+                                        <ImageBlock bheight={props.bheight} src={img17} label='Osteoporosis' />
                                     </div>
+                                    <div className="d-flex flex-row">
+                                        <ImageBlock bheight={props.bheight} src={img18} label='Pre-Pregnancy' />
+                                        <ImageBlock bheight={props.bheight} src={img19} label='Trimster' />
+                                    </div>
+                                    <div className="d-flex flex-row">
+                                        <ImageBlock bheight={props.bheight} src={img110} label='Post-Pregnancy' />
+                                        <ImageBlock bheight={props.bheight} src={img111} label='Teen' />
+                                    </div>
+
 
 
                                 </div>
                             </div>
                             <div className="d-flex justify-content-between mx-3">
-                                <Button onClick={() => { handleClick('block1Back') }} startIcon={<ArrowBack />} variant="contained">Back</Button>
-                                <Button onClick={() => { handleClick('block1Next') }} endIcon={<ArrowForward />} variant="contained">Next</Button>
+                                <Button size='small' onClick={() => { handleClick('block1Back') }} startIcon={<ArrowBack />} variant="contained">Back</Button>
+                                <TextField size='small' InputProps={{ style: { fontSize: `calc(5/360 * ${props.bheight})`, width: '100px' } }} InputLabelProps={{ style: { fontSize: `calc(5/360 * ${props.bheight})` } }} variant='standard' label='other' />
+                                <Button size='small' onClick={() => { handleClick('block1Next') }} endIcon={<ArrowForward />} variant="contained">Next</Button>
                             </div>
                         </div>
 
@@ -579,6 +581,14 @@ function GetACoach(props) {
 
 
                         }} />
+
+                    </div>
+                    <div className="position-absolute" style={{ height: props.bheight, width: '100vw', overflow: 'hidden', zIndex: '0' }}>
+                        <img src={img02} style={{
+                            transform: `translate(calc(calc(0.5 * 100vw) - 50%), calc(calc(0.5 * ${props.bheight}) - 50%))`,
+                            height: `calc(578/1080 * ${props.bheight})`,
+                            width: `calc(578/1080 * ${props.bheight} * 953/578)`
+                        }} alt="" />
                     </div>
                 </div>
             );
@@ -633,6 +643,9 @@ function GetACoach(props) {
             return (
                 <>
                     <div className={`${block2} position-absolute w-100`}>
+                        <div className="position-absolute d-flex justify-content-center align-items-center" style={{ height: `calc(536/640 * ${props.bheight})`, overflow: 'hidden', width: '100%', zIndex: '-1' }}>
+                            <img src={imgtrans00} style={{ height: `calc(500/640 * ${props.bheight} * 1.2)` }} alt="" />
+                        </div>
                         <div className="d-flex flex-column justify-content-around align-items-center pt-5" style={{ height: props.bheight }}>
                             <div className="d-flex flex-column justify-content-center">
                                 <div className="mb-2" style={{
