@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="1411.479"
+   height="1080"
+   viewBox="0 0 1411.479 1080"
+   version="1.1"
+   id="svg79"
+   sodipodi:docname="00.1.svg"
+   inkscape:version="1.1.1 (3bf5ae0d25, 2021-09-20)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs83" />
+  <sodipodi:namedview
+     id="namedview81"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     showgrid="false"
+     inkscape:zoom="0.55024484"
+     inkscape:cx="694.23641"
+     inkscape:cy="462.52138"
+     inkscape:window-width="1600"
+     inkscape:window-height="864"
+     inkscape:window-x="1920"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg79"
+     height="1080px" />
+  <g
+     id="_94-lines"
+     data-name="94-lines"
+     transform="matrix(-1.6010406,0.526527,-0.65947717,-0.87111953,1772.7375,523.70955)">
+    <path
+       id="Path_8263"
+       data-name="Path 8263"
+       d="m 1147.719,513.526 c 36.856,159.3 22.8,324.878 9.282,486.088 h 26.209 C 1205.187,735.753 1221.977,434.081 1032.237,222.365 947.605,127.9 830.212,78.354 708.315,52.009 562.53,20.34 410.6,8.874 261.677,2.731 174.451,-0.818 87.226,-0.818 0,2.185 v 25.936 c 203.663,-7.235 408.008,2.73 609.214,32.624 125.992,18.7 255.67,50.37 356,133.227 96.917,79.991 154.522,199.022 182.505,319.554 z"
+       fill="#fbe551" />
+    <path
+       id="Path_8264"
+       data-name="Path 8264"
+       d="m 1017.9,613.388 c 26.482,114.663 26.618,232.6 19.657,349.858 h 25.663 C 1075.232,736.378 1060.22,498.18 902.692,322.227 818.06,227.767 700.667,178.216 578.77,151.871 432.852,120.2 280.924,108.736 132.135,102.73 87.908,100.819 43.954,100 0,100 v 26.072 c 160.528,0.137 320.919,10.92 479.4,34.535 125.992,18.7 255.67,50.37 356,133.227 96.917,79.991 154.521,199.022 182.5,319.554 z"
+       transform="translate(0,36.504)"
+       fill="#fbe551" />
+    <path
+       id="Path_8265"
+       data-name="Path 8265"
+       d="m 903.651,923.494 h 24.98 C 924.946,743.719 889.182,566.811 765.1,428.261 680.468,333.8 563.076,284.25 441.178,257.9 297.167,226.645 147.014,215.043 0,208.9 v 25.8 a 3224.368,3224.368 0 0 1 342.077,31.8 c 125.992,18.7 255.671,50.37 356,133.227 96.917,79.991 154.522,199.022 182.368,319.69 15.562,67.164 21.841,135.416 23.206,204.077 z"
+       transform="translate(0,76.256)"
+       fill="#fbe551" />
+  </g>
+</svg>
