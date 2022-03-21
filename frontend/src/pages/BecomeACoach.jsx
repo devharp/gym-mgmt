@@ -211,7 +211,7 @@ function Desktop(props) {
                     <div className="position-absolute" style={{ transform: `translateY(calc(${props.bheight} - calc(600/1080 * ${props.bheight})))`, height: 'max-content', width: 'max-content', overflow: 'hidden' }}>
                         <img src={shape} style={{ transform: `translate(-30%, 0%)`, height: `calc(600/1080 * ${props.bheight})`, width: `calc(500/1080 * ${props.bheight})` }} alt="" />
                     </div>
-                    <div className="position-absolute bg-dar" style={{ right: '0', height: `calc(${props.bheight})`, overflow: 'hidden'}}>
+                    <div className="position-absolute" style={{ right: '0', height: `calc(${props.bheight})`, overflow: 'hidden'}}>
                         <img src={shape0} style={{ transform: `translate(60%, -0%)`, height: `calc(${props.bheight} * 1.4)`, width: `calc(800/1080 * ${props.bheight})` }} alt="" />
                     </div>
                 </>
