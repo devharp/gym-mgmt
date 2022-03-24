@@ -15,7 +15,7 @@ import img48 from '../../assets/home/48/1.png'
 import img49 from '../../assets/home/49/1.png'
 
 
-import React from 'react';
+import React, { useEffect } from 'react';
 import Carousel from 'react-material-ui-carousel'
 import { Paper, Button } from '@mui/material'
 
@@ -23,6 +23,12 @@ import NavigateNextIcon from '@mui/icons-material/NavigateNext';
 import NavigateBeforeIcon from '@mui/icons-material/NavigateBefore';
 
 function Block4(props) {
+    
+    useEffect(() => {
+        console.log('props of Block4 Home', props);
+
+
+    }, []);
     const itemsdesk = [
         [
             { img: img40 },
@@ -89,7 +95,7 @@ function Block4(props) {
                                 letterSpacing: `calc(3.6/1080 * ${props.bheight})`,
                                 fontWeight: '500'
                             }
-                        }>Testimonials</div>
+                        }>{props.content.heading}</div>
                         <div style={
                             {
                                 width: `calc(180/640 * ${props.bheight})`,
@@ -102,8 +108,9 @@ function Block4(props) {
                     </div>
                     <div className='d-flex flex-column align-items-center' style={{ fontSize: `calc(28/1080 * ${props.bheight})` }}>
                         <div>Our Customer Quotes:</div>
-                        <div>Over the past months, Go Girl has transformed countless women from all</div>
-                        <div>over India. Have a look about their journey and experiences here.</div>
+                        <div style={{ textAlign: 'center', textAlignLast: 'center', maxWidth: 'calc(1000/1920 * 100vw)' }}>
+                            {props.content.paragraph}
+                        </div>
                     </div>
                     <div className='w-100 p-0' style={{ backgroundColor: 'transparent' }}>
 
@@ -123,7 +130,7 @@ function Block4(props) {
                                 letterSpacing: `calc(1.8/640 * ${props.bheight})`,
                                 fontWeight: '500'
                             }
-                        }>Testimonials</div>
+                        }>{props.content.heading}</div>
                         <div className='mb-4' style={
                             {
                                 width: `calc(180/640 * ${props.bheight})`,
@@ -135,10 +142,8 @@ function Block4(props) {
                         </div>
                     </div>
                     <div className='d-flex flex-column align-items-center mt-5' style={{ fontSize: `calc(14/640 * ${props.bheight})` }}>
-                        <div>Our Customer Quotes:</div>
-                        <div>Over the past months, Go Girl has transformed</div>
-                        <div>countless women from all over India. Have a</div>
-                        <div>look about their journey and experiences here.</div>
+                        <div>Our Customer Quotes: </div>
+                        <div style={{ maxWidth: `calc(150/320 * 100vw)`, textAlign: 'center', textAlignLast: 'center' }}>{props.content.paragraph}</div>
                     </div>
                     <div className='d-flex align-items-center justify-content-center w-100 flex-grow-1' style={{ height: props.bheight, backgroundColor: 'white' }}>
                         {/* <ImageCarouselMob bheight={props.bheight} items={itemsmob} /> */}

@@ -1,7 +1,11 @@
-import { AppBar, Box, IconButton, Toolbar, Typography } from "@mui/material";
+import { AppBar, Box, Button, IconButton, Toolbar, Typography } from "@mui/material";
 import { AccountBox, Menu, Settings } from '@mui/icons-material';
 
+import { useDispatch } from "react-redux";
+import { actionCreators } from '../../state'
+
 function Navbar(props) {
+    const dispatch = useDispatch();
     const desktop_sx = {
         display: {
             xs: 'none',
@@ -43,9 +47,9 @@ function Navbar(props) {
             <Box sx={mobile_sx}>
                 <AppBar position={props.position}>
                     <Box className='d-flex flex-row justify-content-between align-items-center px-3 py-2' sx={navbarstyle}>
-                        <IconButton edge="start" color="inherit" aria-label="menu" sx={{ mr: 2 }}>
+                        <div className="m-2" onClick={() => { dispatch(actionCreators.setSideBar(true)) } }>
                             <Menu />
-                        </IconButton>
+                        </div>
                         <div className="d-flex flex-row">
                             <div className="mx-3"> Profile </div>
                             <div className="mx-3"> Settings </div>

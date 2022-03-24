@@ -10,9 +10,9 @@ function App() {
     <>
       <BrowserRouter>
         <Routes>
-          <Route index element={<Dashboard />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="*" element={<PageNotFound />} />
+          <Route path='/det-admin' element={<Dashboard />} />
+          <Route path="/det-admin/login" element={<Login />} />
+          <Route path="/det-admin/*" element={<PageNotFound />} />
         </Routes>
       </BrowserRouter>
     </>

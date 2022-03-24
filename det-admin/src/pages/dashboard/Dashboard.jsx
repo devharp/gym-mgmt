@@ -1,10 +1,13 @@
 import { Box } from "@mui/material";
+import { useSelector } from "react-redux";
 import Navbar from "../../component/navbar/Navbar";
 import Sidebar from "../../component/sidebar/Sidebar";
 
 import './Dashboard.css'
 
 function Dashboard() {
+
+    const sidebarstate = useSelector(state => state.sidebar);
 
     const desktop_sx = {
         display: {
@@ -41,11 +44,11 @@ function Dashboard() {
                 </div>
             </Box>
             <Box sx={mobile_sx}>
-                <div className="full-hw">
-                    <div className="position-absolute full-hw d-none">
+                <div className='full-hw'>
+                    <div className={`position-absolute  full-hw ${(sidebarstate) ? 'd-block' : 'd-none'}`}>
                         <Sidebar />
                     </div>
-                    <div className="position-absolute d-flex flex-column w-100" style={{ zIndex: '-1' }}>
+                    <div className="position-absolute d-flex flex-column w-100 " style={{ zIndex: ((sidebarstate) ? '-1' : '1'  ) }}>
                         <Navbar position='static' />
                         <div className="flex-grow-1">Hello</div>
                     </div>

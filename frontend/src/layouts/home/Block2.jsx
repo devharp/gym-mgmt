@@ -5,8 +5,17 @@ import img21 from '../../assets/home/21.svg'
 import img22 from '../../assets/home/22.svg'
 import img23 from '../../assets/home/23.svg'
 import img24 from '../../assets/home/24.svg'
+import { useEffect } from 'react'
 
 function Block2(props) {
+
+    useEffect(() => {
+        console.log('props of Block2 Home', props);
+
+
+    }, []);
+
+
     return (
         <>
             {/* Desktop Screen */}
@@ -24,14 +33,10 @@ function Block2(props) {
                     </div>
                     <div className="bg-dark1 d-flex flex-column justify-content-around" style={{ height: '100%' }}>
                         <div className='d-flex flex-column align-items-center'>
-                            <div className='mb-3' style={{ fontSize: `calc(36/1080 * ${props.bheight})`, letterSpacing: `calc(3.6/1080 * ${props.bheight})`, fontWeight: '500' }}>How do you get fit with us?</div>
+                            <div className='mb-3' style={{ fontSize: `calc(36/1080 * ${props.bheight})`, letterSpacing: `calc(3.6/1080 * ${props.bheight})`, fontWeight: '500' }}>{props.content.heading}</div>
                             <div style={{ height: '2px', width: `calc(0.16 * ${props.bheight})`, backgroundColor: '#04C7F4' }}></div>
                         </div>
-                        <div className='d-flex flex-column align-items-center' style={{ fontSize: `calc(28/1080 * ${props.bheight})` }}>
-                            <div>We believe in the mantra,</div>
-                            <div><b>"Being fit is not a destination; It is the way of life."</b></div>
-                            <div>We shape women in their health and fitness regime, though:</div>
-                        </div>
+                        <div dangerouslySetInnerHTML={{ __html: props.content.paragraph }} className='d-flex flex-column align-items-center' style={{ fontSize: `calc(28/1080 * ${props.bheight})` }}></div>
                         <div className='d-flex flex-row justify-content-around'>
                             <div style={{ fontSize: `calc(28/1080 * ${props.bheight})`, fontWeight: '500', letterSpacing: `calc(1.4/1920 * 100vw)` }}>
                                 <div className="d-flex flex-row align-items-center mb-4">
@@ -77,7 +82,7 @@ function Block2(props) {
                             }
                         } alt="" />
                     </div>
-                    <div className='d-flex flex-column align-items-center justify-content-around' style={{height: '100%'}}>
+                    <div className='d-flex flex-column align-items-center justify-content-around' style={{ height: '100%' }}>
                         <div style={
                             {
                                 width: `calc(150/640 * ${props.bheight} * 1.6)`,
@@ -94,7 +99,7 @@ function Block2(props) {
                                     letterSpacing: `calc(1.8/640 * ${props.bheight})`,
                                     fontWeight: '500'
                                 }
-                            }>How do you get fit with us?</div>
+                            }>{props.content.heading}</div>
                             <div style={
                                 {
                                     width: `calc(180/640 * ${props.bheight})`,
@@ -105,33 +110,31 @@ function Block2(props) {
 
                             </div>
                         </div>
-                        <div className='d-flex flex-column align-items-center' style={{
+                        <div dangerouslySetInnerHTML={{ __html: props.content.paragraph }} className='d-flex flex-column align-items-center' style={{
                             fontSize: `calc(14/640 * ${props.bheight})`
                         }}>
-                            <div>We believe in the mantra, <b>" Being fit is not a</b></div>
-                            <div><b>destination; It is the way of life."</b> We shape</div>
-                            <div>women in their health and fitness regime, though</div>
+                            {/* We believe in the mantra, <b>"Being fit is not a destination; It is the way of life."</b> We shape women in their health and fitness regime, though */}
                         </div>
                         <div>
                             <div className='d-flex align-items-center mb-4'>
-                                <img style={{width: `calc(40/640 * ${props.bheight})`}} src={img20} alt="" />
-                                <div className='ms-2' style={{fontSize: `calc(12/640 * ${props.bheight})`}}><b>Identifying your goals &amp; expectation</b></div>
+                                <img style={{ width: `calc(40/640 * ${props.bheight})` }} src={img20} alt="" />
+                                <div className='ms-2' style={{ fontSize: `calc(12/640 * ${props.bheight})` }}><b>Identifying your goals &amp; expectation</b></div>
                             </div>
                             <div className='d-flex align-items-center mb-4'>
-                                <img style={{width: `calc(40/640 * ${props.bheight})`}} src={img21} alt="" />
-                                <div className='ms-2' style={{fontSize: `calc(12/640 * ${props.bheight})`}}><b>Flexible plans to fit your lifestyle</b></div>
+                                <img style={{ width: `calc(40/640 * ${props.bheight})` }} src={img21} alt="" />
+                                <div className='ms-2' style={{ fontSize: `calc(12/640 * ${props.bheight})` }}><b>Flexible plans to fit your lifestyle</b></div>
                             </div>
                             <div className='d-flex align-items-center mb-4'>
-                                <img style={{width: `calc(40/640 * ${props.bheight})`}} src={img22} alt="" />
-                                <div className='ms-2' style={{fontSize: `calc(12/640 * ${props.bheight})`}}><b>Following a customised schedule</b></div>
+                                <img style={{ width: `calc(40/640 * ${props.bheight})` }} src={img22} alt="" />
+                                <div className='ms-2' style={{ fontSize: `calc(12/640 * ${props.bheight})` }}><b>Following a customised schedule</b></div>
                             </div>
                             <div className='d-flex align-items-center mb-4'>
-                                <img style={{width: `calc(40/640 * ${props.bheight})`}} src={img23} alt="" />
-                                <div className='ms-2' style={{fontSize: `calc(12/640 * ${props.bheight})`}}><b>Providing extensive support</b></div>
+                                <img style={{ width: `calc(40/640 * ${props.bheight})` }} src={img23} alt="" />
+                                <div className='ms-2' style={{ fontSize: `calc(12/640 * ${props.bheight})` }}><b>Providing extensive support</b></div>
                             </div>
                             <div className='d-flex align-items-center'>
-                                <img style={{width: `calc(40/640 * ${props.bheight})`}} src={img24} alt="" />
-                                <div className='ms-2' style={{fontSize: `calc(12/640 * ${props.bheight})`}}><b>Monitoring on a weekly basis</b></div>
+                                <img style={{ width: `calc(40/640 * ${props.bheight})` }} src={img24} alt="" />
+                                <div className='ms-2' style={{ fontSize: `calc(12/640 * ${props.bheight})` }}><b>Monitoring on a weekly basis</b></div>
                             </div>
                         </div>
                     </div>
