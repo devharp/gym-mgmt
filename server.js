@@ -1,5 +1,5 @@
 // require('dotenv').config();
-const PORT = 3001;
+const PORT = 3000;
 const db_source = './database/webpage.db'
 
 const path = require('path');
