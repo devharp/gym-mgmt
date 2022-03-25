@@ -5,14 +5,14 @@ function getContent(name) {
         try{
 
             const xhr = new XMLHttpRequest();
-            xhr.open("POST", 'http://localhost:3001/admin/metainfo');
+            xhr.open("POST", 'https://www.harpreetsingh.xyz/admin/metainfo');
             xhr.onreadystatechange = function () {
                 if (xhr.readyState === 4) {
                     if (xhr.status == 200) {
                         const source = JSON.parse(xhr.responseText);
                         // console.log(source);
         
-                        xhr.open('GET', 'http://localhost:3001/admin' + source.content);
+                        xhr.open('GET', 'https://www.harpreetsingh.xyz/admin' + source.content);
                         xhr.onreadystatechange = () => {
                             if (xhr.readyState === 4 && xhr.status === 200) {
                                 const pagecontent = JSON.parse(xhr.responseText);
