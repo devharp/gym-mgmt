@@ -491,7 +491,7 @@ function Desktop(props) {
             <div className={(blockstate == 0) ? 'd-flex' : 'd-none'} style={{ height: props.bheight }}>
                 <Block4 />
             </div>
-            <div className={`${(blockstate == 1) ? 'd-flex' : 'd-none'} flex-column align-items-center pt-5 mt-3`} style={{ height: props.bheight }}>
+            <div className={`${(blockstate == 1) ? 'd-flex' : 'd-none'} flex-column align-items-center pt-5 mt-3`} style={{ minHeight: props.bheight }}>
                 <div className='d-flex flex-column' style={{ minWidth: '600px', width: '50vw' }}>
                     <FillFormAddressBlock bheight={props.bheight} />
                 </div>

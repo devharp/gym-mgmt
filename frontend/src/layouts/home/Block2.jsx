@@ -110,8 +110,8 @@ function Block2(props) {
 
                             </div>
                         </div>
-                        <div dangerouslySetInnerHTML={{ __html: props.content.paragraph }} className='d-flex flex-column align-items-center' style={{
-                            fontSize: `calc(14/640 * ${props.bheight})`
+                        <div dangerouslySetInnerHTML={{ __html: props.content.paragraph }} className='px-4 d-flex flex-column align-items-center' style={{
+                            fontSize: `calc(14/640 * ${props.bheight})`, textAlign: 'center', textAlignLast: 'center'
                         }}>
                             {/* We believe in the mantra, <b>"Being fit is not a destination; It is the way of life."</b> We shape women in their health and fitness regime, though */}
                         </div>
