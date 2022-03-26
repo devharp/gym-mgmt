@@ -277,25 +277,25 @@ function Tools(props) {
                 result: '---'
             };
 
-            
 
-            function showResult(){
-                switch(gender){
+
+            function showResult() {
+                switch (gender) {
                     case "Male":
-                        setIWCalcValues({...iwcalcvalues, result: `${parseInt(50 + (0.91 * (iwcalcvalues.height - 152.4)))} kg`})
+                        setIWCalcValues({ ...iwcalcvalues, result: `${parseInt(50 + (0.91 * (iwcalcvalues.height - 152.4)))} kg` })
                         break;
                     case "Female":
-                        setIWCalcValues({...iwcalcvalues, result: `${parseInt(45.5 + (0.91 * (iwcalcvalues.height - 152.4)))} kg`})
+                        setIWCalcValues({ ...iwcalcvalues, result: `${parseInt(45.5 + (0.91 * (iwcalcvalues.height - 152.4)))} kg` })
                         break;
                     case "Other":
-                        setIWCalcValues({...iwcalcvalues, result: `${parseInt(45.5 + (0.91 * (iwcalcvalues.height - 152.4)))} kg`})
+                        setIWCalcValues({ ...iwcalcvalues, result: `${parseInt(45.5 + (0.91 * (iwcalcvalues.height - 152.4)))} kg` })
                         break;
                     default:
                         break;
                 }
             }
             const [iwcalcvalues, setIWCalcValues] = useState(defaultiwcalcvalues);
-            
+
             async function inputValueChange(e, comp) {
                 switch (comp) {
                     case 'age':
@@ -410,6 +410,36 @@ function Tools(props) {
             );
         }
         function BMRCalculator(props) {
+
+            const defaultbmrcalcvalues = {
+                age: '',
+                height: '',
+                weight: '',
+                result: '---'
+            }
+            const [bmrcalcvalues, setBMRCalcValues] = useState(defaultbmrcalcvalues);
+            const [gender, setGender] = useState('');
+
+
+            function showBMRResult() {
+
+                switch (gender) {
+                    case 'Male':
+                        setBMRCalcValues({ ...bmrcalcvalues, result: parseInt(88.362 + (13.397 * bmrcalcvalues.weight) + (4.799 * bmrcalcvalues.height) - (5.677 * bmrcalcvalues.age)) })
+                        break;
+                    case 'Female':
+                        setBMRCalcValues({ ...bmrcalcvalues, result: parseInt(447.593 + (9.247 * bmrcalcvalues.weight) + (3.098 * bmrcalcvalues.height) - (4.330 * bmrcalcvalues.age)) })
+                        break;
+                    case 'Other':
+                        setBMRCalcValues({ ...bmrcalcvalues, result: parseInt(447.593 + (9.247 * bmrcalcvalues.weight) + (3.098 * bmrcalcvalues.height) - (4.330 * bmrcalcvalues.age)) })
+                        break;
+                    default:
+
+                        break;
+                }
+
+            }
+
             function CalculatorTitle() {
                 return (
                     <>
@@ -420,10 +450,9 @@ function Tools(props) {
                 );
             }
             function GenderSelector() {
-                const [age, setAge] = useState('');
 
                 const handleChange = (event) => {
-                    setAge(event.target.value);
+                    setGender(event.target.value);
                 };
 
                 return (
@@ -433,7 +462,7 @@ function Tools(props) {
                             <Select
                                 labelId="demo-simple-select-label"
                                 id="demo-simple-select"
-                                value={age}
+                                value={gender}
                                 label="Gender"
                                 onChange={handleChange}
                             >
@@ -449,7 +478,7 @@ function Tools(props) {
                 return (
                     <div className="w-100 d-flex flex-column align-items-center">
                         <div className='mb-3' style={{ fontSize: `calc(18/640 * ${props.bheight})` }}>Your BMR is</div>
-                        <div style={{ fontSize: `calc(28/640 * ${props.bheight})`, fontWeight: '500' }}>1,540</div>
+                        <div style={{ fontSize: `calc(28/640 * ${props.bheight})`, fontWeight: '500' }}>{bmrcalcvalues.result}</div>
                         <div style={{ fontSize: `calc(11/640 * ${props.bheight})`, fontWeight: '300' }}>Calories/day</div>
                     </div>
                 );
@@ -458,10 +487,10 @@ function Tools(props) {
                 <div className={props.className} style={props.style}>
                     <CalculatorTitle />
                     <div style={{ width: `calc(27/640 * ${props.bheight} * 129/27)` }}><GenderSelector /></div>
-                    <div style={{ width: `calc(27/640 * ${props.bheight} * 129/27)` }}><TextField className="me-5" type='number' label="Age" variant="outlined" size="small" inputProps={{ style: { fontSize: `calc(12/640 * ${props.bheight})` } }} InputLabelProps={{ style: { fontSize: `calc(12/640 * ${props.bheight})` } }} sx={{ width: `calc(27/640 * ${props.bheight} * 128/27)` }} /></div>
-                    <div style={{ width: `calc(27/640 * ${props.bheight} * 129/27)` }}><TextField className="me-5" type='number' label="Height" variant="outlined" size="small" inputProps={{ style: { fontSize: `calc(12/640 * ${props.bheight})` } }} InputLabelProps={{ style: { fontSize: `calc(12/640 * ${props.bheight})` } }} sx={{ width: `calc(27/640 * ${props.bheight} * 128/27)` }} /></div>
-                    <div style={{ width: `calc(27/640 * ${props.bheight} * 129/27)` }}><TextField className="me-5" type='number' label="Weight" variant="outlined" size="small" inputProps={{ style: { fontSize: `calc(12/640 * ${props.bheight})` } }} InputLabelProps={{ style: { fontSize: `calc(12/640 * ${props.bheight})` } }} sx={{ width: `calc(27/640 * ${props.bheight} * 128/27)` }} /></div>
-                    <div className="d-flex justify-content-center"><Button variant="contained" size="small">Calculate BMR</Button></div>
+                    <div style={{ width: `calc(27/640 * ${props.bheight} * 129/27)` }}><TextField onChange={ (e) => { setBMRCalcValues({...bmrcalcvalues, age: e.target.value}) } } defaultValue={bmrcalcvalues.age} className="me-5" type='number' label="Age" variant="outlined" size="small" inputProps={{ style: { fontSize: `calc(12/640 * ${props.bheight})` } }} InputLabelProps={{ style: { fontSize: `calc(12/640 * ${props.bheight})` } }} sx={{ width: `calc(27/640 * ${props.bheight} * 128/27)` }} /></div>
+                    <div style={{ width: `calc(27/640 * ${props.bheight} * 129/27)` }}><TextField onChange={ (e) => { setBMRCalcValues({...bmrcalcvalues, height: e.target.value}) } } defaultValue={bmrcalcvalues.height} className="me-5" type='number' label="Height" variant="outlined" size="small" inputProps={{ style: { fontSize: `calc(12/640 * ${props.bheight})` } }} InputLabelProps={{ style: { fontSize: `calc(12/640 * ${props.bheight})` } }} sx={{ width: `calc(27/640 * ${props.bheight} * 128/27)` }} /></div>
+                    <div style={{ width: `calc(27/640 * ${props.bheight} * 129/27)` }}><TextField onChange={ (e) => { setBMRCalcValues({...bmrcalcvalues, weight: e.target.value}) } } defaultValue={bmrcalcvalues.weight} className="me-5" type='number' label="Weight" variant="outlined" size="small" inputProps={{ style: { fontSize: `calc(12/640 * ${props.bheight})` } }} InputLabelProps={{ style: { fontSize: `calc(12/640 * ${props.bheight})` } }} sx={{ width: `calc(27/640 * ${props.bheight} * 128/27)` }} /></div>
+                    <div className="d-flex justify-content-center"><Button onClick={showBMRResult} variant="contained" size="small">Calculate BMR</Button></div>
                     <OutputResult />
                     <div className="d-flex justify-content-center"><Button variant="contained" size="small" onClick={() => { setCalc(-1) }}>More Tools</Button></div>
                 </div>
@@ -586,23 +615,23 @@ function Tools(props) {
         }
         function IWCalculator(props) {
             const [gender, setGender] = useState('');
-            
+
             const defaultiwcalcvalues = {
                 age: '',
                 height: '',
                 result: '---'
             };
 
-            function showResult(){
-                switch(gender){
+            function showResult() {
+                switch (gender) {
                     case "Male":
-                        setIWCalcValues({...iwcalcvalues, result: `${parseInt(50 + (0.91 * (iwcalcvalues.height - 152.4)))} kg`})
+                        setIWCalcValues({ ...iwcalcvalues, result: `${parseInt(50 + (0.91 * (iwcalcvalues.height - 152.4)))} kg` })
                         break;
                     case "Female":
-                        setIWCalcValues({...iwcalcvalues, result: `${parseInt(45.5 + (0.91 * (iwcalcvalues.height - 152.4)))} kg`})
+                        setIWCalcValues({ ...iwcalcvalues, result: `${parseInt(45.5 + (0.91 * (iwcalcvalues.height - 152.4)))} kg` })
                         break;
                     case "Other":
-                        setIWCalcValues({...iwcalcvalues, result: `${parseInt(45.5 + (0.91 * (iwcalcvalues.height - 152.4)))} kg`})
+                        setIWCalcValues({ ...iwcalcvalues, result: `${parseInt(45.5 + (0.91 * (iwcalcvalues.height - 152.4)))} kg` })
                         break;
                     default:
                         break;
@@ -655,8 +684,8 @@ function Tools(props) {
                 <div className={props.className} style={props.style}>
                     <CalculatorTitle />
                     <div style={{ width: `calc(27/640 * ${props.bheight} * 129/27)` }}><GenderSelector /></div>
-                    <div style={{ width: `calc(27/640 * ${props.bheight} * 129/27)` }}><TextField defaultValue={iwcalcvalues.age} onChange={(e) => { setIWCalcValues({...iwcalcvalues, age: e.target.value}) }} className="me-5" type='number' label="Age" variant="outlined" size="small" inputProps={{ style: { fontSize: `calc(12/640 * ${props.bheight})` } }} InputLabelProps={{ style: { fontSize: `calc(12/640 * ${props.bheight})` } }} sx={{ width: `calc(27/640 * ${props.bheight} * 128/27)` }} /></div>
-                    <div style={{ width: `calc(27/640 * ${props.bheight} * 129/27)` }}><TextField defaultValue={iwcalcvalues.height} onChange={(e) => { setIWCalcValues({...iwcalcvalues, height: e.target.value}) }} className="me-5" type='number' label="Height" variant="outlined" size="small" inputProps={{ style: { fontSize: `calc(12/640 * ${props.bheight})` } }} InputLabelProps={{ style: { fontSize: `calc(12/640 * ${props.bheight})` } }} sx={{ width: `calc(27/640 * ${props.bheight} * 128/27)` }} /></div>
+                    <div style={{ width: `calc(27/640 * ${props.bheight} * 129/27)` }}><TextField defaultValue={iwcalcvalues.age} onChange={(e) => { setIWCalcValues({ ...iwcalcvalues, age: e.target.value }) }} className="me-5" type='number' label="Age" variant="outlined" size="small" inputProps={{ style: { fontSize: `calc(12/640 * ${props.bheight})` } }} InputLabelProps={{ style: { fontSize: `calc(12/640 * ${props.bheight})` } }} sx={{ width: `calc(27/640 * ${props.bheight} * 128/27)` }} /></div>
+                    <div style={{ width: `calc(27/640 * ${props.bheight} * 129/27)` }}><TextField defaultValue={iwcalcvalues.height} onChange={(e) => { setIWCalcValues({ ...iwcalcvalues, height: e.target.value }) }} className="me-5" type='number' label="Height" variant="outlined" size="small" inputProps={{ style: { fontSize: `calc(12/640 * ${props.bheight})` } }} InputLabelProps={{ style: { fontSize: `calc(12/640 * ${props.bheight})` } }} sx={{ width: `calc(27/640 * ${props.bheight} * 128/27)` }} /></div>
                     <div className="d-flex justify-content-center"><Button onClick={showResult} variant="contained" size="small">Calculate Ideal Weight</Button></div>
                     <OutputResult />
                     <div className="d-flex justify-content-center"><Button variant="contained" size="small" onClick={() => { setCalc(-1) }}>More Tools</Button></div>
