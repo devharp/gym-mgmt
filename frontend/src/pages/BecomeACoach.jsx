@@ -345,15 +345,15 @@ function Desktop(props) {
                     <div className={props.className}>
                         <div className="d-flex flex-row flex-grow-1">
                             <div className="d-flex flex-column justify-content-between" style={{ width: `calc(50vw)` }}>
-                                <TextField type='text' label="First Name" placeholder="Enter Your First Name Here" variant="outlined" size="small" inputProps={{ style: { fontSize: `calc(12/640 * ${props.bheight})` } }} InputLabelProps={{ style: { fontSize: `calc(12/640 * ${props.bheight})` } }} />
-                                <TextField type='text' label="First Name" placeholder="Enter Your First Name Here" variant="outlined" size="small" inputProps={{ style: { fontSize: `calc(12/640 * ${props.bheight})` } }} InputLabelProps={{ style: { fontSize: `calc(12/640 * ${props.bheight})` } }} />
-                                <TextField type='text' label="First Name" placeholder="Enter Your First Name Here" variant="outlined" size="small" inputProps={{ style: { fontSize: `calc(12/640 * ${props.bheight})` } }} InputLabelProps={{ style: { fontSize: `calc(12/640 * ${props.bheight})` } }} />
+                                <TextField type='text' label="Country" placeholder="Country" variant="outlined" size="small" inputProps={{ style: { fontSize: `calc(12/640 * ${props.bheight})` } }} InputLabelProps={{ style: { fontSize: `calc(12/640 * ${props.bheight})` } }} />
+                                <TextField type='text' label="Address 2" placeholder="Enter Your Address 2" variant="outlined" size="small" inputProps={{ style: { fontSize: `calc(12/640 * ${props.bheight})` } }} InputLabelProps={{ style: { fontSize: `calc(12/640 * ${props.bheight})` } }} />
+                                <TextField type='text' label="Postal Code" placeholder="Enter Your Pin code" variant="outlined" size="small" inputProps={{ style: { fontSize: `calc(12/640 * ${props.bheight})` } }} InputLabelProps={{ style: { fontSize: `calc(12/640 * ${props.bheight})` } }} />
                             </div>
                             <div className="d-flex flex-column ms-2 justify-content-between" style={{ width: `calc(50vw)` }}>
-                                <TextField className="" type='text' label="Last Name" placeholder="Enter Your Last Name Here" variant="outlined" size="small" inputProps={{ style: { fontSize: `calc(12/640 * ${props.bheight})` } }} InputLabelProps={{ style: { fontSize: `calc(12/640 * ${props.bheight})` } }} />
+                                <TextField className="" type='text' label="Address 1" placeholder="Enter your Address 1" variant="outlined" size="small" inputProps={{ style: { fontSize: `calc(12/640 * ${props.bheight})` } }} InputLabelProps={{ style: { fontSize: `calc(12/640 * ${props.bheight})` } }} />
                                 <div className="d-flex flex-row">
-                                    <TextField className='flex-grow-1' type='text' label="First Name" placeholder="Enter Your First Name Here" variant="outlined" size="small" inputProps={{ style: { fontSize: `calc(12/640 * ${props.bheight})` } }} InputLabelProps={{ style: { fontSize: `calc(12/640 * ${props.bheight})` } }} />
-                                    <TextField className='ms-2 flex-grow-1' type='text' label="First Name" placeholder="Enter Your First Name Here" variant="outlined" size="small" inputProps={{ style: { fontSize: `calc(12/640 * ${props.bheight})` } }} InputLabelProps={{ style: { fontSize: `calc(12/640 * ${props.bheight})` } }} />
+                                    <TextField className='flex-grow-1' type='text' label="City" placeholder="City" variant="outlined" size="small" inputProps={{ style: { fontSize: `calc(12/640 * ${props.bheight})` } }} InputLabelProps={{ style: { fontSize: `calc(12/640 * ${props.bheight})` } }} />
+                                    <TextField className='ms-2 flex-grow-1' type='text' label="State" placeholder="State" variant="outlined" size="small" inputProps={{ style: { fontSize: `calc(12/640 * ${props.bheight})` } }} InputLabelProps={{ style: { fontSize: `calc(12/640 * ${props.bheight})` } }} />
 
                                 </div>
                             </div>
