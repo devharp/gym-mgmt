@@ -40,7 +40,8 @@ function App() {
           <Route path="/trainers" element={<Trainers bheight={bheight} />} />
           <Route path="/tools" element={<Tools bheight={bheight} />} />
           <Route path="/becomeacoach" element={<BecomeACoach bheight={bheight} />} />
-          <Route path="/register" element={<Register bheight={bheight} />} />
+          {/* <Route path="/register" element={<Register bheight={bheight} />} /> */}
+          <Route path="/register" element={<PageNotFound />} />} />
           <Route path="/aboutus" element={<AboutUs bheight={bheight} />} />
           <Route path="/contactus" element={<ContactUs bheight={bheight} />} />
           <Route path="/joinus" element={<PageNotFound />} />

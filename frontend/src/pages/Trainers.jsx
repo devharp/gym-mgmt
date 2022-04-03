@@ -27,13 +27,15 @@ function Trainers(props) {
         function BackgroundImages() {
             function Image0() {
                 return (
-                    <img className="position-absolute" src={img00} style={{
-                        transform: `translate(calc(-392/1080 * ${props.bheight}), calc(-264/1080 * ${props.bheight} * 1920/1080))`,
-                        width: `calc(1321/1080 * ${props.bheight} * 1906/1321)`,
-                        height: `calc(1321/1080 * ${props.bheight})`,
-                        zIndex: '-2'
-                    }} alt=""
-                    />
+                    <div style={ { width: '100vw', overflow: 'hidden' }}>
+                        <img className="position-absolute" src={img00} style={{
+                            transform: `translate(calc(-392/1080 * ${props.bheight}), calc(-264/1080 * ${props.bheight} * 1920/1080))`,
+                            width: `calc(1321/1080 * ${props.bheight} * 1906/1321)`,
+                            height: `calc(1321/1080 * ${props.bheight})`,
+                            zIndex: '-2'
+                        }} alt=""
+                        />
+                    </div>
                 );
             }
             function Image1() {
@@ -50,7 +52,7 @@ function Trainers(props) {
                 return (
 
                     <>
-                        <div className='position-absolute bg-dar' style={{ overflow: 'hidden', height: `calc(600/1080 * ${props.bheight})`, width: '100%', zIndex: '-1'}}>
+                        <div className='position-absolute bg-dar' style={{ overflow: 'hidden', height: `calc(600/1080 * ${props.bheight})`, width: '100%', zIndex: '-1' }}>
                             <img className="" src={img02} style={{
                                 transform: `translate(calc(900/1920 * 100vw), calc(-200/1080 * ${props.bheight}))`,
                                 // width: `calc(600/1080 * ${props.bheight} * 500/600)`,
@@ -170,7 +172,7 @@ function Trainers(props) {
                                     <div style={{ fontSize: `calc( 14/1080 * ${props.bheight})` }}>Trained 6 people</div>
                                     <div style={{ fontSize: `calc( 14/1080 * ${props.bheight})` }}>3 slots available</div>
                                     <div>
-                                        <Link to='/register'><Button variant='contained' size='small' sx={{ fontSize: `calc( 18/1080 * ${props.bheight})` }}>Enroll</Button></Link>
+                                        <Link to='/register' style={{ textDecoration: 'none' }}><Button variant='contained' size='small' sx={{ '&:hover' : { backgroundColor: 'rgb(4, 199, 244)' }, backgroundColor: 'rgb(4, 199, 244)', fontSize: `calc( 18/1080 * ${props.bheight})` }}>Enroll</Button></Link>
                                     </div>
                                 </div>
                             </div>
@@ -183,28 +185,32 @@ function Trainers(props) {
                             <ContentInfo />
                             <TrainerFilter />
                             <div className='d-flex justify-content-between' >
-                                <TrainerProfile name='Sean Sydall' className='me-3 my-3 d-flex' bheight={props.bheight} src={trainerimg00} borderRadius='20' />
+                                <TrainerProfile name='Sean Sydall' className='me-2 my-3 d-flex' bheight={props.bheight} src={trainerimg00} borderRadius='20' />
                                 <TrainerProfile name='Prathmesh Jaware' className='mx-2 my-3 d-flex' bheight={props.bheight} src={trainerimg01} borderRadius='20' />
                                 <TrainerProfile name='Ramu Bhai' className='mx-2 my-3 d-flex' bheight={props.bheight} src={trainerimg02} borderRadius='20' />
-                                <TrainerProfile name='Sarika Mishra' className='ms-3 my-3 d-flex' bheight={props.bheight} src={trainerimg03} borderRadius='20' />
+                                <TrainerProfile name='Sarika Mishra' className='mx-2 my-3 d-flex' bheight={props.bheight} src={trainerimg03} borderRadius='20' />
+                                <TrainerProfile name='Sarika Mishra' className='ms-2 my-3 d-flex' bheight={props.bheight} src={trainerimg03} borderRadius='20' />
                             </div>
                             <div className='d-flex justify-content-between' >
-                                <TrainerProfile name='Sean Sydall' className='me-3 my-3 d-flex' bheight={props.bheight} src={trainerimg00} borderRadius='20' />
+                                <TrainerProfile name='Sean Sydall' className='me-2 my-3 d-flex' bheight={props.bheight} src={trainerimg00} borderRadius='20' />
                                 <TrainerProfile name='Prathmesh Jaware' className='mx-2 my-3 d-flex' bheight={props.bheight} src={trainerimg01} borderRadius='20' />
                                 <TrainerProfile name='Ramu Bhai' className='mx-2 my-3 d-flex' bheight={props.bheight} src={trainerimg02} borderRadius='20' />
-                                <TrainerProfile name='Sarika Mishra' className='ms-3 my-3 d-flex' bheight={props.bheight} src={trainerimg03} borderRadius='20' />
+                                <TrainerProfile name='Sarika Mishra' className='mx-2 my-3 d-flex' bheight={props.bheight} src={trainerimg03} borderRadius='20' />
+                                <TrainerProfile name='Sarika Mishra' className='ms-2 my-3 d-flex' bheight={props.bheight} src={trainerimg03} borderRadius='20' />
                             </div>
                             <div className='d-flex justify-content-between' >
-                                <TrainerProfile name='Sean Sydall' className='me-3 my-3 d-flex' bheight={props.bheight} src={trainerimg00} borderRadius='20' />
+                                <TrainerProfile name='Sean Sydall' className='me-2 my-3 d-flex' bheight={props.bheight} src={trainerimg00} borderRadius='20' />
                                 <TrainerProfile name='Prathmesh Jaware' className='mx-2 my-3 d-flex' bheight={props.bheight} src={trainerimg01} borderRadius='20' />
                                 <TrainerProfile name='Ramu Bhai' className='mx-2 my-3 d-flex' bheight={props.bheight} src={trainerimg02} borderRadius='20' />
-                                <TrainerProfile name='Sarika Mishra' className='ms-3 my-3 d-flex' bheight={props.bheight} src={trainerimg03} borderRadius='20' />
+                                <TrainerProfile name='Sarika Mishra' className='mx-2 my-3 d-flex' bheight={props.bheight} src={trainerimg03} borderRadius='20' />
+                                <TrainerProfile name='Sarika Mishra' className='ms-2 my-3 d-flex' bheight={props.bheight} src={trainerimg03} borderRadius='20' />
                             </div>
                             <div className='d-flex justify-content-between' >
-                                <TrainerProfile name='Sean Sydall' className='me-3 my-3 d-flex' bheight={props.bheight} src={trainerimg00} borderRadius='20' />
+                                <TrainerProfile name='Sean Sydall' className='me-2 my-3 d-flex' bheight={props.bheight} src={trainerimg00} borderRadius='20' />
                                 <TrainerProfile name='Prathmesh Jaware' className='mx-2 my-3 d-flex' bheight={props.bheight} src={trainerimg01} borderRadius='20' />
                                 <TrainerProfile name='Ramu Bhai' className='mx-2 my-3 d-flex' bheight={props.bheight} src={trainerimg02} borderRadius='20' />
-                                <TrainerProfile name='Sarika Mishra' className='ms-3 my-3 d-flex' bheight={props.bheight} src={trainerimg03} borderRadius='20' />
+                                <TrainerProfile name='Sarika Mishra' className='mx-2 my-3 d-flex' bheight={props.bheight} src={trainerimg03} borderRadius='20' />
+                                <TrainerProfile name='Sarika Mishra' className='ms-2 my-3 d-flex' bheight={props.bheight} src={trainerimg03} borderRadius='20' />
                             </div>
                         </div>
                     </div>
@@ -329,7 +335,7 @@ function Trainers(props) {
                                 <div className='mb-3' style={{ fontSize: `calc(18/640 * ${props.bheight})`, letterSpacing: `calc(1.8/640 * ${props.bheight})`, fontWeight: '500' }}>
                                     Basic level Trainers
                                 </div>
-                                <div className='mb-3'><Button variant='contained' onClick={onFilterBClick} sx={{ fontSize: `calc(12/640 * ${props.bheight})` }}>{filterv ? 'Hide' : 'Show'} Filters</Button></div>
+                                <div className='mb-3'><Button variant='contained' onClick={onFilterBClick} sx={{ '&:hover' : { backgroundColor: 'rgb(4, 199, 244)' }, backgroundColor: 'rgb(4, 199, 244)', fontSize: `calc(12/640 * ${props.bheight})` }}>{filterv ? 'Hide' : 'Show'} Filters</Button></div>
                                 <div className='' style={{ height: `calc(${filterv ? '150/640' : '0'} * ${props.bheight})`, overflow: 'hidden' }}>
                                     <HarpSelector className='my-2' label='Gender' bheight={props.bheight} items={['All', 'Male', 'Female']} />
                                     <HarpSelector className='my-2' label='Language' bheight={props.bheight} items={['All', 'Tamil', 'Hindi', 'English']} />
@@ -363,7 +369,7 @@ function Trainers(props) {
                                     <div style={{ fontSize: `calc( 14/1080 * ${props.bheight})` }}>Trained 6 people</div>
                                     <div style={{ fontSize: `calc( 14/1080 * ${props.bheight})` }}>3 slots available</div>
                                     <div>
-                                        <Link to='/register'><Button variant='contained' size='small' sx={{ fontSize: `calc( 18/1080 * ${props.bheight})` }}>Enroll</Button></Link>
+                                        <Link to='/register' style={{ textDecoration: 'none' }}><Button variant='contained' size='small' sx={{ '&:hover' : { backgroundColor: 'rgb(4, 199, 244)' }, backgroundColor: 'rgb(4, 199, 244)', fontSize: `calc( 18/1080 * ${props.bheight})` }}>Enroll</Button></Link>
                                     </div>
                                 </div>
                             </div>

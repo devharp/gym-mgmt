@@ -183,7 +183,7 @@ function GetACoach(props) {
                                 </div>
                             </div>
                             <div className="d-flex justify-content-end mx-3">
-                                <Button endIcon={<ArrowForward />} onClick={() => { handleClick('block0Next') }} variant="contained">Next</Button>
+                                <Button sx={{ '&:hover' : { backgroundColor: 'rgb(4, 199, 244)' }, backgroundColor: 'rgb(4, 199, 244)' }} endIcon={<ArrowForward />} onClick={() => { handleClick('block0Next') }} variant="contained">Next</Button>
                             </div>
                         </div>
 
@@ -239,10 +239,10 @@ function GetACoach(props) {
 
                             </div>
                             <div className="d-flex justify-content-between mx-3">
-                                <Button onClick={() => { handleClick('block1Back') }} startIcon={<ArrowBack />} variant="contained">Back</Button>
+                                <Button sx={{ '&:hover' : { backgroundColor: 'rgb(4, 199, 244)' }, backgroundColor: 'rgb(4, 199, 244)' }} onClick={() => { handleClick('block1Back') }} startIcon={<ArrowBack />} variant="contained">Back</Button>
                                 <TextField size='small' InputProps={{ style: { fontSize: `calc(20/1080 * ${props.bheight})` } }} InputLabelProps={{ style: { fontSize: `calc(20/1080 * ${props.bheight})` } }} variant='standard' label='other' />
 
-                                <Button onClick={() => { handleClick('block1Next') }} endIcon={<ArrowForward />} variant="contained">Next</Button>
+                                <Button sx={{ '&:hover' : { backgroundColor: 'rgb(4, 199, 244)' }, backgroundColor: 'rgb(4, 199, 244)' }} onClick={() => { handleClick('block1Next') }} endIcon={<ArrowForward />} variant="contained">Next</Button>
                             </div>
                         </div>
 
@@ -315,9 +315,9 @@ function GetACoach(props) {
                                     <div>
                                         <div className='d-flex flex-row justify-content-center w-100' style={{ width: 'max-content' }}>
                                             {/* <div className='p-1' style={{ borderRadius: `calc(5/1080 * ${props.bheight})`, fontWeight: '500', backgroundColor: '#04C7F4', fontSize: `calc(18/1080 * ${props.bheight})`, letterSpacing: `calc(2.7/1080 * ${props.bheight})` }}>Select Trainers</div> */}
-                                            <Link to='/trainers'>
+                                            <Link to='/trainers' style={{ textDecoration: 'none' }}>
 
-                                                <Button className='p-1' variant='contained' sx={{ fontSize: `calc(18/1080 * ${props.bheight})` }}>
+                                                <Button  className='p-1' variant='contained' sx={{ '&:hover' : { backgroundColor: 'rgb(4, 199, 244)' }, backgroundColor: 'rgb(4, 199, 244)', fontSize: `calc(18/1080 * ${props.bheight})` }}>
                                                     Select Trainers
                                                 </Button>
                                             </Link>
@@ -496,7 +496,7 @@ function GetACoach(props) {
                                     </div>
                                 </div>
                                 <div className="d-flex justify-content-end px-3" style={{ width: '100%' }}>
-                                    <Button endIcon={<ArrowForward />} onClick={() => { handleClick('block0Next') }} variant="contained">Next</Button>
+                                    <Button sx={{ '&:hover' : { backgroundColor: 'rgb(4, 199, 244)' }, backgroundColor: 'rgb(4, 199, 244)' }} endIcon={<ArrowForward />} onClick={() => { handleClick('block0Next') }} variant="contained">Next</Button>
                                 </div>
 
                             </div>
@@ -548,9 +548,9 @@ function GetACoach(props) {
                                 </div>
                             </div>
                             <div className="d-flex justify-content-between mx-3">
-                                <Button size='small' onClick={() => { handleClick('block1Back') }} startIcon={<ArrowBack />} variant="contained">Back</Button>
+                                <Button sx={{ '&:hover' : { backgroundColor: 'rgb(4, 199, 244)' }, backgroundColor: 'rgb(4, 199, 244)' }} size='small' onClick={() => { handleClick('block1Back') }} startIcon={<ArrowBack />} variant="contained">Back</Button>
                                 <TextField size='small' InputProps={{ style: { fontSize: `calc(5/360 * ${props.bheight})`, width: '100px' } }} InputLabelProps={{ style: { fontSize: `calc(5/360 * ${props.bheight})` } }} variant='standard' label='other' />
-                                <Button size='small' onClick={() => { handleClick('block1Next') }} endIcon={<ArrowForward />} variant="contained">Next</Button>
+                                <Button sx={{ '&:hover' : { backgroundColor: 'rgb(4, 199, 244)' }, backgroundColor: 'rgb(4, 199, 244)' }} size='small' onClick={() => { handleClick('block1Next') }} endIcon={<ArrowForward />} variant="contained">Next</Button>
                             </div>
                         </div>
 
@@ -625,8 +625,8 @@ function GetACoach(props) {
                                     </div>
                                     <div>
                                         <div className='d-flex flex-row justify-content-center w-100' style={{ width: 'max-content' }}>
-                                            <Link to='/trainers'>
-                                                <Button className='p-1' variant='contained' size='small' sx={{ fontSize: `calc(18/1080 * ${props.bheight})` }}>
+                                            <Link to='/trainers' style={{ textDecoration: 'none' }}>
+                                                <Button className='p-1' variant='contained' size='small' sx={{ '&:hover' : { backgroundColor: 'rgb(4, 199, 244)' }, backgroundColor: 'rgb(4, 199, 244)', fontSize: `calc(18/1080 * ${props.bheight})` }}>
                                                     Select Trainers
                                                 </Button>
                                             </Link>

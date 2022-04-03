@@ -7,12 +7,38 @@ import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
-import { TextField, Button } from '@mui/material/';
+import { TextField, Button, Modal, Typography } from '@mui/material/';
+
+import img00 from '../assets/getacoach/00.svg'
+import img01 from '../assets/getacoach/01.svg'
+import img02 from '../assets/getacoach/02.svg'
 
 function Tools(props) {
     const [result, setResult] = useState('');
+    const [calc, setCalc] = useState(0);
+
+    const [openmodal, setOpenModal] = useState(false);
+
+    const handleBMRModalOpen = () => {
+        setModalValues({ title: 'BMR Calculator', desc: 'If you do nothing all day, the BMR is the number of calories your body uses to sustain life.' })
+        setOpenModal(true);
+        setCalc(0);
+    };
+    const handleBFModalOpen = () => {
+        setModalValues({ title: 'Body Fat Calculator', desc: 'Description for the Body Fat Calculator goes here, something like this here in this modal' })
+        setOpenModal(true);
+        setCalc(1);
+    };
+    const handleIWModalOpen = () => {
+        setModalValues({ title: 'Ideal Weight Calculator', desc: 'Description for the Ideal Weight Calculator goes here, something like this here in this modal like BodyFat Calc' })
+        setOpenModal(true);
+        setCalc(2);
+    };
+
+    const handleModalClose = () => setOpenModal(false);
+    const [modalvalues, setModalValues] = useState({ title: 'Title Here', desc: 'Description will be here' });
+
     function Desktop(props) {
-        const [calc, setCalc] = useState(0);
         function CalculatorsButtons(props) {
             return (
                 <div className={props.className}>
@@ -73,7 +99,10 @@ function Tools(props) {
                 return (
                     <>
                         <div className="d-flex flex-row align-items-center">
-                            <div style={{ fontSize: `calc(36/1080 * ${props.bheight})`, letterSpacing: `calc(3.6/1080 * ${props.bheight})`, fontWeight: '500' }}>BMR Calculator</div>
+                            <div className="d-flex" style={{ fontSize: `calc(36/1080 * ${props.bheight})`, letterSpacing: `calc(3.6/1080 * ${props.bheight})`, fontWeight: '500' }}>
+                                BMR Calculator
+                                <div onClick={handleBMRModalOpen} className="ms-2 d-flex justify-content-center align-items-center" style={{ userSelect: 'none', cursor: 'pointer', color: 'rgb(4, 199, 244)', fontSize: '1em', border: 'rgb(4, 199, 244) solid 3px', borderRadius: '0.75em', height: '1.5em', width: '1.5em' }}>i</div>
+                            </div>
                         </div>
                     </>
                 );
@@ -134,7 +163,7 @@ function Tools(props) {
                         <InputValues />
                         <OutputResult />
                     </div>
-                    <div className="d-flex justify-content-center"><Button onClick={showBMRResult} variant="contained" size="small">Calculate BMR</Button></div>
+                    <div className="d-flex justify-content-center"><Button sx={{ '&:hover': { backgroundColor: 'rgb(4, 199, 244)' }, backgroundColor: 'rgb(4, 199, 244)' }} onClick={showBMRResult} variant="contained" size="small">Calculate BMR</Button></div>
                 </div>
             );
         }
@@ -204,7 +233,10 @@ function Tools(props) {
                 return (
                     <>
                         <div className="d-flex flex-row align-items-center">
-                            <div style={{ fontSize: `calc(36/1080 * ${props.bheight})`, letterSpacing: `calc(3.6/1080 * ${props.bheight})`, fontWeight: '500' }}>Body Fat Calculator</div>
+                            <div className="d-flex" style={{ fontSize: `calc(36/1080 * ${props.bheight})`, letterSpacing: `calc(3.6/1080 * ${props.bheight})`, fontWeight: '500' }}>
+                                Body Fat Calculator
+                                <div onClick={handleBFModalOpen} className="ms-2 d-flex justify-content-center align-items-center" style={{ userSelect: 'none', cursor: 'pointer', color: 'rgb(4, 199, 244)', fontSize: '1em', border: 'rgb(4, 199, 244) solid 3px', borderRadius: '0.75em', height: '1.5em', width: '1.5em' }}>i</div>
+                            </div>
                         </div>
                     </>
                 );
@@ -265,7 +297,7 @@ function Tools(props) {
                         <InputValues />
                         <OutputResult />
                     </div>
-                    <div className="d-flex justify-content-center"><Button onClick={() => { showBFResult() }} variant="contained" size="small">Calculate Body Fat</Button></div>
+                    <div className="d-flex justify-content-center"><Button sx={{ '&:hover': { backgroundColor: 'rgb(4, 199, 244)' }, backgroundColor: 'rgb(4, 199, 244)' }} onClick={() => { showBFResult() }} variant="contained" size="small">Calculate Body Fat</Button></div>
                 </div>
             );
         }
@@ -315,7 +347,10 @@ function Tools(props) {
                 return (
                     <>
                         <div className="d-flex flex-row align-items-center">
-                            <div style={{ fontSize: `calc(36/1080 * ${props.bheight})`, letterSpacing: `calc(3.6/1080 * ${props.bheight})`, fontWeight: '500' }}>Ideal Weight Calculator</div>
+                            <div className="d-flex" style={{ fontSize: `calc(36/1080 * ${props.bheight})`, letterSpacing: `calc(3.6/1080 * ${props.bheight})`, fontWeight: '500' }}>
+                                Ideal Weight Calculator
+                                <div onClick={handleIWModalOpen} className="ms-2 d-flex justify-content-center align-items-center" style={{ userSelect: 'none', cursor: 'pointer', color: 'rgb(4, 199, 244)', fontSize: '1em', border: 'rgb(4, 199, 244) solid 3px', borderRadius: '0.75em', height: '1.5em', width: '1.5em' }}>i</div>
+                            </div>
                         </div>
                     </>
                 );
@@ -373,7 +408,7 @@ function Tools(props) {
                         <InputValues />
                         <OutputResult />
                     </div>
-                    <div className="d-flex justify-content-center"><Button onClick={showResult} variant="contained" size="small">Calculate Ideal Weight</Button></div>
+                    <div className="d-flex justify-content-center"><Button sx={{ '&:hover': { backgroundColor: 'rgb(4, 199, 244)' }, backgroundColor: 'rgb(4, 199, 244)' }} onClick={showResult} variant="contained" size="small">Calculate Ideal Weight</Button></div>
                 </div>
             );
         }
@@ -487,9 +522,9 @@ function Tools(props) {
                 <div className={props.className} style={props.style}>
                     <CalculatorTitle />
                     <div style={{ width: `calc(27/640 * ${props.bheight} * 129/27)` }}><GenderSelector /></div>
-                    <div style={{ width: `calc(27/640 * ${props.bheight} * 129/27)` }}><TextField onChange={ (e) => { setBMRCalcValues({...bmrcalcvalues, age: e.target.value}) } } defaultValue={bmrcalcvalues.age} className="me-5" type='number' label="Age" variant="outlined" size="small" inputProps={{ style: { fontSize: `calc(12/640 * ${props.bheight})` } }} InputLabelProps={{ style: { fontSize: `calc(12/640 * ${props.bheight})` } }} sx={{ width: `calc(27/640 * ${props.bheight} * 128/27)` }} /></div>
-                    <div style={{ width: `calc(27/640 * ${props.bheight} * 129/27)` }}><TextField onChange={ (e) => { setBMRCalcValues({...bmrcalcvalues, height: e.target.value}) } } defaultValue={bmrcalcvalues.height} className="me-5" type='number' label="Height" variant="outlined" size="small" inputProps={{ style: { fontSize: `calc(12/640 * ${props.bheight})` } }} InputLabelProps={{ style: { fontSize: `calc(12/640 * ${props.bheight})` } }} sx={{ width: `calc(27/640 * ${props.bheight} * 128/27)` }} /></div>
-                    <div style={{ width: `calc(27/640 * ${props.bheight} * 129/27)` }}><TextField onChange={ (e) => { setBMRCalcValues({...bmrcalcvalues, weight: e.target.value}) } } defaultValue={bmrcalcvalues.weight} className="me-5" type='number' label="Weight" variant="outlined" size="small" inputProps={{ style: { fontSize: `calc(12/640 * ${props.bheight})` } }} InputLabelProps={{ style: { fontSize: `calc(12/640 * ${props.bheight})` } }} sx={{ width: `calc(27/640 * ${props.bheight} * 128/27)` }} /></div>
+                    <div style={{ width: `calc(27/640 * ${props.bheight} * 129/27)` }}><TextField onChange={(e) => { setBMRCalcValues({ ...bmrcalcvalues, age: e.target.value }) }} defaultValue={bmrcalcvalues.age} className="me-5" type='number' label="Age" variant="outlined" size="small" inputProps={{ style: { fontSize: `calc(12/640 * ${props.bheight})` } }} InputLabelProps={{ style: { fontSize: `calc(12/640 * ${props.bheight})` } }} sx={{ width: `calc(27/640 * ${props.bheight} * 128/27)` }} /></div>
+                    <div style={{ width: `calc(27/640 * ${props.bheight} * 129/27)` }}><TextField onChange={(e) => { setBMRCalcValues({ ...bmrcalcvalues, height: e.target.value }) }} defaultValue={bmrcalcvalues.height} className="me-5" type='number' label="Height" variant="outlined" size="small" inputProps={{ style: { fontSize: `calc(12/640 * ${props.bheight})` } }} InputLabelProps={{ style: { fontSize: `calc(12/640 * ${props.bheight})` } }} sx={{ width: `calc(27/640 * ${props.bheight} * 128/27)` }} /></div>
+                    <div style={{ width: `calc(27/640 * ${props.bheight} * 129/27)` }}><TextField onChange={(e) => { setBMRCalcValues({ ...bmrcalcvalues, weight: e.target.value }) }} defaultValue={bmrcalcvalues.weight} className="me-5" type='number' label="Weight" variant="outlined" size="small" inputProps={{ style: { fontSize: `calc(12/640 * ${props.bheight})` } }} InputLabelProps={{ style: { fontSize: `calc(12/640 * ${props.bheight})` } }} sx={{ width: `calc(27/640 * ${props.bheight} * 128/27)` }} /></div>
                     <div className="d-flex justify-content-center"><Button onClick={showBMRResult} variant="contained" size="small">Calculate BMR</Button></div>
                     <OutputResult />
                     <div className="d-flex justify-content-center"><Button variant="contained" size="small" onClick={() => { setCalc(-1) }}>More Tools</Button></div>
@@ -702,11 +737,61 @@ function Tools(props) {
             </div>
         );
     }
+
+    function BackgroundImagesDesktop() {
+
+        return (
+            <>
+                <div className="position-absolute" style={{ height: props.bheight, width: '100vw', overflow: 'hidden', zIndex: '0' }}>
+                    <img src={img02} style={{
+                        transform: `translate(calc(839/1920 * 100vw), calc(653/1080 * ${props.bheight}))`,
+                        height: `calc(578/1080 * ${props.bheight})`,
+                        width: `calc(578/1080 * ${props.bheight} * 953/578)`
+                    }} alt="" />
+                </div>
+
+                <div className="position-absolute" style={{
+                    left: `calc(-350/1920 * ${props.bheight})`,
+                    height: props.bheight,
+                    overflow: 'hidden'
+                }}>
+                    <img src={img00} style={{
+                        height: `calc(1156/1080 * ${props.bheight})`,
+                        width: `calc(1156/1080 * ${props.bheight}) * 0.669`,
+                        transform: `translateY(calc(400/1080 * ${props.bheight}))`
+                    }} alt="" />
+                </div>
+                <div className="position-absolute" style={{
+                    width: `calc(876/1920 * ${props.bheight})`,
+                    height: `calc(662.85/1080 * ${props.bheight})`,
+                    right: '0px',
+                    overflow: 'hidden'
+                }}>
+                    <img src={img01} alt="" style={{
+                        transform: `translate(0, calc(-375/1080 * ${props.bheight}))`,
+                        height: `calc(934/1080 * ${props.bheight})`,
+                        width: `calc(1036/1920 * ${props.bheight})`
+                    }} />
+                </div>
+            </>
+        );
+    }
     return (
         <>
             <div>
-                <NavBar position="fixed" brand="GymFit" minHeight='50px' />
+                {/* <NavBar position="fixed" brand="GymFit" minHeight='50px' /> */}
+                <div className="position-absolute" style={{ width: '100vw' }} >
 
+                    {/* Desktop Screen Images */}
+                    <Box sx={{ display: { xs: 'none', sm: 'none', md: 'flex', lg: 'block', xl: 'block' }, width: '100%', height: '100%' }}>
+                        <BackgroundImagesDesktop />
+                    </Box>
+
+                    {/* Mobile Screen Images */}
+                    <Box sx={{ display: { xs: 'block', sm: 'block', md: 'none', lg: 'none', xl: 'none' }, width: '100%', height: '100%' }}>
+                        Mobile
+                    </Box>
+                </div>
                 <div className="pt-5 w-100 d-block position-absolute" style={{ backgroundColor: 'none', height: `${props.bheight}` }}>
 
                     {/* Desktop Screen */}
@@ -719,11 +804,32 @@ function Tools(props) {
                         <Mobile className='py-3 flex-grow-1' bheight={props.bheight} style={{ height: '100%', width: '100vw' }} />
                     </Box>
                 </div>
+                <div className={`position-absolute ${openmodal ? 'd-block' : 'd-none'}`} onClick={handleModalClose} style={{ cursor: 'pointer', backgroundColor: 'rgba(0, 0, 0, 0.5)', height: '100vh', width: '100vw', overflow: 'hidden', zIndex: '1' }}>
+                    <div style={{ transform: 'translate(50vw, 50vh)' }}>
+                        <Box sx={{
+                            top: '50%',
+                            left: '50%',
+                            transform: 'translate(-50%, -50%)',
+                            width: 400,
+                            bgcolor: 'background.paper',
+                            boxShadow: 24,
+                            p: 4
+                        }}>
+                            <Typography id="modal-modal-title" variant="h6" component="h2" sx={{ userSelect: 'none' }}>
+                                {modalvalues.title}
+                            </Typography>
+                            <Typography id="modal-modal-description" sx={{ mt: 2, userSelect: 'none' }}>
+                                {modalvalues.desc}
+                            </Typography>
+                        </Box>
+                    </div>
+                </div>
 
             </div>
         </>
     );
 }
+
 
 
 

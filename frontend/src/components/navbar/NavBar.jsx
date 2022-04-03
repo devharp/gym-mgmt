@@ -68,6 +68,8 @@ function ResponsiveAppBar(props) {
             >
               <Link style={{ color: 'black', textDecoration: 'none' }} to='/'>{props.brand}</Link>
             </Typography>
+            
+            {/* Mobile Screen */}
             <Box sx={{ flexGrow: 0, display: { xs: 'flex', md: 'none' } }}>
               <IconButton
                 size="large"
@@ -112,15 +114,18 @@ function ResponsiveAppBar(props) {
                 ))}
               </Menu>
             </Box>
+
+            {/* Desktop Screen */}
             <Box sx={{ display: { xs: 'none', md: 'flex' }, flexDirection: 'row', justifyContent: 'space-between', width: '50vw', backgroundColor: 'none' }}>
               {pages.map((page, i) => (
                 <div
                   key={i}
+                  className='mx-2'
                   // onClick={handleCloseNavMenu}
                   style={{
                     my: 2, display: 'block', textTransform: 'none', color: 'black',
-                    fontSize: 'max(1.6vh, 9px)', letterSpacing: 'calc(0.14vw)', margin: '0', backgroundColor: 'none',
-                    fontFamily: 'Roboto', fontWeight: '500', cursor: 'pointer', userSelect: 'none'
+                    fontSize: 'max(2vh, 9px)', letterSpacing: 'calc(0.14vw)', backgroundColor: 'none',
+                    fontFamily: 'Roboto', fontWeight: '500', cursor: 'pointer', userSelect: 'none', whiteSpace: 'nowrap'
                   }}
                 >
                   <Link style={{ color: 'black', textDecoration: 'none' }} to={page.link}>{page.name}</Link>
