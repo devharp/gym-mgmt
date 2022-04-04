@@ -75,7 +75,7 @@ function AboutUs(props) {
                 <div className='d-flex justify-content-center' style={{ width: '100%', overflow: 'hidden' }}>
                     <img src={img0} style={{ width: '150%' }} alt="" />
                 </div>
-                <div className='position-relative' >
+                <div className='position-relative' style={{ width: '100%' }}>
                     <div className='position-absolute' style={{ width: '100%', height: `calc(300/640 * 100vw)`, overflow: 'hidden' }}>
                         <img src={img1} style={{ transform: `translateX(-50%)` }} alt="" />
                     </div>
@@ -104,20 +104,21 @@ function AboutUs(props) {
 
                     {/* Desktop Screen */}
                     <Box sx={{ display: { xs: 'none', sm: 'none', md: 'flex', lg: 'flex', xl: 'flex' }, width: '100%', height: '100%' }}>
-                        <div className='d-flex flex-column'>
+                        <div className='d-flex flex-column' style={{ width: '100%', overflow: 'hidden' }}>
                             <Desktop className='w-100 flex-grow-1 d-flex flex-column' bheight={props.bheight} />
-                            <div style={{ backgroundColor: 'black' }}><Footer bheight={props.bheight} /></div>
+                            <div className='py-5' style={{ backgroundColor: 'rgb(251, 229, 81)' }}></div>
+                            <div className=""  style={{ backgroundColor: 'black' }}><Footer bheight={props.bheight} /></div>
                         </div>
                     </Box>
 
                     {/* Mobile Screen */}
                     <Box sx={{ display: { xs: 'flex', sm: 'flex', md: 'none', lg: 'none', xl: 'none' }, width: '100%', height: '100%' }}>
-                        <Mobile className='flex-grow-1' bheight={props.bheight} style={{ height: '100%', width: '100vw' }} />
+                        <Mobile className='flex-grow-1' bheight={props.bheight} style={{ height: '100%', width: '100%' }} />
                     </Box>
                     {/* <div style={{ backgroundColor: 'black' }}><Footer bheight={props.bheight} /></div> */}
 
                 </div>
-                <div className="w-100 d-block position-absolute" style={{ backgroundColor: 'none' }}>
+                <div className="w-100 d-block position-absolute d-none" style={{ backgroundColor: 'none' }}>
                 </div>
 
             </div>
