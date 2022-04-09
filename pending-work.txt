@@ -1,8 +1,8 @@
-#1. Website Logo (Top and Bottom)
-#2. Alignment, HOME heading
-#3. Enroll Now, HOME button, Link to GetACoach
-#4. GetACoach, selection
-#5. GetACoach, plan tablets -> Heading BOLD, with animation
-#6. Trainer Filters, add margin
-#7. 42nd Page ADOBE XD file, add Plans (with prices)
-#8. Select Trainers -> 42nd Adobe XD Slide -> Register Page -> Filled info will be to a mailid
+(Better to Add after the Alignment) #1. Website Logo (Top and Bottom)
+(DONE) #2. Alignment, HOME heading (DONE)
+(DONE) #3. Enroll Now, HOME button, Link to GetACoach
+(DONE) #4. GetACoach, selection
+(DONE) #5. GetACoach, plan tablets -> Heading BOLD, with animation
+(DONE) #6. Trainer Filters, add margin
+(DONE) #7. 42nd Page ADOBE XD file, add Plans (with prices)
+(CONFUSED HERE) #8. Select Trainers -> 42nd Adobe XD Slide -> Register Page -> Filled info will be to a mailid

@@ -69,13 +69,42 @@ function GetACoach(props) {
 
     function Desktop() {
         function ImageBlock(props) {
+            const [imgbstate, setImgBState] = useState(false);
+
+            function imgBlockClicked() {
+                setImgBState(!imgbstate);
+            }
+
+            function getValueOfState(key) {
+                switch (key) {
+                    case 'backgroundColor':
+                        if (imgbstate === false) {
+                            return 'white';
+                        }
+                        else if (imgbstate === true) {
+                            return '#FBE551';
+                        }
+                        break;
+                    case 'fontSize':
+                        if (imgbstate === false) {
+                            return 20;
+                        }
+                        else if (imgbstate === true) {
+                            return 17;
+                        }
+                        break;
+                    default:
+                        break;
+                }
+            }
             return (
                 <>
-                    <div className='d-flex flex-column align-items-center mx-3' style={{
-                        backgroundColor: 'white',
+                    <div className='d-flex flex-column align-items-center mx-3' onClick={imgBlockClicked} style={{
+                        backgroundColor: getValueOfState('backgroundColor'),
                         width: 'max-content',
                         padding: `calc(0.8/100 * ${props.bheight})`,
-                        boxShadow: '0px 14px 8px #00000029'
+                        boxShadow: '0px 14px 8px #00000029',
+                        cursor: 'pointer'
                     }}>
                         <div className='d-flex justify-content-center w-100' style={{
                             backgroundColor: '#FFF5CC',
@@ -86,11 +115,12 @@ function GetACoach(props) {
                             <img src={props.src} style={{ width: `calc(150/1080 * ${props.bheight})` }} alt="" />
                         </div>
                         {/* <div className="d-flex align-items-center flex-grow-1" style={{ fontSize: `calc(22/1080 * ${props.bheight})`, fontWeight: '500', marginTop: `calc(0.5/100 * ${props.bheight})` }}>India's First Woman Only</div> */}
-                        <div className="d-flex align-items-center flex-grow-1" style={{ fontSize: `calc(20/1920 * 100vw)`, fontWeight: '500', marginTop: `calc(0.5/100 * ${props.bheight})` }}>{props.label}</div>
+                        <div className="d-flex align-items-center flex-grow-1" style={{ userSelect: 'none', fontSize: `calc(${getValueOfState('fontSize')}/1920 * 100vw)`, fontWeight: '500', marginTop: `calc(0.5/100 * ${props.bheight})` }}>{props.label}</div>
                     </div>
                 </>
             );
         }
+
         function Block0() {
 
             return (
@@ -113,77 +143,13 @@ function GetACoach(props) {
                         </div>
                         <div className="d-flex flex-column mb-2">
                             <div className="d-flex mb-3">
-                                <div className='d-flex flex-column align-items-center mx-3' style={{
-                                    backgroundColor: 'white',
-                                    width: 'max-content',
-                                    padding: `calc(0.8/100 * ${props.bheight})`,
-                                    boxShadow: '0px 14px 8px #00000029'
-                                }}>
-                                    <div className='d-flex justify-content-center w-100' style={{
-                                        backgroundColor: '#FFF5CC',
-                                        maxHeight: `calc(10vw)`,
-                                        maxWidth: `calc(10vw)`,
-                                        height: `calc(150/1080 * ${props.bheight})`, flexShrink: '0'
-                                    }}>
-                                        <img src={img10} style={{ width: `calc(150/1080 * ${props.bheight})` }} alt="" />
-                                    </div>
-                                    {/* <div className="d-flex align-items-center flex-grow-1" style={{ fontSize: `calc(22/1080 * ${props.bheight})`, fontWeight: '500', marginTop: `calc(0.5/100 * ${props.bheight})` }}>India's First Woman Only</div> */}
-                                    <div className="d-flex align-items-center flex-grow-1" style={{ fontSize: `calc(20/1920 * 100vw)`, fontWeight: '500', marginTop: `calc(0.5/100 * ${props.bheight})` }}>Weight Loss</div>
-                                </div>
-                                <div className='d-flex flex-column align-items-center mx-3' style={{
-                                    backgroundColor: 'white',
-                                    width: 'max-content',
-                                    padding: `calc(0.8/100 * ${props.bheight})`,
-                                    boxShadow: '0px 14px 8px #00000029'
-                                }}>
-                                    <div className='d-flex justify-content-center w-100' style={{
-                                        backgroundColor: '#FFF5CC',
-                                        maxHeight: `calc(10vw)`,
-                                        maxWidth: `calc(10vw)`,
-                                        height: `calc(150/1080 * ${props.bheight})`, flexShrink: '0'
-                                    }}>
-                                        <img src={img11} style={{ width: `calc(150/1080 * ${props.bheight})` }} alt="" />
-                                    </div>
-                                    {/* <div className="d-flex align-items-center flex-grow-1" style={{ fontSize: `calc(22/1080 * ${props.bheight})`, fontWeight: '500', marginTop: `calc(0.5/100 * ${props.bheight})` }}>India's First Woman Only</div> */}
-                                    <div className="d-flex align-items-center flex-grow-1" style={{ fontSize: `calc(20/1920 * 100vw)`, fontWeight: '500', marginTop: `calc(0.5/100 * ${props.bheight})` }}>Weight Gain</div>
-                                </div>
-                                <div className='d-flex flex-column align-items-center mx-3' style={{
-                                    backgroundColor: 'white',
-                                    width: 'max-content',
-                                    padding: `calc(0.8/100 * ${props.bheight})`,
-                                    boxShadow: '0px 14px 8px #00000029'
-                                }}>
-                                    <div className='d-flex justify-content-center w-100' style={{
-                                        backgroundColor: '#FFF5CC',
-                                        maxHeight: `calc(10vw)`,
-                                        maxWidth: `calc(10vw)`,
-                                        height: `calc(150/1080 * ${props.bheight})`, flexShrink: '0'
-                                    }}>
-                                        <img src={img12} style={{ width: `calc(150/1080 * ${props.bheight})` }} alt="" />
-                                    </div>
-                                    {/* <div className="d-flex align-items-center flex-grow-1" style={{ fontSize: `calc(22/1080 * ${props.bheight})`, fontWeight: '500', marginTop: `calc(0.5/100 * ${props.bheight})` }}>India's First Woman Only</div> */}
-                                    <div className="d-flex align-items-center flex-grow-1" style={{ fontSize: `calc(20/1920 * 100vw)`, fontWeight: '500', marginTop: `calc(0.5/100 * ${props.bheight})` }}>Body Toning</div>
-                                </div>
-                                <div className='d-flex flex-column align-items-center mx-3' style={{
-                                    backgroundColor: 'white',
-                                    width: 'max-content',
-                                    padding: `calc(0.8/100 * ${props.bheight})`,
-                                    boxShadow: '0px 14px 8px #00000029'
-                                }}>
-                                    <div className='d-flex justify-content-center w-100' style={{
-                                        backgroundColor: '#FFF5CC',
-                                        maxHeight: `calc(10vw)`,
-                                        maxWidth: `calc(10vw)`,
-                                        height: `calc(150/1080 * ${props.bheight})`, flexShrink: '0'
-                                    }}>
-                                        <img src={img13} style={{ width: `calc(150/1080 * ${props.bheight})` }} alt="" />
-                                    </div>
-                                    {/* <div className="d-flex align-items-center flex-grow-1" style={{ fontSize: `calc(22/1080 * ${props.bheight})`, fontWeight: '500', marginTop: `calc(0.5/100 * ${props.bheight})` }}>India's First Woman Only</div> */}
-                                    <div className="d-flex align-items-center flex-grow-1" style={{ fontSize: `calc(20/1920 * 100vw)`, fontWeight: '500', marginTop: `calc(0.5/100 * ${props.bheight})` }}>General Fitness</div>
-                                </div>
+                                <ImageBlock src={img10} label='Weight Loss' bheight={props.bheight} />
+                                <ImageBlock src={img11} label='Weight Gain' bheight={props.bheight} />
+                                <ImageBlock src={img12} label='Body Toning' bheight={props.bheight} />
+                                <ImageBlock src={img13} label='General Fitness' bheight={props.bheight} />
                             </div>
                             <div className="d-flex justify-content-end mx-3">
-                                <Button sx={{ '&:hover' : { backgroundColor: 'rgb(4, 199, 244)' }, backgroundColor: 'rgb(4, 199, 244)' }} endIcon={<ArrowForward />} onClick={() => { handleClick('block0Next') }} variant="contained">Next</Button>
+                                <Button sx={{ '&:hover': { backgroundColor: 'rgb(4, 199, 244)' }, backgroundColor: 'rgb(4, 199, 244)' }} endIcon={<ArrowForward />} onClick={() => { handleClick('block0Next') }} variant="contained">Next</Button>
                             </div>
                         </div>
 
@@ -239,10 +205,10 @@ function GetACoach(props) {
 
                             </div>
                             <div className="d-flex justify-content-between mx-3">
-                                <Button sx={{ '&:hover' : { backgroundColor: 'rgb(4, 199, 244)' }, backgroundColor: 'rgb(4, 199, 244)' }} onClick={() => { handleClick('block1Back') }} startIcon={<ArrowBack />} variant="contained">Back</Button>
+                                <Button sx={{ '&:hover': { backgroundColor: 'rgb(4, 199, 244)' }, backgroundColor: 'rgb(4, 199, 244)' }} onClick={() => { handleClick('block1Back') }} startIcon={<ArrowBack />} variant="contained">Back</Button>
                                 <TextField size='small' InputProps={{ style: { fontSize: `calc(20/1080 * ${props.bheight})` } }} InputLabelProps={{ style: { fontSize: `calc(20/1080 * ${props.bheight})` } }} variant='standard' label='other' />
 
-                                <Button sx={{ '&:hover' : { backgroundColor: 'rgb(4, 199, 244)' }, backgroundColor: 'rgb(4, 199, 244)' }} onClick={() => { handleClick('block1Next') }} endIcon={<ArrowForward />} variant="contained">Next</Button>
+                                <Button sx={{ '&:hover': { backgroundColor: 'rgb(4, 199, 244)' }, backgroundColor: 'rgb(4, 199, 244)' }} onClick={() => { handleClick('block1Next') }} endIcon={<ArrowForward />} variant="contained">Next</Button>
                             </div>
                         </div>
 
@@ -286,13 +252,35 @@ function GetACoach(props) {
             function BottomSection() {
 
                 function PlanTablet(props) {
+                    const [tabbg, setTabBg] = useState(350);
+                    function mouseOnTablet(){
+                        // const elem = document.getElementById('plan-tablet-headbg');
+                        // elem.style.transform = `translateX(0)`;
+                        setTabBg(-100);
+                    }
+
+                    function mouseLeaveTablet(){
+                        // const elem = document.getElementById('plan-tablet-headbg');
+                        // elem.style.transform = `translateX(calc(350/1080 * ${props.bheight} * 0.79))`;
+                        setTabBg(350);
+                    }
+
                     return (
                         <>
-                            <div style={{ height: `calc(477/1080 * ${props.bheight})`, borderRadius: `calc(20/1080 * ${props.bheight})`, width: `calc(477/1080 * ${props.bheight} * 0.79)`, backgroundColor: '#FFF5CC' }}>
-                                <div className='d-flex flex-column px-3 py-3 justify-content-between' style={{ height: '100%' }}>
-                                    <div style={{ fontSize: `calc(36/1080 * ${props.bheight})`, letterSpacing: `calc(1.8/1080 * ${props.bheight})`, fontWeight: '500' }}>{props.title}</div>
-                                    <div style={{ fontSize: `calc(24/1080 * ${props.bheight})`, fontWeight: '500' }}>
-                                        <div className='d-flex flex-row align-items-center'>
+                            <div onMouseEnter={ mouseOnTablet } onMouseLeave= { mouseLeaveTablet } style={{ height: `calc(477/1080 * ${props.bheight})`, borderRadius: `calc(20/1080 * ${props.bheight})`, width: `calc(477/1080 * ${props.bheight} * 0.79)`, backgroundColor: '#FFF5CC', overflow: 'hidden' }}>
+                                <div className='d-flex flex-column py-3 justify-content-between' style={{ height: '100%' }}>
+                                    <div className="position-absolute" style={{ backgroundColor: 'none', height: `calc(52/1080 * ${props.bheight})`, width: `calc(477/1080 * ${props.bheight} * 0.79)`, overflow: 'hidden' }}>
+                                        <div style={{ 
+                                            borderRadius: `calc(26/1080 * ${props.bheight})`,
+                                            height: '100%',
+                                            width: '100%',
+                                            backgroundColor: '#FBE551', transform: `translateX(calc(${tabbg}/1080 * ${props.bheight} * 0.79))`, transition: '0.3s' }}>
+
+                                        </div>
+                                    </div>
+                                    <div className="ms-3" style={{ fontSize: `calc(36/1080 * ${props.bheight})`, letterSpacing: `calc(1.8/1080 * ${props.bheight})`, fontWeight: 'bolder', zIndex: '1', userSelect: 'none' }}>{props.title}</div>
+                                    <div className="ms-3" style={{ fontSize: `calc(24/1080 * ${props.bheight})`, fontWeight: '500' }}>
+                                        <div className='d-flex flex-row align-items-center' style={{ userSelect: 'none' }}>
                                             <img className="me-3 my-3" src={arrowltr} style={{ height: `calc(32/1080 * ${props.bheight})`, width: `calc(32/1080 * ${props.bheight})` }} alt="" />
                                             <div>
                                                 <div>2+ Years Experience</div>
@@ -317,7 +305,7 @@ function GetACoach(props) {
                                             {/* <div className='p-1' style={{ borderRadius: `calc(5/1080 * ${props.bheight})`, fontWeight: '500', backgroundColor: '#04C7F4', fontSize: `calc(18/1080 * ${props.bheight})`, letterSpacing: `calc(2.7/1080 * ${props.bheight})` }}>Select Trainers</div> */}
                                             <Link to='/trainers' style={{ textDecoration: 'none' }}>
 
-                                                <Button  className='p-1' variant='contained' sx={{ '&:hover' : { backgroundColor: 'rgb(4, 199, 244)' }, backgroundColor: 'rgb(4, 199, 244)', fontSize: `calc(18/1080 * ${props.bheight})` }}>
+                                                <Button className='p-1' variant='contained' sx={{ '&:hover': { backgroundColor: 'rgb(4, 199, 244)' }, backgroundColor: 'rgb(4, 199, 244)', fontSize: `calc(18/1080 * ${props.bheight})` }}>
                                                     Select Trainers
                                                 </Button>
                                             </Link>
@@ -420,17 +408,45 @@ function GetACoach(props) {
 
     function Mobile() {
         function ImageBlock(props) {
+            const [imgbstate, setImgBState] = useState(false);
+
+            function imgBlockClicked() {
+                setImgBState(!imgbstate);
+            }
+
+            function getValueOfState(key) {
+                switch (key) {
+                    case 'backgroundColor':
+                        if (imgbstate === false) {
+                            return 'white';
+                        }
+                        else if (imgbstate === true) {
+                            return '#FBE551';
+                        }
+                        break;
+                    case 'fontSize':
+                        if (imgbstate === false) {
+                            return 14;
+                        }
+                        else if (imgbstate === true) {
+                            return 12;
+                        }
+                        break;
+                    default:
+                        break;
+                }
+            }
             return (
                 <>
-                    <div className="d-flex flex-column p-2 m-3"
-                        style={{ width: 'max-content', backgroundColor: 'white', boxShadow: '0px 14px 8px #00000029' }}>
+                    <div className="d-flex flex-column p-2 m-3" onClick={imgBlockClicked}
+                        style={{ width: 'max-content', backgroundColor: getValueOfState('backgroundColor'), boxShadow: '0px 14px 8px #00000029', cursor: 'pointer' }}>
                         <div className='d-flex justify-content-center' style={{
                             width: `calc(75/640 * ${props.bheight} * 1.4)`,
                             backgroundColor: '#FFF5CC'
                         }}>
                             <img src={props.src} style={{ height: `calc(63.5/640 * ${props.bheight})` }} alt="" />
                         </div>
-                        <div className="d-flex justify-content-center" style={{ fontSize: `calc(14/640 * ${props.bheight})` }}>{props.label}</div>
+                        <div className="d-flex justify-content-center" style={{ userSelect: 'none', fontSize: `calc(${getValueOfState('fontSize')}/640 * ${props.bheight})` }}>{props.label}</div>
                     </div>
                 </>
             );
@@ -456,47 +472,17 @@ function GetACoach(props) {
                         <div className="d-flex flex-column mb-2">
                             <div className='d-flex flex-column align-items-center'>
                                 <div className="d-flex flex-row">
-                                    <div className="d-flex flex-column p-2 m-3" style={{ width: 'max-content', backgroundColor: 'white', boxShadow: '0px 14px 8px #00000029' }}>
-                                        <div className='d-flex justify-content-center' style={{
-                                            width: `calc(75/640 * ${props.bheight} * 1.4)`,
-                                            backgroundColor: '#FFF5CC'
-                                        }}>
-                                            <img src={img10} style={{ height: `calc(63.5/640 * ${props.bheight})` }} alt="" />
-                                        </div>
-                                        <div className='d-flex justify-content-center' style={{ fontSize: `calc(14/640 * ${props.bheight})` }}>Weight Loss</div>
-                                    </div>
-                                    <div className="d-flex flex-column p-2 m-3" style={{ width: 'max-content', backgroundColor: 'white', boxShadow: '0px 14px 8px #00000029' }}>
-                                        <div className='d-flex justify-content-center' style={{
-                                            width: `calc(75/640 * ${props.bheight} * 1.4)`,
-                                            backgroundColor: '#FFF5CC'
-                                        }}>
-                                            <img src={img11} style={{ height: `calc(63.5/640 * ${props.bheight})` }} alt="" />
-                                        </div>
-                                        <div className='d-flex justify-content-center' style={{ fontSize: `calc(14/640 * ${props.bheight})` }}>Weight Gain</div>
-                                    </div>
+                                    <ImageBlock bheight={props.bheight} src={img10} label='Weight Loss' />
+                                    <ImageBlock bheight={props.bheight} src={img11} label='Weight Gain' />
+
                                 </div>
                                 <div className="d-flex flex-row">
-                                    <div className="d-flex flex-column p-2 m-3" style={{ width: 'max-content', backgroundColor: 'white', boxShadow: '0px 14px 8px #00000029' }}>
-                                        <div className='d-flex justify-content-center' style={{
-                                            width: `calc(75/640 * ${props.bheight} * 1.4)`,
-                                            backgroundColor: '#FFF5CC'
-                                        }}>
-                                            <img src={img12} style={{ height: `calc(63.5/640 * ${props.bheight})` }} alt="" />
-                                        </div>
-                                        <div className='d-flex justify-content-center' style={{ fontSize: `calc(14/640 * ${props.bheight})` }}>Body Toning</div>
-                                    </div>
-                                    <div className="d-flex flex-column p-2 m-3" style={{ width: 'max-content', backgroundColor: 'white', boxShadow: '0px 14px 8px #00000029' }}>
-                                        <div className='d-flex justify-content-center' style={{
-                                            width: `calc(75/640 * ${props.bheight} * 1.4)`,
-                                            backgroundColor: '#FFF5CC'
-                                        }}>
-                                            <img src={img13} style={{ height: `calc(63.5/640 * ${props.bheight})` }} alt="" />
-                                        </div>
-                                        <div className='d-flex justify-content-center' style={{ fontSize: `calc(14/640 * ${props.bheight})` }}>General Fitness</div>
-                                    </div>
+                                    <ImageBlock bheight={props.bheight} src={img12} label='Body Toning' />
+                                    <ImageBlock bheight={props.bheight} src={img13} label='General Fitness' />
+
                                 </div>
                                 <div className="d-flex justify-content-end px-3" style={{ width: '100%' }}>
-                                    <Button sx={{ '&:hover' : { backgroundColor: 'rgb(4, 199, 244)' }, backgroundColor: 'rgb(4, 199, 244)' }} endIcon={<ArrowForward />} onClick={() => { handleClick('block0Next') }} variant="contained">Next</Button>
+                                    <Button sx={{ '&:hover': { backgroundColor: 'rgb(4, 199, 244)' }, backgroundColor: 'rgb(4, 199, 244)' }} endIcon={<ArrowForward />} onClick={() => { handleClick('block0Next') }} variant="contained">Next</Button>
                                 </div>
 
                             </div>
@@ -548,9 +534,9 @@ function GetACoach(props) {
                                 </div>
                             </div>
                             <div className="d-flex justify-content-between mx-3">
-                                <Button sx={{ '&:hover' : { backgroundColor: 'rgb(4, 199, 244)' }, backgroundColor: 'rgb(4, 199, 244)' }} size='small' onClick={() => { handleClick('block1Back') }} startIcon={<ArrowBack />} variant="contained">Back</Button>
+                                <Button sx={{ '&:hover': { backgroundColor: 'rgb(4, 199, 244)' }, backgroundColor: 'rgb(4, 199, 244)' }} size='small' onClick={() => { handleClick('block1Back') }} startIcon={<ArrowBack />} variant="contained">Back</Button>
                                 <TextField size='small' InputProps={{ style: { fontSize: `calc(5/360 * ${props.bheight})`, width: '100px' } }} InputLabelProps={{ style: { fontSize: `calc(5/360 * ${props.bheight})` } }} variant='standard' label='other' />
-                                <Button sx={{ '&:hover' : { backgroundColor: 'rgb(4, 199, 244)' }, backgroundColor: 'rgb(4, 199, 244)' }} size='small' onClick={() => { handleClick('block1Next') }} endIcon={<ArrowForward />} variant="contained">Next</Button>
+                                <Button sx={{ '&:hover': { backgroundColor: 'rgb(4, 199, 244)' }, backgroundColor: 'rgb(4, 199, 244)' }} size='small' onClick={() => { handleClick('block1Next') }} endIcon={<ArrowForward />} variant="contained">Next</Button>
                             </div>
                         </div>
 
@@ -626,7 +612,7 @@ function GetACoach(props) {
                                     <div>
                                         <div className='d-flex flex-row justify-content-center w-100' style={{ width: 'max-content' }}>
                                             <Link to='/trainers' style={{ textDecoration: 'none' }}>
-                                                <Button className='p-1' variant='contained' size='small' sx={{ '&:hover' : { backgroundColor: 'rgb(4, 199, 244)' }, backgroundColor: 'rgb(4, 199, 244)', fontSize: `calc(18/1080 * ${props.bheight})` }}>
+                                                <Button className='p-1' variant='contained' size='small' sx={{ '&:hover': { backgroundColor: 'rgb(4, 199, 244)' }, backgroundColor: 'rgb(4, 199, 244)', fontSize: `calc(18/1080 * ${props.bheight})` }}>
                                                     Select Trainers
                                                 </Button>
                                             </Link>

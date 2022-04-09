@@ -139,9 +139,9 @@ function Trainers(props) {
                                     Basic level Trainers
                                 </div>
                                 <div className='d-flex flex-row'>
-                                    <HarpSelector className='mx-2' label='Gender' bheight={props.bheight} items={['All', 'Male', 'Female']} />
-                                    <HarpSelector className='mx-2' label='Language' bheight={props.bheight} items={['All', 'Tamil', 'Hindi', 'English']} />
-                                    <HarpSelector className='mx-2' label='Ratings' bheight={props.bheight} items={['All', '1-3 Star', '4-5 Star']} />
+                                    <HarpSelector className='me-4' label='Gender' bheight={props.bheight} items={['All', 'Male', 'Female']} />
+                                    <HarpSelector className='mx-4' label='Language' bheight={props.bheight} items={['All', 'Tamil', 'Hindi', 'English']} />
+                                    <HarpSelector className='ms-4' label='Ratings' bheight={props.bheight} items={['All', '1-3 Star', '4-5 Star']} />
                                 </div>
                             </div>
                         </>);
@@ -337,9 +337,9 @@ function Trainers(props) {
                                 </div>
                                 <div className='mb-3'><Button variant='contained' onClick={onFilterBClick} sx={{ '&:hover' : { backgroundColor: 'rgb(4, 199, 244)' }, backgroundColor: 'rgb(4, 199, 244)', fontSize: `calc(12/640 * ${props.bheight})` }}>{filterv ? 'Hide' : 'Show'} Filters</Button></div>
                                 <div className='' style={{ height: `calc(${filterv ? '150/640' : '0'} * ${props.bheight})`, overflow: 'hidden' }}>
-                                    <HarpSelector className='my-2' label='Gender' bheight={props.bheight} items={['All', 'Male', 'Female']} />
-                                    <HarpSelector className='my-2' label='Language' bheight={props.bheight} items={['All', 'Tamil', 'Hindi', 'English']} />
-                                    <HarpSelector className='my-2' label='Ratings' bheight={props.bheight} items={['All', '1-3 Star', '4-5 Star']} />
+                                    <HarpSelector className='mt-2 mb-4' label='Gender' bheight={props.bheight} items={['All', 'Male', 'Female']} />
+                                    <HarpSelector className='my-4' label='Language' bheight={props.bheight} items={['All', 'Tamil', 'Hindi', 'English']} />
+                                    <HarpSelector className='my-4' label='Ratings' bheight={props.bheight} items={['All', '1-3 Star', '4-5 Star']} />
                                 </div>
                             </div>
                         </>);

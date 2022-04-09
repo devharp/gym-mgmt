@@ -1,5 +1,6 @@
 import { Box, Button } from '@mui/material'
 import { useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import img00 from '../../assets/home/00.svg'
 import img10 from '../../assets/home/10.svg'
 function Block1(props) {
@@ -49,7 +50,9 @@ function Block1(props) {
                                     <img style={{ height: `calc(0.5 * ${props.bheight})` }} src={img10} />
                                 </div>
                                 <div className='position-absolute d-flex justify-content-center' style={{ transform: `translateY(calc(-110/1080 * ${props.bheight}))`, width: '100%' }}>
-                                    <Button className='px-3' size='small' sx={{ '&:hover' : { backgroundColor: 'rgb(4, 199, 244)' }, backgroundColor: 'rgb(4, 199, 244)', fontSize: `calc(20/1080 * ${props.bheight})`, borderRadius: `calc(25/1080 * ${props.bheight})` }} variant='contained'>Enroll Now</Button>
+                                    <Link to='/getacoach' style={{ textDecoration: 'none' }}>
+                                        <Button className='px-3' size='small' sx={{ '&:hover': { backgroundColor: 'rgb(4, 199, 244)' }, backgroundColor: 'rgb(4, 199, 244)', fontSize: `calc(20/1080 * ${props.bheight})`, borderRadius: `calc(25/1080 * ${props.bheight})` }} variant='contained'>Enroll Now</Button>
+                                    </Link>
                                 </div>
                             </div>
                         </div>
@@ -74,8 +77,9 @@ function Block1(props) {
                         </div>
                         <div className="my-3" style={{ fontSize: `calc(0.025 * ${props.bheight})`, letterSpacing: '2.5px', fontWeight: '500' }}>{props.content.other}</div>
                         <div className="my-3" >
-                            <Button className='px-3' size='small' sx={{ '&:hover' : { backgroundColor: 'rgb(4, 199, 244)' }, backgroundColor: 'rgb(4, 199, 244)', fontSize: `calc(10/640 * ${props.bheight})`, borderRadius: `calc(12.5/640 * ${props.bheight})` }} variant='contained'>Enroll Now</Button>
-
+                            <Link to='/getacoach' style={{ textDecoration: 'none' }}>
+                                <Button className='px-3' size='small' sx={{ '&:hover': { backgroundColor: 'rgb(4, 199, 244)' }, backgroundColor: 'rgb(4, 199, 244)', fontSize: `calc(10/640 * ${props.bheight})`, borderRadius: `calc(12.5/640 * ${props.bheight})` }} variant='contained'>Enroll Now</Button>
+                            </Link>
                         </div>
                     </div>
                     <BackgroundImageMob />
