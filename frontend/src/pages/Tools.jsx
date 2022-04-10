@@ -101,7 +101,7 @@ function Tools(props) {
                         <div className="d-flex flex-row align-items-center">
                             <div className="d-flex" style={{ fontSize: `calc(36/1080 * ${props.bheight})`, letterSpacing: `calc(3.6/1080 * ${props.bheight})`, fontWeight: '500' }}>
                                 BMR Calculator
-                                <div onClick={handleBMRModalOpen} className="ms-2 d-flex justify-content-center align-items-center" style={{ userSelect: 'none', cursor: 'pointer', color: 'rgb(4, 199, 244)', fontSize: '1em', border: 'rgb(4, 199, 244) solid 3px', borderRadius: '0.75em', height: '1.5em', width: '1.5em' }}>i</div>
+                                <div onMouseEnter={handleBMRModalOpen} className="ms-2 d-flex justify-content-center align-items-center" style={{ fontFamily: 'consolas', userSelect: 'none', cursor: 'pointer', color: 'rgb(4, 199, 244)', fontSize: '1em', border: 'rgb(4, 199, 244) solid 3px', borderRadius: '0.75em', height: '1.2em', width: '1.2em' }}><i>i</i></div>
                             </div>
                         </div>
                     </>
@@ -235,7 +235,7 @@ function Tools(props) {
                         <div className="d-flex flex-row align-items-center">
                             <div className="d-flex" style={{ fontSize: `calc(36/1080 * ${props.bheight})`, letterSpacing: `calc(3.6/1080 * ${props.bheight})`, fontWeight: '500' }}>
                                 Body Fat Calculator
-                                <div onClick={handleBFModalOpen} className="ms-2 d-flex justify-content-center align-items-center" style={{ userSelect: 'none', cursor: 'pointer', color: 'rgb(4, 199, 244)', fontSize: '1em', border: 'rgb(4, 199, 244) solid 3px', borderRadius: '0.75em', height: '1.5em', width: '1.5em' }}>i</div>
+                                <div onMouseEnter={handleBFModalOpen} className="ms-2 d-flex justify-content-center align-items-center" style={{ fontFamily: 'consolas', userSelect: 'none', cursor: 'pointer', color: 'rgb(4, 199, 244)', fontSize: '1em', border: 'rgb(4, 199, 244) solid 3px', borderRadius: '0.75em', height: '1.2em', width: '1.2em' }}><i>i</i></div>
                             </div>
                         </div>
                     </>
@@ -349,7 +349,7 @@ function Tools(props) {
                         <div className="d-flex flex-row align-items-center">
                             <div className="d-flex" style={{ fontSize: `calc(36/1080 * ${props.bheight})`, letterSpacing: `calc(3.6/1080 * ${props.bheight})`, fontWeight: '500' }}>
                                 Ideal Weight Calculator
-                                <div onClick={handleIWModalOpen} className="ms-2 d-flex justify-content-center align-items-center" style={{ userSelect: 'none', cursor: 'pointer', color: 'rgb(4, 199, 244)', fontSize: '1em', border: 'rgb(4, 199, 244) solid 3px', borderRadius: '0.75em', height: '1.5em', width: '1.5em' }}>i</div>
+                                <div onMouseEnter={handleIWModalOpen} className="ms-2 d-flex justify-content-center align-items-center" style={{ fontFamily: 'consolas', userSelect: 'none', cursor: 'pointer', color: 'rgb(4, 199, 244)', fontSize: '1em', border: 'rgb(4, 199, 244) solid 3px', borderRadius: '0.75em', height: '1.2em', width: '1.2em' }}><i>i</i></div>
                             </div>
                         </div>
                     </>
@@ -817,7 +817,7 @@ function Tools(props) {
                     </Box>
                 </div>
                 <div className={`position-absolute ${openmodal ? 'd-block' : 'd-none'}`} onClick={handleModalClose} style={{ cursor: 'pointer', backgroundColor: 'rgba(0, 0, 0, 0.5)', height: '100vh', width: '100vw', overflow: 'hidden', zIndex: '1' }}>
-                    <div style={{ transform: 'translate(50vw, 50vh)' }}>
+                    <div style={{ transform: 'translate(65vw, 45vh)' }}>
                         <Box sx={{
                             top: '50%',
                             left: '50%',
@@ -825,12 +825,12 @@ function Tools(props) {
                             width: 400,
                             bgcolor: 'background.paper',
                             boxShadow: 24,
-                            p: 4
+                            p: 0
                         }}>
-                            <Typography id="modal-modal-title" variant="h6" component="h2" sx={{ userSelect: 'none' }}>
+                            <Typography className='d-none' id="modal-modal-title" variant="h6" component="h2" sx={{ userSelect: 'none' }}>
                                 {modalvalues.title}
                             </Typography>
-                            <Typography id="modal-modal-description" sx={{ mt: 2, userSelect: 'none' }}>
+                            <Typography className='p-1 ps-3' id="modal-modal-description" variant='h6' sx={{ mt: 2, userSelect: 'none' }}>
                                 {modalvalues.desc}
                             </Typography>
                         </Box>

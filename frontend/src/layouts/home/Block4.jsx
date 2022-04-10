@@ -87,16 +87,16 @@ function Block4(props) {
         <>
             {/* Desktop Screen */}
             <Box sx={{ display: { xs: 'none', sm: 'none', md: 'flex', lg: 'flex', xl: 'flex' }, width: '100%' }}>
-                <div className='d-flex flex-column align-items-center justify-content-around w-100' style={{ height: props.bheight }}>
+                <div className='d-flex flex-column align-items-center justify-content-start w-100' style={{ height: props.bheight }}>
                     <div className='d-flex flex-column align-items-center'>
-                        <div className='mb-2' style={
+                        <div className='mt-5 mb-2' style={
                             {
                                 fontSize: `calc(36/1080 * ${props.bheight})`,
                                 letterSpacing: `calc(3.6/1080 * ${props.bheight})`,
                                 fontWeight: '500'
                             }
                         }>{props.content.heading}</div>
-                        <div style={
+                        <div className='mb-5' style={
                             {
                                 width: `calc(180/640 * ${props.bheight})`,
                                 height: '2px',
@@ -106,13 +106,13 @@ function Block4(props) {
 
                         </div>
                     </div>
-                    <div className='d-flex flex-column align-items-center' style={{ fontSize: `calc(28/1080 * ${props.bheight})` }}>
+                    <div className='my-5 d-flex flex-column align-items-center' style={{ fontSize: `calc(28/1080 * ${props.bheight})` }}>
                         <div>Our Customer Quotes:</div>
                         <div style={{ textAlign: 'center', textAlignLast: 'center', maxWidth: 'calc(1000/1920 * 100vw)' }}>
                             {props.content.paragraph}
                         </div>
                     </div>
-                    <div className='w-100 p-0' style={{ backgroundColor: 'transparent' }}>
+                    <div className='mt-5 w-100 p-0' style={{ backgroundColor: 'transparent' }}>
 
                         <ImageCarouselDesk bheight={props.bheight} items={itemsdesk} />
 

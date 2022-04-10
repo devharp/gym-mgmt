@@ -20,9 +20,10 @@ function ContactUs(props) {
             return (
                 <>
                     <div className='pt-5 d-flex flex-column justify-content-between' style={{ width: '100%', height: props.bheight, overflow: 'hidden' }}>
-                        <div className='position-absolute' style={{ transform: `translate(calc(335/1920 * 100vw), calc(162/1080 * ${props.bheight}))`, letterSpacing: `calc(8.35/1080 * ${props.bheight})`, fontSize: `calc(167/1080 * ${props.bheight})`, fontWeight: '500', zIndex: '1' }}>
-                            <div>CONTACT</div>
-                            <div>US</div>
+                        <div className='position-absolute d-flex' style={{ transform: `translate(calc(100/1920 * 100vw), calc(350/1080 * ${props.bheight}))`, letterSpacing: `calc(8.35/1080 * ${props.bheight})`, fontSize: `calc(167/1080 * ${props.bheight})`, fontWeight: '500', zIndex: '1' }}>
+                            {/* <div>CONTACT</div>
+                            <div>US</div> */}
+                            <div>CONTACT US</div>
                         </div>
                         <img className='position-absolut' style={{ transform: `translate(calc(100vw - 100%), calc(${props.bheight} - 100%))`, width: `calc(907/1080 * ${props.bheight} * 1131/907)`, height: `calc(907/1080 * ${props.bheight})` }} src={img0} alt="" />
                     </div>
@@ -62,7 +63,7 @@ function ContactUs(props) {
                                 </div>
                                 <TextField className='flex-grow-1' label='Message' variant='outlined' rows={6} size='small' multiline />
                                 <div className='d-flex justify-content-end'>
-                                    <Button size='small' variant='contained'>Send</Button>
+                                    <Button size='small' variant='contained' sx={{ backgroundColor: 'rgb(4, 199, 244)', '&:hover' : { backgroundColor: 'rgb(4, 199, 244)' } }} >Send</Button>
                                 </div>
                             </div>
                         </div>
@@ -101,9 +102,9 @@ function ContactUs(props) {
         return (
             <div style={{ width: '100%', height: `calc(${props.bheight})` }}>
                 <div className='pt-5 mt-3 position-absolute' style={{ width: '100%', height: props.bheight, overflow: 'hidden' }}>
-                    <div className='position-absolute ps-3' style={{ zIndex: '1', fontSize: `calc(31/640 * ${props.bheight})`, letterSpacing: `calc(1.55/640 * ${props.bheight})`, fontWeight: '500' }}>
-                        <div>CONTACT</div>
-                        <div>US</div>
+                    <div className='position-absolute ps-3' style={{ transform: 'translate(10vw, 10vh)', zIndex: '1', fontSize: `calc(31/640 * ${props.bheight})`, letterSpacing: `calc(1.55/640 * ${props.bheight})`, fontWeight: '500' }}>
+                        <div>CONTACT US</div>
+                        {/* <div>US</div> */}
                     </div>
                     <img className='position-absolute' style={{ transform: `translate(calc(100vw - 100%), calc(${props.bheight} * 0))`, width: `calc(229/640 * ${props.bheight} * 286/229)`, height: `calc(229/640 * ${props.bheight})` }} src={img0} alt="" />
                 </div>
@@ -122,7 +123,7 @@ function ContactUs(props) {
                         </div>
                         <TextField inputProps={{style: textfieldstyle}} InputLabelProps={{style: textfieldstyle}} className='flex-grow-1' label='Message' variant='outlined' rows={3} size='small' multiline />
                         <div className='d-flex justify-content-end'>
-                            <Button sx={textfieldstyle} size='small' variant='contained'>Send</Button>
+                            <Button sx={{ fontSize: textfieldstyle.fontSize, backgroundColor: 'rgb(4, 199, 244)', '&:hover': { backgroundColor: 'rgb(4, 199, 244)' } }} size='small' variant='contained'>Send</Button>
                         </div>
                     </div>
                 </div>

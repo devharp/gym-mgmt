@@ -41,7 +41,7 @@ function Block1(props) {
                         <div className="d-flex flex-column justify-content-end align-items-center w-100" style={{ overflow: 'hidden' }}>
                             <div className="mb-4 mt-5" style={{ fontSize: `calc(0.045 * ${props.bheight})`, letterSpacing: '0.75vw' }}>{props.content.heading}</div>
                             <div className="mb-4" style={{ backgroundColor: '#04C7F4', width: '30vw', height: '2px' }}></div>
-                            <div className="mb-4 d-flex flex-column align-items-center" style={{ maxWidth: `calc(1000/1920 * 100vw)`, fontSize: `calc(28/1920 * 100vw)`, textAlign: 'center', textAlignLast: 'center' }}>
+                            <div className="mb-4 d-flex flex-column align-items-center" style={{ maxWidth: `calc(1000/1920 * 100vw)`, fontSize: `calc(28/1080 * ${props.bheight})`, textAlign: 'center', textAlignLast: 'center' }}>
                                 {props.content.paragraph}
                             </div>
                             <div className="mb-4" style={{ fontSize: `calc(0.03 * ${props.bheight})`, letterSpacing: '0.16vw' }}>{props.content.other}</div>

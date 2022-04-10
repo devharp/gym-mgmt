@@ -27,7 +27,7 @@ function Trainers(props) {
         function BackgroundImages() {
             function Image0() {
                 return (
-                    <div style={ { width: '100vw', overflow: 'hidden' }}>
+                    <div style={{ width: '100vw', overflow: 'hidden' }}>
                         <img className="position-absolute" src={img00} style={{
                             transform: `translate(calc(-392/1080 * ${props.bheight}), calc(-264/1080 * ${props.bheight} * 1920/1080))`,
                             width: `calc(1321/1080 * ${props.bheight} * 1906/1321)`,
@@ -76,7 +76,7 @@ function Trainers(props) {
         function FrontBody() {
             function Heading() {
                 return (
-                    <div className='d-flex flex-column align-items-center mb-3' style={{ width: '100%' }}>
+                    <div className='d-flex flex-column align-items-start mb-3 d-none' style={{ width: '100%' }}>
                         <div style={{
                             fontSize: `calc(36/1080 * ${props.bheight})`,
                             letterSpacing: `calc(3.6/1080 * ${props.bheight})`,
@@ -95,6 +95,22 @@ function Trainers(props) {
                 function ContentInfo() {
                     return (
                         <>
+                            <div className='mb-3'>
+                                <div className='d-flex flex-column' style={{
+                                    fontSize: `calc(36/1080 * ${props.bheight})`,
+                                    letterSpacing: `calc(3.6/1080 * ${props.bheight})`,
+                                    fontWeight: '500',
+                                    width: 'max-content'
+                                }}>
+
+                                    <div className='d-flex flex-column align-items-center' style={{ backgroundColor: 'none' }}>
+                                        Select Your Trainer
+                                        <div className="d-flex justify-content-start mt-2">
+                                            <div style={{ height: '2px', width: `calc(180/1920*100vw)`, backgroundColor: '#04C7F4' }}></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                             <div className='mb-3' style={{ maxWidth: `calc(337/1080 * ${props.bheight} * 640/337)`, fontSize: `calc(28/1080 * ${props.bheight})` }}>
                                 We are proud to have transformed more than 5,000+ lives with our unique fitness approach, customized diet, and exercise plans that fit your lifestyle and work for you! Choose from more than 500 expert coaches. Get started today. And Get better.
                             </div>
@@ -134,7 +150,8 @@ function Trainers(props) {
 
                     return (
                         <>
-                            <div className='d-flex flex-row justify-content-between mb-3'>
+                            <div className='mt-5'></div>
+                            <div className='d-flex flex-row justify-content-between mb-3 mt-5'>
                                 <div style={{ fontSize: `calc(36/1080 * ${props.bheight})`, letterSpacing: `calc(3.6/1080 * ${props.bheight})`, fontWeight: '500' }}>
                                     Basic level Trainers
                                 </div>
@@ -172,7 +189,7 @@ function Trainers(props) {
                                     <div style={{ fontSize: `calc( 14/1080 * ${props.bheight})` }}>Trained 6 people</div>
                                     <div style={{ fontSize: `calc( 14/1080 * ${props.bheight})` }}>3 slots available</div>
                                     <div>
-                                        <Link to='/register' style={{ textDecoration: 'none' }}><Button variant='contained' size='small' sx={{ '&:hover' : { backgroundColor: 'rgb(4, 199, 244)' }, backgroundColor: 'rgb(4, 199, 244)', fontSize: `calc( 18/1080 * ${props.bheight})` }}>Enroll</Button></Link>
+                                        <Link to='/register' style={{ textDecoration: 'none' }}><Button variant='contained' size='small' sx={{ '&:hover': { backgroundColor: 'rgb(4, 199, 244)' }, backgroundColor: 'rgb(4, 199, 244)', fontSize: `calc( 18/1080 * ${props.bheight})` }}>Enroll</Button></Link>
                                     </div>
                                 </div>
                             </div>
@@ -218,7 +235,9 @@ function Trainers(props) {
             }
             return (
                 <>
-                    <div className="position-absolute" style={{ width: '100%', top: `calc(0.25 * ${props.bheight})` }}>
+                    {/* <div className="position-absolute" style={{ width: '100%', top: `calc(0.18 * ${props.bheight})` }}> */}
+                    <div className="position-absolute mt-5" style={{ width: '100%' }}>
+                        <div className='mt-5 mb-3'>&nbsp;</div>
                         <Heading />
                         <MidContent />
                     </div>
@@ -335,7 +354,7 @@ function Trainers(props) {
                                 <div className='mb-3' style={{ fontSize: `calc(18/640 * ${props.bheight})`, letterSpacing: `calc(1.8/640 * ${props.bheight})`, fontWeight: '500' }}>
                                     Basic level Trainers
                                 </div>
-                                <div className='mb-3'><Button variant='contained' onClick={onFilterBClick} sx={{ '&:hover' : { backgroundColor: 'rgb(4, 199, 244)' }, backgroundColor: 'rgb(4, 199, 244)', fontSize: `calc(12/640 * ${props.bheight})` }}>{filterv ? 'Hide' : 'Show'} Filters</Button></div>
+                                <div className='mb-3'><Button variant='contained' onClick={onFilterBClick} sx={{ '&:hover': { backgroundColor: 'rgb(4, 199, 244)' }, backgroundColor: 'rgb(4, 199, 244)', fontSize: `calc(12/640 * ${props.bheight})` }}>{filterv ? 'Hide' : 'Show'} Filters</Button></div>
                                 <div className='' style={{ height: `calc(${filterv ? '150/640' : '0'} * ${props.bheight})`, overflow: 'hidden' }}>
                                     <HarpSelector className='mt-2 mb-4' label='Gender' bheight={props.bheight} items={['All', 'Male', 'Female']} />
                                     <HarpSelector className='my-4' label='Language' bheight={props.bheight} items={['All', 'Tamil', 'Hindi', 'English']} />
@@ -369,7 +388,7 @@ function Trainers(props) {
                                     <div style={{ fontSize: `calc( 14/1080 * ${props.bheight})` }}>Trained 6 people</div>
                                     <div style={{ fontSize: `calc( 14/1080 * ${props.bheight})` }}>3 slots available</div>
                                     <div>
-                                        <Link to='/register' style={{ textDecoration: 'none' }}><Button variant='contained' size='small' sx={{ '&:hover' : { backgroundColor: 'rgb(4, 199, 244)' }, backgroundColor: 'rgb(4, 199, 244)', fontSize: `calc( 18/1080 * ${props.bheight})` }}>Enroll</Button></Link>
+                                        <Link to='/register' style={{ textDecoration: 'none' }}><Button variant='contained' size='small' sx={{ '&:hover': { backgroundColor: 'rgb(4, 199, 244)' }, backgroundColor: 'rgb(4, 199, 244)', fontSize: `calc( 18/1080 * ${props.bheight})` }}>Enroll</Button></Link>
                                     </div>
                                 </div>
                             </div>

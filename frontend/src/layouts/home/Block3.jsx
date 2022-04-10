@@ -34,16 +34,16 @@ function Block3(props) {
         <>
             {/* Desktop Screen */}
             <Box sx={{ display: { xs: 'none', sm: 'none', md: 'flex', lg: 'flex', xl: 'flex' }, width: '100%' }}>
-                <div className='d-flex flex-column align-items-center justify-content-around w-100' style={{ height: props.bheight }}>
+                <div className='d-flex flex-column align-items-center justify-content-start w-100' style={{ height: props.bheight }}>
                     <div className='d-flex flex-column align-items-center'>
-                        <div className='mb-2' style={
+                        <div className='mt-5 mb-2' style={
                             {
                                 fontSize: `calc(36/1080 * ${props.bheight})`,
                                 letterSpacing: `calc(3.6/1080 * ${props.bheight})`,
                                 fontWeight: '500'
                             }
                         }>{props.content.heading}</div>
-                        <div style={
+                        <div className='mb-5' style={
                             {
                                 width: `calc(180/640 * ${props.bheight})`,
                                 height: '2px',
@@ -53,10 +53,10 @@ function Block3(props) {
 
                         </div>
                     </div>
-                    <div className='d-flex flex-column align-items-center' style={{ textAlign: 'center', textAlignLast: 'center', maxWidth: `calc(1000/1920 * 100vw)`, fontSize: `calc(28/1080 * ${props.bheight})` }}>
+                    <div className='d-flex bg-primar flex-row my-5 align-items-center' style={{ textAlign: 'center', textAlignLast: 'center', maxWidth: `calc(1000/1920 * 100vw)`, fontSize: `calc(28/1080 * ${props.bheight})` }}>
                         {props.content.paragraph}
                     </div>
-                    <div className='d-flex flex-row justify-content-around w-100 px-5'>
+                    <div className='d-flex my-5 flex-row justify-content-around w-100 px-5'>
                         <div className='d-flex flex-column align-items-center mx-3' style={{
                             backgroundColor: 'white',
                             width: 'max-content',

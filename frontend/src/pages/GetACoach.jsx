@@ -69,9 +69,13 @@ function GetACoach(props) {
 
     function Desktop() {
         function ImageBlock(props) {
+            let mouse_button_clicked = false;
             const [imgbstate, setImgBState] = useState(false);
 
+            const [mouseover, setMouseOver] = useState(0);
+
             function imgBlockClicked() {
+                mouse_button_clicked = !mouse_button_clicked;
                 setImgBState(!imgbstate);
             }
 
@@ -97,25 +101,42 @@ function GetACoach(props) {
                         break;
                 }
             }
+
+            function onMouseEnterBlock(state) {
+                setMouseOver(state);
+
+                if (mouse_button_clicked === false) {
+                    if (state === true) {
+                        setImgBState(true)
+                    }
+
+                    else if (state === false) {
+                        setImgBState(false);
+                    }
+                }
+            }
             return (
                 <>
-                    <div className='d-flex flex-column align-items-center mx-3' onClick={imgBlockClicked} style={{
-                        backgroundColor: getValueOfState('backgroundColor'),
-                        width: 'max-content',
-                        padding: `calc(0.8/100 * ${props.bheight})`,
-                        boxShadow: '0px 14px 8px #00000029',
-                        cursor: 'pointer'
-                    }}>
-                        <div className='d-flex justify-content-center w-100' style={{
-                            backgroundColor: '#FFF5CC',
-                            maxHeight: `calc(10vw)`,
-                            maxWidth: `calc(10vw)`,
-                            height: `calc(150/1080 * ${props.bheight})`, flexShrink: '0'
+                    <div className="" style={{ backgroundColor: 'none' }}>
+                        <div className='d-flex flex-column align-items-center mx-3' onMouseLeave={() => { onMouseEnterBlock(false) }} onMouseOver={() => { onMouseEnterBlock(true) }} onClick={imgBlockClicked} style={{
+                            backgroundColor: getValueOfState('backgroundColor'),
+                            width: 'max-content',
+                            padding: `calc(0.8/100 * ${props.bheight})`,
+                            boxShadow: '0px 14px 8px #00000029',
+                            cursor: 'pointer'
                         }}>
-                            <img src={props.src} style={{ width: `calc(150/1080 * ${props.bheight})` }} alt="" />
+                            <div className='d-flex justify-content-center w-100' style={{
+                                backgroundColor: '#FFF5CC',
+                                // backgroundColor: '#F00',
+                                maxHeight: `calc(10vw)`,
+                                maxWidth: `calc(10vw)`,
+                                height: `calc(${(mouseover === true) ? (180) : (150)}/1080 * ${props.bheight})`, flexShrink: '0'
+                            }}>
+                                <img src={props.src} style={{ width: `calc(150/1080 * ${props.bheight})` }} alt="" />
+                            </div>
+                            {/* <div className="d-flex align-items-center flex-grow-1" style={{ fontSize: `calc(22/1080 * ${props.bheight})`, fontWeight: '500', marginTop: `calc(0.5/100 * ${props.bheight})` }}>India's First Woman Only</div> */}
+                            <div className="d-flex align-items-center flex-grow-1" style={{ userSelect: 'none', fontSize: `calc(${getValueOfState('fontSize')}/1920 * 100vw)`, fontWeight: '500', marginTop: `calc(0.5/100 * ${props.bheight})` }}>{props.label}</div>
                         </div>
-                        {/* <div className="d-flex align-items-center flex-grow-1" style={{ fontSize: `calc(22/1080 * ${props.bheight})`, fontWeight: '500', marginTop: `calc(0.5/100 * ${props.bheight})` }}>India's First Woman Only</div> */}
-                        <div className="d-flex align-items-center flex-grow-1" style={{ userSelect: 'none', fontSize: `calc(${getValueOfState('fontSize')}/1920 * 100vw)`, fontWeight: '500', marginTop: `calc(0.5/100 * ${props.bheight})` }}>{props.label}</div>
                     </div>
                 </>
             );
@@ -194,7 +215,7 @@ function GetACoach(props) {
                                 </div>
                                 <div className={`${((optionpane === 1) ? 'd-flex' : 'd-none')} flex-row mb-3`}>
                                     <ImageBlock src={img18} bheight={props.bheight} label='Pre-Pregnancy' />
-                                    <ImageBlock src={img19} bheight={props.bheight} label='Trimster' />
+                                    <ImageBlock src={img19} bheight={props.bheight} label='Trimester' />
                                     <ImageBlock src={img110} bheight={props.bheight} label='Post-Pregnancy' />
                                     <ImageBlock src={img111} bheight={props.bheight} label='Teen' />
                                 </div>
@@ -223,9 +244,9 @@ function GetACoach(props) {
                 return (
                     <>
                         <div className="d-flex flex-row justify-content-center mt-3">
-                            <div className="d-flex flex-column justify-content-between">
+                            <div className="d-flex flex-column justify-content-between me-5 pe-5">
                                 <div>
-                                    <div className='mb-2' style={{
+                                    <div className='mt-5 mb-2' style={{
                                         fontWeight: '500',
                                         fontSize: `calc(36/1080 * ${props.bheight})`,
                                         letterSpacing: `calc(3.6/1080 * ${props.bheight})`
@@ -243,7 +264,7 @@ function GetACoach(props) {
                                 </div>
                                 <div style={{ fontSize: `calc(28/1080 * ${props.bheight})` }}>Level up or down? Choose your transformation level</div>
                             </div>
-                            <img src={oldlady} style={{ height: `calc(400/1080 * ${props.bheight})`, width: `calc(400/1080 * ${props.bheight}) * 1.102` }} alt="" />
+                            <img className="ms-5" src={oldlady} style={{ height: `calc(400/1080 * ${props.bheight})`, width: `calc(400/1080 * ${props.bheight}) * 1.102` }} alt="" />
                         </div>
                     </>
                 );
@@ -253,13 +274,28 @@ function GetACoach(props) {
 
                 function PlanTablet(props) {
                     const [tabbg, setTabBg] = useState(350);
-                    function mouseOnTablet(){
+
+                    function badgeColor() {
+                        switch (props.badge) {
+                            case 'bronze':
+                                return 'none'
+                            case 'silver':
+                                return 'sepia(100%)'
+                            case 'gold':
+                                return 'sepia(100%) hue-rotate(350deg) saturate(400%)';
+                                break;
+                            default:
+                                break;
+
+                        }
+                    }
+                    function mouseOnTablet() {
                         // const elem = document.getElementById('plan-tablet-headbg');
                         // elem.style.transform = `translateX(0)`;
                         setTabBg(-100);
                     }
 
-                    function mouseLeaveTablet(){
+                    function mouseLeaveTablet() {
                         // const elem = document.getElementById('plan-tablet-headbg');
                         // elem.style.transform = `translateX(calc(350/1080 * ${props.bheight} * 0.79))`;
                         setTabBg(350);
@@ -267,14 +303,15 @@ function GetACoach(props) {
 
                     return (
                         <>
-                            <div onMouseEnter={ mouseOnTablet } onMouseLeave= { mouseLeaveTablet } style={{ height: `calc(477/1080 * ${props.bheight})`, borderRadius: `calc(20/1080 * ${props.bheight})`, width: `calc(477/1080 * ${props.bheight} * 0.79)`, backgroundColor: '#FFF5CC', overflow: 'hidden' }}>
+                            <div onMouseEnter={mouseOnTablet} onMouseLeave={mouseLeaveTablet} style={{ height: `calc(477/1080 * ${props.bheight})`, borderRadius: `calc(20/1080 * ${props.bheight})`, width: `calc(477/1080 * ${props.bheight} * 0.79)`, backgroundColor: '#FFF5CC', overflow: 'hidden' }}>
                                 <div className='d-flex flex-column py-3 justify-content-between' style={{ height: '100%' }}>
                                     <div className="position-absolute" style={{ backgroundColor: 'none', height: `calc(52/1080 * ${props.bheight})`, width: `calc(477/1080 * ${props.bheight} * 0.79)`, overflow: 'hidden' }}>
-                                        <div style={{ 
+                                        <div style={{
                                             borderRadius: `calc(26/1080 * ${props.bheight})`,
                                             height: '100%',
                                             width: '100%',
-                                            backgroundColor: '#FBE551', transform: `translateX(calc(${tabbg}/1080 * ${props.bheight} * 0.79))`, transition: '0.3s' }}>
+                                            backgroundColor: '#FBE551', transform: `translateX(calc(${tabbg}/1080 * ${props.bheight} * 0.79))`, transition: '0.3s'
+                                        }}>
 
                                         </div>
                                     </div>
@@ -283,7 +320,7 @@ function GetACoach(props) {
                                         <div className='d-flex flex-row align-items-center' style={{ userSelect: 'none' }}>
                                             <img className="me-3 my-3" src={arrowltr} style={{ height: `calc(32/1080 * ${props.bheight})`, width: `calc(32/1080 * ${props.bheight})` }} alt="" />
                                             <div>
-                                                <div>2+ Years Experience</div>
+                                                <div>{props.years}+ Years Experience</div>
                                                 <div>Trainers</div>
                                             </div>
                                         </div>
@@ -294,7 +331,7 @@ function GetACoach(props) {
                                             </div>
                                         </div>
                                         <div className='d-flex flex-row align-items-center'>
-                                            <img className="me-3 my-3" src={badge} style={{ height: `calc(32/1080 * ${props.bheight})`, width: `calc(32/1080 * ${props.bheight})` }} alt="" />
+                                            <img className="me-3 my-3" src={badge} style={{ filter: badgeColor(), height: `calc(32/1080 * ${props.bheight})`, width: `calc(32/1080 * ${props.bheight})` }} alt="" />
                                             <div>
                                                 <div>Badged Trainers</div>
                                             </div>
@@ -321,10 +358,9 @@ function GetACoach(props) {
                 return (
                     <>
                         <div className="d-flex flex-row w-100 justify-content-around mt-4">
-                            <PlanTablet title='Basic' bheight={props.bheight} />
-                            <PlanTablet title='Intermediate' bheight={props.bheight} />
-                            <PlanTablet title='Advanced' bheight={props.bheight} />
-
+                            <PlanTablet years='2' badge='bronze' title='Basic' bheight={props.bheight} />
+                            <PlanTablet years='5' badge='silver' title='Intermediate' bheight={props.bheight} />
+                            <PlanTablet years='8' badge='gold' title='Advanced' bheight={props.bheight} />
                         </div>
                     </>);
             }
@@ -522,7 +558,7 @@ function GetACoach(props) {
                                     </div>
                                     <div className="d-flex flex-row">
                                         <ImageBlock bheight={props.bheight} src={img18} label='Pre-Pregnancy' />
-                                        <ImageBlock bheight={props.bheight} src={img19} label='Trimster' />
+                                        <ImageBlock bheight={props.bheight} src={img19} label='Trimester' />
                                     </div>
                                     <div className="d-flex flex-row">
                                         <ImageBlock bheight={props.bheight} src={img110} label='Post-Pregnancy' />
@@ -592,7 +628,7 @@ function GetACoach(props) {
                                         <div className='d-flex flex-row align-items-center'>
                                             <img className="me-3 my-3" src={arrowltr} style={{ height: `calc(32/1080 * ${props.bheight})`, width: `calc(32/1080 * ${props.bheight})` }} alt="" />
                                             <div>
-                                                <div>2+ Years Experience</div>
+                                                <div>{props.years}+ Years Experience</div>
                                                 <div>Trainers</div>
                                             </div>
                                         </div>
@@ -630,7 +666,7 @@ function GetACoach(props) {
                 <>
                     <div className={`${block2} position-absolute w-100`}>
                         <div className="position-absolute d-flex justify-content-center align-items-center" style={{ height: `calc(536/640 * ${props.bheight})`, overflow: 'hidden', width: '100%', zIndex: '-1' }}>
-                            <img src={imgtrans00} style={{ height: `calc(500/640 * ${props.bheight} * 1.2)` }} alt="" />
+                            <img src={imgtrans00} style={{ height: `calc(350/640 * ${props.bheight} * 1.2)` }} alt="" />
                         </div>
                         <div className="d-flex flex-column justify-content-around align-items-center pt-5" style={{ height: props.bheight }}>
                             <div className="d-flex flex-column justify-content-center">
@@ -647,7 +683,7 @@ function GetACoach(props) {
                                     <div style={{ width: `calc(180/640 * 100vw)`, height: '2px', backgroundColor: '#04C7F4' }}></div>
                                 </div>
                             </div>
-                            <img src={oldlady} style={{ width: `calc(214/640 * ${props.bheight} * 1.102)`, height: `calc(214/640 * ${props.bheight})` }} alt="" />
+                            <img src={oldlady} style={{ width: `calc(200/640 * ${props.bheight} * 1.102)`, height: `calc(214/640 * ${props.bheight})` }} alt="" />
                             <div className="d-flex flex-column" style={{ fontSize: `calc(14/640 * ${props.bheight})` }}>
                                 <div className="mb-3 d-flex flex-column align-items-center">
                                     <div>It's quick, simple, and will help you drastically</div>
@@ -665,9 +701,9 @@ function GetACoach(props) {
                             </div>
                         </div>
                         <div className='' style={{ backgroundColor: 'none' }}>
-                            <PlanTablet name='Basic' bheight={props.bheight} />
-                            <PlanTablet name='Intermediate' bheight={props.bheight} />
-                            <PlanTablet name='Advanced' bheight={props.bheight} />
+                            <PlanTablet years='2' badgeColor='bronze' name='Basic' bheight={props.bheight} />
+                            <PlanTablet years='5' badgeColor='silver' name='Intermediate' bheight={props.bheight} />
+                            <PlanTablet years='8' badgeColor='gold' name='Advanced' bheight={props.bheight} />
                         </div>
                     </div>
                 </>

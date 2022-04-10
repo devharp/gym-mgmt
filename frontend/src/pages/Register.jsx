@@ -27,7 +27,7 @@ function Register(props) {
                         <div>HERE</div>
                     </div>
                 </div>
-                <div className="position-absolute d-flex align-items-end" style={{ bottom: '0', left: '50vw', width: '50vw' }}>
+                <div className="position-absolute d-flex align-items-end" style={{ bottom: '5vh', left: '50vw', width: '50vw' }}>
                     <div className="d-flex flex-column">
                         <div className="mb-3" style={{ fontSize: `calc(36/1080 * ${props.bheight})`, letterSpacing: `calc(3.6/1080 * ${props.bheight})`, fontWeight: '500' }}>Register</div>
                         <TextField className="mb-3" label='Username' size="small" placeholder="Enter Username Here"
@@ -59,7 +59,7 @@ function Register(props) {
                             <div>I accept the&nbsp;</div>
                             <div className="text-primary">terms &amp; condition</div>
                         </div>
-                        <Button className="mb-3" variant="contained" size="small" sx={{ fontSize: `calc(20/1080 * ${props.bheight})` }}>Register</Button>
+                        <Button className="mb-3" variant="contained" size="small" sx={{ fontSize: `calc(20/1080 * ${props.bheight})`, backgroundColor: 'rgb(4, 199, 244)', '&:hover': { backgroundColor: 'rgb(4, 199, 244)' } }}>Register</Button>
                         <div className="mb-1" >Or Sign In Using <Facebook /><Google /></div>
                         <div className="mb-3" style={{ height: '1px', backgroundColor: 'black' }}></div>
                         <div className="mb-4 d-flex justify-content-center" style={{ fontSize: `calc(18/1080 * ${props.bheight})`, letterSpacing: `calc(2.7/1080 * ${props.bheight})` }}><b>Already have an account</b></div>

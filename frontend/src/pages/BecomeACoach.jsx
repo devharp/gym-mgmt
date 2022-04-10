@@ -95,7 +95,7 @@ function Desktop(props) {
                     </div>
                     <div className='position-relative my-3' style={{ fontSize: `calc(32/1080 * ${props.bheight})`, fontWeight: '500', color: '#04C7F4' }}>
                         <div>Grab an opportunity to become an</div>
-                        <div>expert coach at Go Girl!</div>
+                        <div>expert coach at SuperGrl!</div>
                     </div>
                     <div className='position-relative my-3' style={{ fontSize: `calc(28/1080 * ${props.bheight})` }}>
                         <div>Over the past decade, health &amp; fitness has</div>
@@ -108,7 +108,7 @@ function Desktop(props) {
                     </div>
                     <div className='position-relative my-3' style={{ fontSize: `calc(28/1080 * ${props.bheight})` }}>
                         <div>Are you ready to discover the path to</div>
-                        <div>becoming a Go Girl Coach?</div>
+                        <div>becoming a SuperGrl Coach?</div>
                     </div>
                 </div>
             );
@@ -140,13 +140,13 @@ function Desktop(props) {
         function FrontContent() {
             return (
                 <div className="pt-5 position-absolute d-flex flex-column align-items-center" style={{ left: `calc(763/1920 * 100vw)` }}>
-                    <div className='my-5' style={{ fontWeight: '500', fontSize: `calc(36/1080 * ${props.bheight})`, letterSpacing: `calc(3.6/1080 * ${props.bheight})` }}>We Achieve this by Offering:</div>
+                    <div className='my-5' style={{ fontWeight: '500', fontSize: `calc(36/1080 * ${props.bheight})`, letterSpacing: `calc(3.6/1080 * ${props.bheight})` }}>We achieve this by offering:</div>
                     <div className='d-flex flex-column align-items-center' style={{ fontSize: `calc(28/1080 * ${props.bheight})` }}>
-                        <div style={{ whiteSpace: 'nowrap' }}>With Go Girl, You have a lot of flexibility in terms of your</div>
+                        <div style={{ whiteSpace: 'nowrap' }}>With SuperGrl, You have a lot of flexibility in terms of your</div>
                         <div style={{ whiteSpace: 'nowrap' }}>work schedule and timing. We let you communicate</div>
                         <div style={{ whiteSpace: 'nowrap' }}>directly with your clients and fix the timings that work for</div>
                         <div style={{ whiteSpace: 'nowrap' }}>you both. In addition, you won't face any peer pressure at</div>
-                        <div style={{ whiteSpace: 'nowrap' }}>Go Girl so that you will have a fun and self-motivated work</div>
+                        <div style={{ whiteSpace: 'nowrap' }}>SuperGrl so that you will have a fun and self-motivated work</div>
                         <div style={{ whiteSpace: 'nowrap' }}>environment.</div>
                     </div>
                 </div>
@@ -176,12 +176,12 @@ function Desktop(props) {
             return (
                 <div className="position-absolute d-flex flex-row align-items-center" style={{ width: '100%', height: props.bheight }}>
                     <img src={img02} style={{ width: `calc(985/1920 * 100vw)`, height: `calc(560/1080 * ${props.bheight})` }} alt="" />
-                    <div className="d-flex flex-column align-items-center flex-grow-1">
+                    <div className="d-flex flex-column align-items-center flex-grow-0" style={{ transform: `translateX(-5vw)` }}>
                         <div className="mb-5" style={{
                             fontSize: `calc(36/1080 * ${props.bheight})`,
                             letterSpacing: `calc(3.6/1080 * ${props.bheight})`,
                             fontWeight: '500'
-                        }}>Exposure to a Range of People</div>
+                        }}>Exposure to a range of people</div>
                         <div className="d-flex flex-column align-items-center" style={{ fontSize: `calc(28/1080 * ${props.bheight})` }}>
                             <div>You can get the freedom to explore</div>
                             <div>yourself as an independent coach.</div>
@@ -190,7 +190,7 @@ function Desktop(props) {
                             <div>nutritionists, and skilled trainers. You</div>
                             <div>can always avail of guidance and</div>
                             <div>support from experienced trainers.</div>
-                            <div>Thus Go Girl works on you to make</div>
+                            <div>Thus SuperGrl works on you to make</div>
                             <div>you more proficient.</div>
                         </div>
                     </div>
@@ -211,7 +211,7 @@ function Desktop(props) {
                     <div className="position-absolute" style={{ transform: `translateY(calc(${props.bheight} - calc(600/1080 * ${props.bheight})))`, height: 'max-content', width: 'max-content', overflow: 'hidden' }}>
                         <img src={shape} style={{ transform: `translate(-30%, 0%)`, height: `calc(600/1080 * ${props.bheight})`, width: `calc(500/1080 * ${props.bheight})` }} alt="" />
                     </div>
-                    <div className="position-absolute" style={{ right: '0', height: `calc(${props.bheight})`, overflow: 'hidden'}}>
+                    <div className="position-absolute" style={{ right: '0', height: `calc(${props.bheight})`, overflow: 'hidden' }}>
                         <img src={shape0} style={{ transform: `translate(60%, -0%)`, height: `calc(${props.bheight} * 1.4)`, width: `calc(800/1080 * ${props.bheight})` }} alt="" />
                     </div>
                 </>
@@ -223,12 +223,12 @@ function Desktop(props) {
                     <img className='' style={{ height: `calc(449/1080 * ${props.bheight})`, width: `calc(449/1080 * ${props.bheight} * 553/449)` }} src={img03} alt="" />
                     <div className='' style={{ fontSize: `calc(36/1080 * ${props.bheight})`, letterSpacing: `calc(3.6/1080 * ${props.bheight})`, fontWeight: '500' }}>Attractive Packages</div>
                     <div className='d-flex flex-column align-items-center' style={{ fontSize: `calc(28/1080 * ${props.bheight})` }}>
-                        <div>You will earn the highest salary in the industry with Go Girl. We also offer professional</div>
+                        <div>You will earn the highest salary in the industry with SuperGrl. We also offer professional</div>
                         <div>development opportunities. And we'll make sure you have tremendous support both</div>
                         <div>personally and financially. We do our best not only to enhance your skills but also to enhance</div>
                         <div>your career goals.</div>
                     </div>
-                    <div className=''><Button onClick={() => { setBlockState(1) }} variant='contained' size='small' sx={{ fontSize: `calc(18/1080 * ${props.bheight})` }}>Fill the form</Button></div>
+                    <div className=''><Button onClick={() => { setBlockState(1) }} variant='contained' size='small' sx={{ '&:hover': { backgroundColor: 'rgb(4, 199, 244)' }, backgroundColor: 'rgb(4, 199, 244)', fontSize: `calc(18/1080 * ${props.bheight})` }}>Fill the form</Button></div>
                 </div>
             );
         }
@@ -246,7 +246,7 @@ function Desktop(props) {
         function BasicInformationSubBlock(props) {
             function Heading() {
                 return (
-                    <div className="d-flex flex-column mb-3">
+                    <div className="d-flex flex-column mb-3 mt-5">
                         <div className="" style={{ fontFamily: 'Helvetica Neue', fontSize: `calc(18/640 * ${props.bheight})` }}>Basic Information</div>
                         <div className="" style={{ fontFamily: 'Helvetica Neue 45 Light', fontSize: `calc(14/640 * ${props.bheight})`, }}>We need some details about your identity</div>
                     </div>
@@ -319,7 +319,7 @@ function Desktop(props) {
                                     <TextField className="flex-grow-1 me-3" label="Mobile Number" type='number' InputProps={{ startAdornment: (<InputAdornment position="start"><PhoneAndroidIcon /></InputAdornment>) }} variant="outlined" size="small" inputProps={{ style: { fontSize: `calc(12/640 * ${props.bheight})` } }} InputLabelProps={{ style: { fontSize: `calc(12/640 * ${props.bheight})` } }} />
                                     <div>
 
-                                        <Button variant='contained' size='small' sx={{ fontSize: `calc(12/640 * ${props.bheight})` }}>Verify</Button>
+                                        <Button variant='contained' size='small' sx={{ '&:hover': { backgroundColor: 'rgb(4, 199, 244)' }, backgroundColor: 'rgb(4, 199, 244)', fontSize: `calc(12/640 * ${props.bheight})` }}>Verify</Button>
                                     </div>
                                 </div>
                             </div>
@@ -363,11 +363,15 @@ function Desktop(props) {
             }
 
             return (
-                <div className={props.className} style={props.style}>
-                    <Heading bheight={props.bheight} />
-                    <MidSection bheight={props.bheight} className="d-flex flex-column justify-content-aroun flex-grow-1" />
-                    <div className='d-flex justify-content-center mt-3'><Button onClick={() => { setBlockState(2) }} sx={{ width: `calc(35vw)` }} variant="contained">Next</Button></div>
-                </div>
+                <>
+                    <div className={props.className} style={props.style}>
+                        <Heading bheight={props.bheight} />
+                        <MidSection bheight={props.bheight} className="d-flex flex-column justify-content-aroun flex-grow-1" />
+                        <div className='d-flex justify-content-center mt-3' style={{ opacity: '0' }}><Button onClick={() => { setBlockState(2) }} sx={{ width: `calc(35vw)`, '&:hover': { backgroundColor: 'rgb(4, 199, 244)' }, backgroundColor: 'rgb(4, 199, 244)' }} variant="contained">Next</Button></div>
+
+                    </div>
+                    <div className='d-flex justify-content-center mb-5'><Button onClick={() => { setBlockState(2) }} sx={{ width: `calc(35vw)`, '&:hover': { backgroundColor: 'rgb(4, 199, 244)' }, backgroundColor: 'rgb(4, 199, 244)' }} variant="contained">Next</Button></div>
+                </>
             );
 
         }
@@ -376,8 +380,8 @@ function Desktop(props) {
 
         return (
             <>
-                <BasicInformationSubBlock bheight={props.bheight} className="d-flex flex-column pb-3" style={{ height: `calc(${props.bheight} / 2)` }} />
-                <AddressInformationSubBlock bheight={props.bheight} className="d-flex flex-column pb-3" style={{ height: `calc(${props.bheight} / 2)` }} />
+                <BasicInformationSubBlock bheight={props.bheight} className="d-flex flex-column pb-3 mt-5" style={{ height: `calc(${props.bheight} / 2.5)` }} />
+                <AddressInformationSubBlock bheight={props.bheight} className="d-flex flex-column pb-3 mt-5" style={{ height: `calc(${props.bheight} / 2.5)` }} />
             </>
 
         );
@@ -385,7 +389,7 @@ function Desktop(props) {
     function JobInformationSkillsTrainingBlock(props) {
         function InformationSection() {
             return (
-                <div className="d-flex flex-column px-3" style={{ height: props.bheight, width: '50vw' }}>
+                <div className="d-flex flex-column px-3 mx-5" style={{ height: 'max-content', width: '30vw' }}>
                     <div className="d-flex flex-column">
                         <div className="" style={{ fontFamily: 'Helvetica Neue', fontSize: `calc(18/640 * ${props.bheight})` }}>Job Information</div>
                         <div className="" style={{ fontFamily: 'Helvetica Neue 45 Light', fontSize: `calc(14/640 * ${props.bheight})`, }}>We need some details about you</div>
@@ -426,54 +430,47 @@ function Desktop(props) {
                     </div>
                 );
             }
-
-            function UploadBox() {
-                function UploadPhoto() {
-                    return (
-                        <Box className="d-flex justify-content-center align-items-center" sx={{ border: 1, borderColor: 'text.primary', width: `calc(90/640 * ${props.bheight})`, height: `calc(90/640 * ${props.bheight})` }}>
-                            <FileUploadIcon />
-                        </Box>
-
-                    );
-                }
-                return (
-                    <>
-                        <div className="d-flex flex-column">
-                            <div className="mb-3" style={{ fontFamily: 'Helvetica Neue 45 Light', fontSize: `calc(14/640 * ${props.bheight})` }}>Upload Your Photos</div>
-                            <div className="d-flex flex-row justify-content-between">
-                                <UploadPhoto />
-                                <UploadPhoto />
-                                <UploadPhoto />
-                            </div>
-                        </div>
-                        <div className="d-flex flex-row align-items-center">
-                            <Checkbox />
-                            <div style={{ fontFamily: 'Helvetica Neue 45 Light', fontSize: `calc(14/640 * ${props.bheight})`, }}>
-                                I accept the
-                            </div>
-                            <Typography sx={{ color: 'primary.main' }}>&nbsp;terms &amp; conditions</Typography>
-                        </div>
-                    </>
-                );
-            }
+            
             return (
-                <div className="d-flex flex-column px-3" style={{ height: props.bheight, width: `50vw` }}>
+                <div className="d-flex flex-column px-3 mx-5" style={{ width: `30vw` }}>
                     <Heading />
-                    <div className="d-flex flex-column justify-content-around flex-grow-1">
+                    <div className="my-5 d-flex flex-column justify-content-around">
 
-                        <TextField className="" size="small" label="Describe Your Skills" variant="outlined" type='text' multiline rows={5} inputProps={{ style: { fontSize: `calc(12/640 * ${props.bheight})` } }} InputLabelProps={{ style: { fontSize: `calc(12/640 * ${props.bheight})` } }} />
+                        <TextField className="mb-5" size="small" label="Describe Your Skills" variant="outlined" type='text' multiline rows={5} inputProps={{ style: { fontSize: `calc(12/640 * ${props.bheight})` } }} InputLabelProps={{ style: { fontSize: `calc(12/640 * ${props.bheight})` } }} />
                         <div className="mt-4 d-flex flex-column"><TextField InputProps={{ endAdornment: (<InputAdornment position="start"><AttachFileIcon /></InputAdornment>) }} InputLabelProps={{ style: { fontSize: `calc(12/640 * ${props.bheight})` } }} inputProps={{ style: { fontSize: `calc(12/640 * ${props.bheight})`, width: '100%' } }} id="standard-basic" label="Upload Your Resume" size='small' variant="outlined" disabled={true} /></div>
-                        <UploadBox />
                     </div>
                 </div>
             );
         }
         return (
-            <div className='d-flex flex-row px-3'>
+            <div className='d-flex flex-row justify-content-center px-3 mt-5'>
                 <InformationSection />
                 <SkillsTrainingSection />
             </div>
 
+        );
+    }
+
+    function UploadBox() {
+        function UploadPhoto(props) {
+            return (
+                <Box className={props.className} sx={{ border: 1, borderColor: 'text.primary', width: `calc(90/640 * ${props.bheight})`, height: `calc(90/640 * ${props.bheight})` }}>
+                    <FileUploadIcon />
+                </Box>
+
+            );
+        }
+        return (
+            <>
+                <div className="d-flex flex-column">
+                    <div className="mb-3" style={{ fontFamily: 'Helvetica Neue 45 Light', fontSize: `calc(14/640 * ${props.bheight})` }}>Upload Your Photos</div>
+                    <div className="d-flex flex-row justify-content-between mb-3">
+                        <UploadPhoto bheight={props.bheight} className="d-flex justify-content-center align-items-center" />
+                        <UploadPhoto bheight={props.bheight} className="d-flex justify-content-center align-items-center mx-5" />
+                        <UploadPhoto bheight={props.bheight} className="d-flex justify-content-center align-items-center" />
+                    </div>
+                </div>
+            </>
         );
     }
 
@@ -498,8 +495,16 @@ function Desktop(props) {
             </div>
             <div className={`${(blockstate == 2) ? 'd-flex' : 'd-none'} flex-column pt-5 mt-3`}>
                 <JobInformationSkillsTrainingBlock bheight={props.bheight} />
-                <div className="my-5 d-flex justify-content-center">
-                    <ButtonModal variant='contained' size='small' sx={{ fontSize: `calc(20/1080 * ${props.bheight})`, width: '35vw' }}>Submit</ButtonModal>
+                <div className="mb-5 d-flex flex-column align-items-center justify-content-center mt-5" style={{ transform: 'translateY(-0vh)' }}>
+                    <UploadBox/>
+                    <div className="d-flex flex-row align-items-center mb-4">
+                        <Checkbox />
+                        <div style={{ fontFamily: 'Helvetica Neue 45 Light', fontSize: `calc(14/640 * ${props.bheight})`, }}>
+                            I accept the
+                        </div>
+                        <Typography sx={{ color: 'primary.main' }}>&nbsp;terms &amp; conditions</Typography>
+                    </div>
+                    <ButtonModal variant='contained' size='small' sx={{ fontSize: `calc(20/1080 * ${props.bheight})`, width: '35vw', backgroundColor: 'rgb(4, 199, 244)', '&:hover': { backgroundColor: 'rgb(4, 199, 244)' } }}>Submit</ButtonModal>
                 </div>
             </div>
         </div>
@@ -545,7 +550,7 @@ function Mobile(props) {
                             <div className="my-5">
                                 <div className="mb-3 d-flex flex-column align-items-center" style={{ fontSize: `calc(16/640 * ${props.bheight})`, fontWeight: '500', color: '#04C7F4' }}>
                                     <div>Grab an opportunity to become an expert</div>
-                                    <div>coach at Go Girl!</div>
+                                    <div>coach at SuperGrl!</div>
                                 </div>
                                 <div className='mb-3 d-flex flex-column align-items-center' style={{ fontSize: `calc(14/640 * ${props.bheight})` }}>
                                     <div>Over the past decade, health &amp; fitness has grown</div>
@@ -557,7 +562,7 @@ function Mobile(props) {
                                 </div>
                                 <div className='d-flex flex-column align-items-center' style={{ fontSize: `calc(14/640 * ${props.bheight})` }}>
                                     <div>Are you ready to discover the path to becoming</div>
-                                    <div>a Go Girl Coach?</div>
+                                    <div>a SuperGrl Coach?</div>
                                 </div>
                             </div>
                         </div>
@@ -600,9 +605,9 @@ function Mobile(props) {
         function FrontContent() {
             return (
                 <div className="position-absolute d-flex flex-column justify-content-center" style={{ width: '100vw', height: props.bheight }}>
-                    <div className='d-flex justify-content-center my-5' style={{ fontWeight: '500', fontSize: `calc(18/640 * ${props.bheight})`, letterSpacing: `calc(1.8/640 * ${props.bheight})` }}>We Achieve this by Offering:</div>
+                    <div className='d-flex justify-content-center my-5' style={{ fontWeight: '500', fontSize: `calc(18/640 * ${props.bheight})`, letterSpacing: `calc(1.8/640 * ${props.bheight})` }}>We achieve this by offering:</div>
                     <div className='d-flex justify-content-center' style={{ fontSize: `calc(14/640 * ${props.bheight})` }}>
-                        <div className='' style={{ textAlign: 'center', maxWidth: 'calc(320px)' }}>With Go Girl, You have a lot of flexibility in terms of your work schedule and timing. We let you communicate directly with your clients and fix the timings that work for you both. In addition, you won't face any peer pressure at Go Girl so that you will have a fun and self-motivated work environment.</div>
+                        <div className='' style={{ textAlign: 'center', maxWidth: 'calc(320px)' }}>With SuperGrl, You have a lot of flexibility in terms of your work schedule and timing. We let you communicate directly with your clients and fix the timings that work for you both. In addition, you won't face any peer pressure at SuperGrl so that you will have a fun and self-motivated work environment.</div>
                     </div>
                 </div>
             );
@@ -627,9 +632,9 @@ function Mobile(props) {
                 <div className="position-absolute d-flex flex-column justify-content-around" style={{ width: '100%', height: props.bheight }}>
                     <div className="d-flex justify-content-center"><img style={{ width: `calc(287/360 * 100vw)`, height: `calc(264/640 * ${props.bheight})` }} src={img02} alt="" /></div>
                     <div className="d-flex flex-column align-items-center bg-">
-                        <div className='my-4' style={{ fontSize: `calc(18/640 * ${props.bheight})`, letterSpacing: `calc(1.8/640 * ${props.bheight})`, fontWeight: '500' }}>Exposure to a Range of People</div>
+                        <div className='my-4' style={{ fontSize: `calc(18/640 * ${props.bheight})`, letterSpacing: `calc(1.8/640 * ${props.bheight})`, fontWeight: '500' }}>Exposure to a range of people</div>
                         <div className="" style={{ fontSize: `calc(14/640 * ${props.bheight})`, maxWidth: '320px', textAlignLast: 'center', textAlign: 'center' }}>
-                            You can get the freedom to explore yourself as an independent coach. Also, you’ll get the opportunity to work along with industry experts, nutritionists, and skilled trainers. You can always avail of guidance and support from experienced trainers. Thus Go Girl works on you to make you more proficient.
+                            You can get the freedom to explore yourself as an independent coach. Also, you’ll get the opportunity to work along with industry experts, nutritionists, and skilled trainers. You can always avail of guidance and support from experienced trainers. Thus SuperGrl works on you to make you more proficient.
                         </div>
                     </div>
                 </div>
@@ -655,8 +660,8 @@ function Mobile(props) {
                 <div className="position-absolute d-flex flex-column align-items-center justify-content-evenly w-100" style={{ height: props.bheight }}>
                     <img className='' style={{ height: `calc(187/640 * ${props.bheight})`, width: `calc(230/360 * 100vw)` }} src={img03} alt="" />
                     <div className='' style={{ fontSize: `calc(18/640 * ${props.bheight})`, letterSpacing: `calc(1.8/640 * ${props.bheight})`, fontWeight: '500' }}>Attractive Packages</div>
-                    <div className='d-flex flex-column align-items-center' style={{ fontSize: `calc(14/640 * ${props.bheight})`, maxWidth: '320px', textAlign: 'center', textAlignLast: 'center' }}>You will earn the highest salary in the industry with Go Girl. We also offer professional development opportunities. And we'll make sure you have tremendous support both personally and financially. We do our best not only to enhance your skills but also to enhance your career goals.</div>
-                    <div className=''><Button onClick={() => { switchBlockState(1) }} variant='contained' size='small' sx={{ fontSize: `calc(18/640 * ${props.bheight})` }}>Fill the form</Button></div>
+                    <div className='d-flex flex-column align-items-center' style={{ fontSize: `calc(14/640 * ${props.bheight})`, maxWidth: '320px', textAlign: 'center', textAlignLast: 'center' }}>You will earn the highest salary in the industry with SuperGrl. We also offer professional development opportunities. And we'll make sure you have tremendous support both personally and financially. We do our best not only to enhance your skills but also to enhance your career goals.</div>
+                    <div className=''><Button onClick={() => { switchBlockState(1) }} variant='contained' size='small' sx={{ fontSize: `calc(18/640 * ${props.bheight})`, '&:hover': { backgroundColor: 'rgb(4, 199, 244)' }, backgroundColor: 'rgb(4, 199, 244)' }}>Fill the form</Button></div>
                 </div>
             );
         }
@@ -717,18 +722,18 @@ function Mobile(props) {
 
         return (
             <>
-                <div className="d-flex flex-column">
-                    <div className="" style={{ fontFamily: 'Helvetica Neue', fontSize: `calc(18/640 * ${props.bheight})` }}>Basic Information</div>
-                    <div className="" style={{ fontFamily: 'Helvetica Neue 45 Light', fontSize: `calc(14/640 * ${props.bheight})`, }}>We need some details about your identity</div>
+                <div className="d-flex flex-column mb-3">
+                    <div className="mb-3" style={{ fontFamily: 'Helvetica Neue', fontSize: `calc(18/640 * ${props.bheight})` }}>Basic Information</div>
+                    <div className="mb-3" style={{ fontFamily: 'Helvetica Neue 45 Light', fontSize: `calc(14/640 * ${props.bheight})`, }}>We need some details about your identity</div>
                 </div>
-                <div className="d-flex flex-column justify-content-around flex-grow-1">
-                    <TextField className="" type='text' label="First Name" placeholder="Enter Your First Name Here" variant="outlined" size="small" inputProps={{ style: { fontSize: `calc(12/640 * ${props.bheight})` } }} InputLabelProps={{ style: { fontSize: `calc(12/640 * ${props.bheight})` } }} />
-                    <TextField className="" type='text' label="Last Name" placeholder="Enter Your Last Name Here" variant="outlined" size="small" inputProps={{ style: { fontSize: `calc(12/640 * ${props.bheight})` } }} InputLabelProps={{ style: { fontSize: `calc(12/640 * ${props.bheight})` } }} />
-                    <div className='d-flex flex-row'>
+                <div className="mb-3 d-flex flex-column justify-content-around flex-grow-1">
+                    <TextField className="mb-3" type='text' label="First Name" placeholder="Enter Your First Name Here" variant="outlined" size="small" inputProps={{ style: { fontSize: `calc(12/640 * ${props.bheight})` } }} InputLabelProps={{ style: { fontSize: `calc(12/640 * ${props.bheight})` } }} />
+                    <TextField className="mb-3" type='text' label="Last Name" placeholder="Enter Your Last Name Here" variant="outlined" size="small" inputProps={{ style: { fontSize: `calc(12/640 * ${props.bheight})` } }} InputLabelProps={{ style: { fontSize: `calc(12/640 * ${props.bheight})` } }} />
+                    <div className='mb-3 d-flex flex-row'>
                         <div className='me-3'><HarpDatePicker /></div>
                         <div className=''><GenderSelector /></div>
                     </div>
-                    <div className='d-flex flex-row justify-content-between'>
+                    <div className='mb-3 d-flex flex-row justify-content-between'>
                         <TextField className="" type='number' label="Age" variant="outlined" size="small" inputProps={{ style: { fontSize: `calc(12/640 * ${props.bheight})`, width: '3ch' } }} InputLabelProps={{ style: { fontSize: `calc(12/640 * ${props.bheight})` } }} onInput={(e) => { e.target.value = Math.max(0, parseInt(e.target.value)).toString().slice(0, 3) }} />
                         <TextField label="Mobile Number" type='number' InputProps={{ startAdornment: (<InputAdornment position="start"><PhoneAndroidIcon /></InputAdornment>) }} variant="outlined" size="small" inputProps={{ style: { fontSize: `calc(12/640 * ${props.bheight})` } }} InputLabelProps={{ style: { fontSize: `calc(12/640 * ${props.bheight})` } }} />
                     </div>
@@ -736,7 +741,7 @@ function Mobile(props) {
                 </div>
 
                 <div className="mb-3 d-flex justify-content-center">
-                    <Button variant='contained' size='small' sx={{ fontSize: `calc(12/640 * ${props.bheight})` }}>Verify</Button>
+                    <Button variant='contained' size='small' sx={{ fontSize: `calc(12/640 * ${props.bheight})`, '&:hover': { backgroundColor: 'rgb(4, 199, 244)' }, backgroundColor: 'rgb(4, 199, 244)' }}>Verify</Button>
                 </div>
             </>
         );
@@ -745,15 +750,15 @@ function Mobile(props) {
 
         return (
             <>
-                <div className="d-flex flex-column">
-                    <div className="" style={{ fontFamily: 'Helvetica Neue', fontSize: `calc(18/640 * ${props.bheight})` }}>Address Information</div>
-                    <div className="" style={{ fontFamily: 'Helvetica Neue 45 Light', fontSize: `calc(14/640 * ${props.bheight})`, }}>We need details regarding your Address</div>
+                <div className="d-flex flex-column mb-3">
+                    <div className="mb-3" style={{ fontFamily: 'Helvetica Neue', fontSize: `calc(18/640 * ${props.bheight})` }}>Address Information</div>
+                    <div className="mb-3" style={{ fontFamily: 'Helvetica Neue 45 Light', fontSize: `calc(14/640 * ${props.bheight})`, }}>We need details regarding your Address</div>
                 </div>
-                <div className="d-flex flex-column justify-content-around flex-grow-1">
-                    <TextField className="" type='text' label="Country" placeholder="Enter Your Country Here" variant="outlined" size="small" inputProps={{ style: { fontSize: `calc(12/640 * ${props.bheight})` } }} InputLabelProps={{ style: { fontSize: `calc(12/640 * ${props.bheight})` } }} />
-                    <TextField className="" type='text' label="Address 1" placeholder="Enter Your Address 1 Here" variant="outlined" size="small" inputProps={{ style: { fontSize: `calc(12/640 * ${props.bheight})` } }} InputLabelProps={{ style: { fontSize: `calc(12/640 * ${props.bheight})` } }} />
-                    <TextField className="" type='text' label="Address 2" placeholder="Enter Your Address 2 Here" variant="outlined" size="small" inputProps={{ style: { fontSize: `calc(12/640 * ${props.bheight})` } }} InputLabelProps={{ style: { fontSize: `calc(12/640 * ${props.bheight})` } }} />
-                    <TextField className="" type='text' label="Postal Code" placeholder="Enter Your Postal Code Here" variant="outlined" size="small" inputProps={{ style: { fontSize: `calc(12/640 * ${props.bheight})` } }} InputLabelProps={{ style: { fontSize: `calc(12/640 * ${props.bheight})` } }} />
+                <div className="mb-4 d-flex flex-column justify-content-around flex-grow-1">
+                    <TextField className="mb-3" type='text' label="Country" placeholder="Enter Your Country Here" variant="outlined" size="small" inputProps={{ style: { fontSize: `calc(12/640 * ${props.bheight})` } }} InputLabelProps={{ style: { fontSize: `calc(12/640 * ${props.bheight})` } }} />
+                    <TextField className="mb-3" type='text' label="Address 1" placeholder="Enter Your Address 1 Here" variant="outlined" size="small" inputProps={{ style: { fontSize: `calc(12/640 * ${props.bheight})` } }} InputLabelProps={{ style: { fontSize: `calc(12/640 * ${props.bheight})` } }} />
+                    <TextField className="mb-3" type='text' label="Address 2" placeholder="Enter Your Address 2 Here" variant="outlined" size="small" inputProps={{ style: { fontSize: `calc(12/640 * ${props.bheight})` } }} InputLabelProps={{ style: { fontSize: `calc(12/640 * ${props.bheight})` } }} />
+                    <TextField className="mb-3" type='text' label="Postal Code" placeholder="Enter Your Postal Code Here" variant="outlined" size="small" inputProps={{ style: { fontSize: `calc(12/640 * ${props.bheight})` } }} InputLabelProps={{ style: { fontSize: `calc(12/640 * ${props.bheight})` } }} />
                     <div className='d-flex flex-row'>
                         <TextField className="me-2" type='text' label="City" placeholder="City Here" variant="outlined" size="small" inputProps={{ style: { fontSize: `calc(12/640 * ${props.bheight})` } }} InputLabelProps={{ style: { fontSize: `calc(12/640 * ${props.bheight})` } }} />
                         <TextField className="ms-4" type='text' label="State" placeholder="State Here" variant="outlined" size="small" inputProps={{ style: { fontSize: `calc(12/640 * ${props.bheight})` } }} InputLabelProps={{ style: { fontSize: `calc(12/640 * ${props.bheight})` } }} />
@@ -761,7 +766,7 @@ function Mobile(props) {
                 </div>
 
                 <div className="mb-3 d-flex justify-content-center">
-                    <Button onClick={() => { switchBlockState(2) }} variant='contained' size='small' sx={{ fontSize: `calc(12/640 * ${props.bheight})` }}>Next</Button>
+                    <Button onClick={() => { switchBlockState(2) }} variant='contained' size='small' sx={{ '&:hover': { backgroundColor: 'rgb(4, 199, 244)' }, backgroundColor: 'rgb(4, 199, 244)', fontSize: `calc(12/640 * ${props.bheight})` }}>Next</Button>
                 </div>
             </>
         );
@@ -805,9 +810,9 @@ function Mobile(props) {
 
         function Heading() {
             return (
-                <div className="d-flex flex-column">
-                    <div className="" style={{ fontFamily: 'Helvetica Neue', fontSize: `calc(18/640 * ${props.bheight})` }}>Job Skills &amp; Training</div>
-                    <div className="" style={{ fontFamily: 'Helvetica Neue 45 Light', fontSize: `calc(14/640 * ${props.bheight})`, }}>We need details regarding your skills and experience</div>
+                <div className="d-flex flex-column mb-3">
+                    <div className="mb-3" style={{ fontFamily: 'Helvetica Neue', fontSize: `calc(18/640 * ${props.bheight})` }}>Job Skills &amp; Training</div>
+                    <div className="mb-3" style={{ fontFamily: 'Helvetica Neue 45 Light', fontSize: `calc(14/640 * ${props.bheight})`, }}>We need details regarding your skills and experience</div>
                 </div>
             );
         }
@@ -815,7 +820,7 @@ function Mobile(props) {
         function UploadBox() {
             function UploadPhoto() {
                 return (
-                    <Box className="d-flex justify-content-center align-items-center" sx={{ border: 1, borderColor: 'text.primary', width: `calc(90/640 * ${props.bheight})`, height: `calc(90/640 * ${props.bheight})` }}>
+                    <Box className="mb-3 d-flex justify-content-center align-items-center" sx={{ border: 1, borderColor: 'text.primary', width: `calc(90/640 * ${props.bheight})`, height: `calc(90/640 * ${props.bheight})` }}>
                         <FileUploadIcon />
                     </Box>
 
@@ -824,35 +829,36 @@ function Mobile(props) {
             return (
                 <>
                     <div className="d-flex flex-column">
-                        <div className="mb-3" style={{ fontFamily: 'Helvetica Neue 45 Light', fontSize: `calc(14/640 * ${props.bheight})` }}>Upload Your Photos</div>
+                        <div className="mt-4 mb-3" style={{ fontFamily: 'Helvetica Neue 45 Light', fontSize: `calc(14/640 * ${props.bheight})` }}>Upload Your Photos</div>
                         <div className="d-flex flex-row justify-content-between">
                             <UploadPhoto />
                             <UploadPhoto />
                             <UploadPhoto />
                         </div>
                     </div>
-                    <div className="d-flex flex-row align-items-center">
-                        <Checkbox />
-                        <div style={{ fontFamily: 'Helvetica Neue 45 Light', fontSize: `calc(14/640 * ${props.bheight})`, }}>
-                            I accept the
-                        </div>
-                        <Typography sx={{ color: 'primary.main' }}>&nbsp;terms &amp; conditions</Typography>
-                    </div>
+
                 </>
             );
         }
         return (
             <>
                 <Heading />
-                <div className="d-flex flex-column justify-content-around flex-grow-1">
+                <div className="mb-3 d-flex flex-column justify-content-around flex-grow-1">
 
-                    <TextField className="" size="small" label="Describe Your Skills" variant="outlined" type='text' multiline rows={5} inputProps={{ style: { fontSize: `calc(12/640 * ${props.bheight})` } }} InputLabelProps={{ style: { fontSize: `calc(12/640 * ${props.bheight})` } }} />
+                    <TextField className="mb-3" size="small" label="Describe Your Skills" variant="outlined" type='text' multiline rows={5} inputProps={{ style: { fontSize: `calc(12/640 * ${props.bheight})` } }} InputLabelProps={{ style: { fontSize: `calc(12/640 * ${props.bheight})` } }} />
                     <div className="mt-4 d-flex flex-column"><TextField InputProps={{ endAdornment: (<InputAdornment position="start"><AttachFileIcon /></InputAdornment>) }} InputLabelProps={{ style: { fontSize: `calc(12/640 * ${props.bheight})` } }} inputProps={{ style: { fontSize: `calc(12/640 * ${props.bheight})`, width: '100%' } }} id="standard-basic" label="Upload Your Resume" size='small' variant="outlined" disabled={true} /></div>
                     <UploadBox />
                 </div>
-                <div className="mb-3 d-flex justify-content-center">
+                <div className="mb-3 d-flex flex-column align-items-center justify-content-center">
                     {/* <Button variant='contained' size='small' sx={{ fontSize: `calc(12/640 * ${props.bheight})` }}>Submit</Button> */}
-                    <ButtonModal variant='contained' size='small' sx={{ fontSize: `calc(12/640 * ${props.bheight})` }}>Submit</ButtonModal>
+                    <div className="mb-3 d-flex flex-row align-items-center">
+                        <Checkbox />
+                        <div style={{ fontFamily: 'Helvetica Neue 45 Light', fontSize: `calc(14/640 * ${props.bheight})`, }}>
+                            I accept the
+                        </div>
+                        <Typography sx={{ color: 'primary.main' }}>&nbsp;terms &amp; conditions</Typography>
+                    </div>
+                    <ButtonModal variant='contained' size='small' sx={{ backgroundColor: 'rgb(4, 199, 244)', '&:hover': { backgroundColor: 'rgb(4, 199, 244)' }, fontSize: `calc(12/640 * ${props.bheight})` }}>Submit</ButtonModal>
 
                 </div>
             </>
@@ -874,19 +880,19 @@ function Mobile(props) {
                 <Block4 />
             </div>
             <div className={`${(blockstate == 1) ? 'd-flex' : 'd-none'} flex-column`}>
-                <div className="container d-flex justify-content-center" style={{ height: props.bheight }}>
+                <div className="container d-flex justify-content-center" style={{ height: 'max-content' }}>
                     <div className='mt-3 pt-5 d-flex flex-column justify-content-between'><FillFormBlock /> </div>
                 </div>
-                <div className="container d-flex justify-content-center w-100" style={{ height: props.bheight }}>
+                <div className="container d-flex justify-content-center w-100" style={{ height: 'max-content' }}>
                     <div className='d-flex flex-column justify-content-between pt-3'><AddressFormBlock /> </div>
 
                 </div>
             </div>
             <div className={`${(blockstate == 2) ? 'd-flex' : 'd-none'} flex-column`}>
-                <div className="container d-flex justify-content-center" style={{ height: props.bheight }}>
+                <div className="container d-flex justify-content-start mb-5" style={{ height: 'max-content' }}>
                     <div className='mt-3 pt-5 d-flex flex-column justify-content-between'><JobInformationBlock /> </div>
                 </div>
-                <div className="container d-flex justify-content-center w-100" style={{ height: props.bheight }}>
+                <div className="container d-flex justify-content-center w-100" style={{ height: 'max-content' }}>
                     <div className='d-flex flex-column justify-content-between pt-3 flex-grow-1'><JobSkillsTrainingBlock /> </div>
 
                 </div>
