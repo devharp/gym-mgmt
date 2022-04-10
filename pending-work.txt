@@ -1,14 +1,19 @@
-(Better to Add after the Alignment) #1. Website Logo (Top and Bottom)
 (DONE) #2. Alignment, HOME heading (DONE)
 (DONE) #3. Enroll Now, HOME button, Link to GetACoach
 (DONE) #4. GetACoach, selection
 (DONE) #5. GetACoach, plan tablets -> Heading BOLD, with animation
 (DONE) #6. Trainer Filters, add margin
 (DONE) #7. 42nd Page ADOBE XD file, add Plans (with prices)
-(CONFUSED HERE) #8. Select Trainers -> 42nd Adobe XD Slide -> Register Page -> Filled info will be to a mailid
 
-GetACoach Selectors - Hover Effect, Image Size
-GetACoach, Plan Tablets - Badge Colors
-Tools Page, All components size must be same
-BecomeACoach, Work with us Block, Add ribbons image to the left side (Background Image)
-BecomeACoach, All Forms Blocks, Add ribbons image to the left side (Background Image)
+(DONE) GetACoach Selectors - Hover Effect, Image Size
+(DONE) Tools Page, All components size must be same
+(DONE) BecomeACoach, Work with us Block, Add ribbons image to the left side (Background Image)
+(DONE) BecomeACoach, All Forms Blocks, Add ribbons image to the left side (Background Image)
+
+
+
+
+
+(Better to Add after the Alignment) #1. Website Logo (Top and Bottom)
+(CONFUSED HERE) #8. Select Trainers -> 42nd Adobe XD Slide -> Register Page -> Filled info will be to a mailid
+(Difficult to change Badge Colors, Expected SVG ) GetACoach, Plan Tablets - Badge Colors

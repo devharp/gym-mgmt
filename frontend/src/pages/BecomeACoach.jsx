@@ -36,6 +36,9 @@ import girllines from '../assets/becomeacoach/girllines.svg';
 import shape0 from '../assets/becomeacoach/shape0.png';
 import shape from '../assets/becomeacoach/shape.png';
 
+import imgleftlines from '../assets/plans/00.svg';
+import imgrightlines from '../assets/plans/01.svg';
+
 
 function BecomeACoach(props) {
     return (
@@ -283,7 +286,7 @@ function Desktop(props) {
 
                 return (
                     <Box sx={{ width: `calc(27/640 * ${props.bheight} * 129/27)` }}>
-                        <FormControl size='small' fullWidth>
+                        <FormControl size='small' fullWidth sx={{ height: `calc(27/640 * ${props.bheight})` }}>
                             <InputLabel sx={{ fontSize: `calc(12/640 * ${props.bheight})` }}>Gender</InputLabel>
                             <Select
                                 value={gender}
@@ -318,7 +321,6 @@ function Desktop(props) {
                                 <div className="d-flex flex-row">
                                     <TextField className="flex-grow-1 me-3" label="Mobile Number" type='number' InputProps={{ startAdornment: (<InputAdornment position="start"><PhoneAndroidIcon /></InputAdornment>) }} variant="outlined" size="small" inputProps={{ style: { fontSize: `calc(12/640 * ${props.bheight})` } }} InputLabelProps={{ style: { fontSize: `calc(12/640 * ${props.bheight})` } }} />
                                     <div>
-
                                         <Button variant='contained' size='small' sx={{ '&:hover': { backgroundColor: 'rgb(4, 199, 244)' }, backgroundColor: 'rgb(4, 199, 244)', fontSize: `calc(12/640 * ${props.bheight})` }}>Verify</Button>
                                     </div>
                                 </div>
@@ -430,7 +432,7 @@ function Desktop(props) {
                     </div>
                 );
             }
-            
+
             return (
                 <div className="d-flex flex-column px-3 mx-5" style={{ width: `30vw` }}>
                     <Heading />
@@ -478,6 +480,12 @@ function Desktop(props) {
         <div className={props.className} style={props.style}>
             <div className={(blockstate == 0) ? 'd-flex' : 'd-none'} style={{ height: props.bheight }}>
                 <Block1 />
+                <div className="position-absolute" style={{ backgroundColor: 'none', width: `calc(1142/1080 * ${props.bheight} * 995/1142)`, height: '100%', overflow: 'hidden' }}>
+                    <div className="" style={{ backgroundColor: 'none', width: `calc(1142/1080 * ${props.bheight} * 1192/1142)` }}>
+                        <img src={imgleftlines} style={{ height: `calc(1000/1080 * ${props.bheight})`, transform: `rotate(20deg) translateX(calc(-700/1080 * ${props.bheight}))` }} />
+                    </div>
+                </div>
+
             </div>
             <div className={(blockstate == 0) ? 'd-flex' : 'd-none'} style={{ height: props.bheight, backgroundColor: '#FBE551' }}>
                 <Block2 />
@@ -488,15 +496,27 @@ function Desktop(props) {
             <div className={(blockstate == 0) ? 'd-flex' : 'd-none'} style={{ height: props.bheight }}>
                 <Block4 />
             </div>
-            <div className={`${(blockstate == 1) ? 'd-flex' : 'd-none'} flex-column align-items-center pt-5 mt-3`} style={{ minHeight: props.bheight }}>
-                <div className='d-flex flex-column' style={{ minWidth: '600px', width: '50vw' }}>
-                    <FillFormAddressBlock bheight={props.bheight} />
+            <div className={`${(blockstate == 1) ? '' : 'd-none'}`} style={{ minHeight: props.bheight, height: '110vh' }}>
+                <div className="position-absolute d-flex flex-column align-items-center pt-5 mt-3" style={{ width: '100%' }}>
+                    <div className='d-flex flex-column' style={{ minWidth: '600px', width: '50vw' }}>
+                        <FillFormAddressBlock bheight={props.bheight} />
+                    </div>
+
                 </div>
+                <div className="position-absolute" style={{ width: `calc(500/1080 * ${props.bheight})`, height: '100%', overflow: 'hidden' }}>
+                    <img src={imgleftlines} style={{ height: `calc(1000/1080 * ${props.bheight})`, transform: `rotate(30deg) translateY(calc(400/1080 * ${props.bheight})) translateX(calc(-550/1080 * ${props.bheight}))` }} alt="" />
+                </div>
+                <div className="position-absolute d-flex justify-content-end" style={{ width: '100%', height: '100%', zIndex: '-1', overflow: 'hidden' }}>
+                    <div className="" style={{ width: `calc(400/1080 * ${props.bheight})` }}>
+                        <img src={imgrightlines} style={{ height: `calc(1000/1080 * ${props.bheight})`, transform: `rotate(-50deg) translateY(calc(100/1080 * ${props.bheight})) translateX(calc(10/1080 * ${props.bheight}))` }} alt="" />
+                    </div>
+                </div>
+
             </div>
             <div className={`${(blockstate == 2) ? 'd-flex' : 'd-none'} flex-column pt-5 mt-3`}>
                 <JobInformationSkillsTrainingBlock bheight={props.bheight} />
                 <div className="mb-5 d-flex flex-column align-items-center justify-content-center mt-5" style={{ transform: 'translateY(-0vh)' }}>
-                    <UploadBox/>
+                    <UploadBox />
                     <div className="d-flex flex-row align-items-center mb-4">
                         <Checkbox />
                         <div style={{ fontFamily: 'Helvetica Neue 45 Light', fontSize: `calc(14/640 * ${props.bheight})`, }}>
@@ -505,6 +525,14 @@ function Desktop(props) {
                         <Typography sx={{ color: 'primary.main' }}>&nbsp;terms &amp; conditions</Typography>
                     </div>
                     <ButtonModal variant='contained' size='small' sx={{ fontSize: `calc(20/1080 * ${props.bheight})`, width: '35vw', backgroundColor: 'rgb(4, 199, 244)', '&:hover': { backgroundColor: 'rgb(4, 199, 244)' } }}>Submit</ButtonModal>
+                </div>
+                <div className="position-absolute" style={{ width: `calc(500/1080 * ${props.bheight})`, height: '100%', overflow: 'hidden' }}>
+                    <img src={imgleftlines} style={{ height: `calc(1000/1080 * ${props.bheight})`, transform: `rotate(30deg) translateY(calc(400/1080 * ${props.bheight})) translateX(calc(-550/1080 * ${props.bheight}))` }} alt="" />
+                </div>
+                <div className="position-absolute d-flex justify-content-end" style={{ width: '100%', height: '100%', zIndex: '-1', overflow: 'hidden' }}>
+                    <div className="" style={{ width: `calc(400/1080 * ${props.bheight})` }}>
+                        <img src={imgrightlines} style={{ height: `calc(1000/1080 * ${props.bheight})`, transform: `rotate(-50deg) translateY(calc(100/1080 * ${props.bheight})) translateX(calc(10/1080 * ${props.bheight}))` }} alt="" />
+                    </div>
                 </div>
             </div>
         </div>

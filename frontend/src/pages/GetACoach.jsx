@@ -76,7 +76,9 @@ function GetACoach(props) {
 
             function imgBlockClicked() {
                 mouse_button_clicked = !mouse_button_clicked;
-                setImgBState(!imgbstate);
+                if(mouse_button_clicked === false){
+                    setImgBState(!imgbstate);
+                }
             }
 
             function getValueOfState(key) {
@@ -103,15 +105,18 @@ function GetACoach(props) {
             }
 
             function onMouseEnterBlock(state) {
-                setMouseOver(state);
+                
+                // setMouseOver(state);
 
                 if (mouse_button_clicked === false) {
                     if (state === true) {
-                        setImgBState(true)
+                        setImgBState(true);
+                        setMouseOver(state);
                     }
 
                     else if (state === false) {
                         setImgBState(false);
+                        setMouseOver(state);
                     }
                 }
             }
@@ -163,7 +168,7 @@ function GetACoach(props) {
 
                         </div>
                         <div className="d-flex flex-column mb-2">
-                            <div className="d-flex mb-3">
+                            <div className="d-flex mb-3 align-items-center" style={{ height: `calc(300/1080 * ${props.bheight})`, width: `calc(850/1080 * ${props.bheight})` }}>
                                 <ImageBlock src={img10} label='Weight Loss' bheight={props.bheight} />
                                 <ImageBlock src={img11} label='Weight Gain' bheight={props.bheight} />
                                 <ImageBlock src={img12} label='Body Toning' bheight={props.bheight} />
@@ -207,13 +212,13 @@ function GetACoach(props) {
                                 <div className="d-flex align-items-center">
                                     <div onClick={() => { setOptionPane(0) }} style={{ borderRadius: '50%', cursor: 'pointer', backgroundColor: ((optionpane === 0) ? '#FBE551' : '#DCDCDC') }}><NavigateBefore /></div>
                                 </div>
-                                <div className={`${((optionpane === 0) ? 'd-flex' : 'd-none')} flex-row mb-3`}>
+                                <div className={`${((optionpane === 0) ? 'd-flex' : 'd-none')} flex-row mb-3 align-items-center`} style={{ height: `calc(300/1080 * ${props.bheight})`, width: `calc(850/1080 * ${props.bheight})` }}>
                                     <ImageBlock src={img14} bheight={props.bheight} label='PCOD' />
                                     <ImageBlock src={img15} bheight={props.bheight} label='Diabetes' />
                                     <ImageBlock src={img16} bheight={props.bheight} label='Thyroid' />
                                     <ImageBlock src={img17} bheight={props.bheight} label='Osteoporosis' />
                                 </div>
-                                <div className={`${((optionpane === 1) ? 'd-flex' : 'd-none')} flex-row mb-3`}>
+                                <div className={`${((optionpane === 1) ? 'd-flex' : 'd-none')} flex-row mb-3 align-items-center`} style={{ height: `calc(300/1080 * ${props.bheight})`, width: `calc(850/1080 * ${props.bheight})` }}>
                                     <ImageBlock src={img18} bheight={props.bheight} label='Pre-Pregnancy' />
                                     <ImageBlock src={img19} bheight={props.bheight} label='Trimester' />
                                     <ImageBlock src={img110} bheight={props.bheight} label='Post-Pregnancy' />
