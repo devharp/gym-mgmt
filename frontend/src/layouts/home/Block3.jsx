@@ -64,9 +64,9 @@ function Block3(props) {
                             boxShadow: '0px 14px 8px #00000029'
                         }}>
                             <div className='d-flex justify-content-center' style={{ backgroundColor: '#FFF5CC', height: `calc(240/1080 * ${props.bheight})`, width: `calc(240/1080 * ${props.bheight}) * 1.4`, flexShrink: '0' }}>
-                                <img src={`${props.content.other[0].img}`} style={{ width: `calc(572/1920 * ${props.bheight})` }} alt="" />
+                                <img src={img30} style={{ width: `calc(572/1920 * ${props.bheight})` }} alt="" />
                             </div>
-                            <div style={{ textAlign: 'center', textAlignLast: 'center', maxWidth: `calc(260/1080 * ${props.bheight})`, fontSize: `calc(28/1080 * ${props.bheight})`, fontWeight: '500', marginTop: `calc(0.5/100 * ${props.bheight})` }}>{props.content.other[0].text}</div>
+                            <div style={{ textAlign: 'center', textAlignLast: 'center', maxWidth: `calc(260/1080 * ${props.bheight})`, fontSize: `calc(28/1080 * ${props.bheight})`, fontWeight: '500', marginTop: `calc(0.5/100 * ${props.bheight})` }}>India's First Woman Only</div>
 
                         </div>
                         <div className='d-flex flex-column align-items-center mx-3' style={{
@@ -76,9 +76,9 @@ function Block3(props) {
                             boxShadow: '0px 14px 8px #00000029'
                         }}>
                             <div className='d-flex justify-content-center' style={{ backgroundColor: '#FFF5CC', height: `calc(240/1080 * ${props.bheight})`, width: `calc(240/1080 * ${props.bheight}) * 1.4`, flexShrink: '0' }}>
-                                <img src={`${props.content.other[1].img}`} style={{ width: `calc(572/1920 * ${props.bheight})` }} alt="" />
+                                <img src={img31} style={{ width: `calc(572/1920 * ${props.bheight})` }} alt="" />
                             </div>
-                            <div style={{ textAlign: 'center', textAlignLast: 'center', maxWidth: `calc(260/1080 * ${props.bheight})`, fontSize: `calc(28/1080 * ${props.bheight})`, fontWeight: '500', marginTop: `calc(0.5/100 * ${props.bheight})` }}>{props.content.other[1].text}</div>
+                            <div style={{ textAlign: 'center', textAlignLast: 'center', maxWidth: `calc(260/1080 * ${props.bheight})`, fontSize: `calc(28/1080 * ${props.bheight})`, fontWeight: '500', marginTop: `calc(0.5/100 * ${props.bheight})` }}>We Understand Your Emotions</div>
                         </div>
                         <div className='d-flex flex-column align-items-center mx-3' style={{
                             backgroundColor: 'white',
@@ -87,9 +87,9 @@ function Block3(props) {
                             boxShadow: '0px 14px 8px #00000029'
                         }}>
                             <div className='d-flex justify-content-center' style={{ backgroundColor: '#FFF5CC', height: `calc(240/1080 * ${props.bheight})`, width: `calc(240/1080 * ${props.bheight}) * 1.4`, flexShrink: '0' }}>
-                                <img src={`${props.content.other[2].img}`} style={{ width: `calc(572/1920 * ${props.bheight})` }} alt="" />
+                                <img src={img32} style={{ width: `calc(572/1920 * ${props.bheight})` }} alt="" />
                             </div>
-                            <div style={{ textAlign: 'center', textAlignLast: 'center', maxWidth: `calc(260/1080 * ${props.bheight})`, fontSize: `calc(28/1080 * ${props.bheight})`, fontWeight: '500', marginTop: `calc(0.5/100 * ${props.bheight})` }}>{props.content.other[2].text}</div>
+                            <div style={{ textAlign: 'center', textAlignLast: 'center', maxWidth: `calc(260/1080 * ${props.bheight})`, fontSize: `calc(28/1080 * ${props.bheight})`, fontWeight: '500', marginTop: `calc(0.5/100 * ${props.bheight})` }}>Qualified &amp; Motivative Trainers</div>
                         </div>
 
                     </div>
@@ -121,9 +121,9 @@ function Block3(props) {
                         {props.content.paragraph}
                     </div>
                     <div className='flex-grow-1 d-flex flex-column justify-content-around'>
-                        <MobileImageBlock bheight={props.bheight} img={props.content.other[0].img} text={props.content.other[0].text} />
-                        <MobileImageBlock bheight={props.bheight} img={props.content.other[1].img} text={props.content.other[1].text} />
-                        <MobileImageBlock bheight={props.bheight} img={props.content.other[2].img} text={props.content.other[2].text} />
+                        <MobileImageBlock bheight={props.bheight} img={img30} text="India's First Woman Only" />
+                        <MobileImageBlock bheight={props.bheight} img={img31} text="We Understand Your Emotions" />
+                        <MobileImageBlock bheight={props.bheight} img={img32} text="Qualified &amp; Motivative Trainers" />
                     </div>
                     <div className='d-flex flex-column'>
                     </div>

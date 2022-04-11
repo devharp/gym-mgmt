@@ -345,10 +345,10 @@ function GetACoach(props) {
                                     <div>
                                         <div className='d-flex flex-row justify-content-center w-100' style={{ width: 'max-content' }}>
                                             {/* <div className='p-1' style={{ borderRadius: `calc(5/1080 * ${props.bheight})`, fontWeight: '500', backgroundColor: '#04C7F4', fontSize: `calc(18/1080 * ${props.bheight})`, letterSpacing: `calc(2.7/1080 * ${props.bheight})` }}>Select Trainers</div> */}
-                                            <Link to='/trainers' style={{ textDecoration: 'none' }}>
+                                            <Link to={props.to} style={{ textDecoration: 'none' }}>
 
                                                 <Button className='p-1' variant='contained' sx={{ '&:hover': { backgroundColor: 'rgb(4, 199, 244)' }, backgroundColor: 'rgb(4, 199, 244)', fontSize: `calc(18/1080 * ${props.bheight})` }}>
-                                                    Select Trainers
+                                                    Select Plans
                                                 </Button>
                                             </Link>
                                         </div>
@@ -363,9 +363,9 @@ function GetACoach(props) {
                 return (
                     <>
                         <div className="d-flex flex-row w-100 justify-content-around mt-4">
-                            <PlanTablet years='2' badge='bronze' title='Basic' bheight={props.bheight} />
-                            <PlanTablet years='5' badge='silver' title='Intermediate' bheight={props.bheight} />
-                            <PlanTablet years='8' badge='gold' title='Advanced' bheight={props.bheight} />
+                            <PlanTablet to='/basicplans' years='2' badge='bronze' title='Basic' bheight={props.bheight} />
+                            <PlanTablet to='/intermediateplans' years='5' badge='silver' title='Intermediate' bheight={props.bheight} />
+                            <PlanTablet to='/advancedplans' years='8' badge='gold' title='Advanced' bheight={props.bheight} />
                         </div>
                     </>);
             }
