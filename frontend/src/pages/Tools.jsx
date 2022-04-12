@@ -19,21 +19,42 @@ function Tools(props) {
 
     const [openmodal, setOpenModal] = useState(false);
 
+    const handleBMRModalOpenDesk = () => {
+        setModalValues({ title: 'BMR Calculator', desc: 'If you do nothing all day, the BMR is the number of calories your body uses to sustain life.' })
+        setOpenModal(true);
+        setCalc(-1);
+    };
+
     const handleBMRModalOpen = () => {
         setModalValues({ title: 'BMR Calculator', desc: 'If you do nothing all day, the BMR is the number of calories your body uses to sustain life.' })
         setOpenModal(true);
         setCalc(0);
     };
+
+    const handleBFModalOpenDesk = () => {
+        setModalValues({ title: 'Body Fat Calculator', desc: 'Description for the Body Fat Calculator goes here, something like this here in this modal' })
+        setOpenModal(true);
+        setCalc(0);
+    };
+
     const handleBFModalOpen = () => {
         setModalValues({ title: 'Body Fat Calculator', desc: 'Description for the Body Fat Calculator goes here, something like this here in this modal' })
         setOpenModal(true);
         setCalc(1);
     };
+    
+    const handleIWModalOpenDesk = () => {
+        setModalValues({ title: 'Ideal Weight Calculator', desc: 'Description for the Ideal Weight Calculator goes here, something like this here in this modal like BodyFat Calc' })
+        setOpenModal(true);
+        setCalc(1);
+    };
+
     const handleIWModalOpen = () => {
         setModalValues({ title: 'Ideal Weight Calculator', desc: 'Description for the Ideal Weight Calculator goes here, something like this here in this modal like BodyFat Calc' })
         setOpenModal(true);
         setCalc(2);
     };
+
 
     const handleModalClose = () => setOpenModal(false);
     const [modalvalues, setModalValues] = useState({ title: 'Title Here', desc: 'Description will be here' });
@@ -101,7 +122,7 @@ function Tools(props) {
                         <div className="d-flex flex-row align-items-center">
                             <div className="d-flex" style={{ fontSize: `calc(36/1080 * ${props.bheight})`, letterSpacing: `calc(3.6/1080 * ${props.bheight})`, fontWeight: '500' }}>
                                 BMR Calculator
-                                <div onMouseEnter={handleBMRModalOpen} className="ms-2 d-flex justify-content-center align-items-center" style={{ fontFamily: 'consolas', userSelect: 'none', cursor: 'pointer', color: 'rgb(4, 199, 244)', fontSize: '1em', border: 'rgb(4, 199, 244) solid 3px', borderRadius: '0.75em', height: '1.2em', width: '1.2em' }}><i>i</i></div>
+                                <div onMouseEnter={handleBMRModalOpenDesk} className="ms-2 d-flex justify-content-center align-items-center" style={{ fontFamily: 'consolas', userSelect: 'none', cursor: 'pointer', color: 'rgb(4, 199, 244)', fontSize: '1em', border: 'rgb(4, 199, 244) solid 3px', borderRadius: '0.75em', height: '1.2em', width: '1.2em' }}><i>i</i></div>
                             </div>
                         </div>
                     </>
@@ -235,7 +256,7 @@ function Tools(props) {
                         <div className="d-flex flex-row align-items-center">
                             <div className="d-flex" style={{ fontSize: `calc(36/1080 * ${props.bheight})`, letterSpacing: `calc(3.6/1080 * ${props.bheight})`, fontWeight: '500' }}>
                                 Body Fat Calculator
-                                <div onMouseEnter={handleBFModalOpen} className="ms-2 d-flex justify-content-center align-items-center" style={{ fontFamily: 'consolas', userSelect: 'none', cursor: 'pointer', color: 'rgb(4, 199, 244)', fontSize: '1em', border: 'rgb(4, 199, 244) solid 3px', borderRadius: '0.75em', height: '1.2em', width: '1.2em' }}><i>i</i></div>
+                                <div onMouseEnter={handleBFModalOpenDesk} className="ms-2 d-flex justify-content-center align-items-center" style={{ fontFamily: 'consolas', userSelect: 'none', cursor: 'pointer', color: 'rgb(4, 199, 244)', fontSize: '1em', border: 'rgb(4, 199, 244) solid 3px', borderRadius: '0.75em', height: '1.2em', width: '1.2em' }}><i>i</i></div>
                             </div>
                         </div>
                     </>
@@ -349,7 +370,7 @@ function Tools(props) {
                         <div className="d-flex flex-row align-items-center">
                             <div className="d-flex" style={{ fontSize: `calc(36/1080 * ${props.bheight})`, letterSpacing: `calc(3.6/1080 * ${props.bheight})`, fontWeight: '500' }}>
                                 Ideal Weight Calculator
-                                <div onMouseEnter={handleIWModalOpen} className="ms-2 d-flex justify-content-center align-items-center" style={{ fontFamily: 'consolas', userSelect: 'none', cursor: 'pointer', color: 'rgb(4, 199, 244)', fontSize: '1em', border: 'rgb(4, 199, 244) solid 3px', borderRadius: '0.75em', height: '1.2em', width: '1.2em' }}><i>i</i></div>
+                                <div onMouseEnter={handleIWModalOpenDesk} className="ms-2 d-flex justify-content-center align-items-center" style={{ fontFamily: 'consolas', userSelect: 'none', cursor: 'pointer', color: 'rgb(4, 199, 244)', fontSize: '1em', border: 'rgb(4, 199, 244) solid 3px', borderRadius: '0.75em', height: '1.2em', width: '1.2em' }}><i>i</i></div>
                             </div>
                         </div>
                     </>
