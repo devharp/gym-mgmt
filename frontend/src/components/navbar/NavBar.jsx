@@ -15,6 +15,8 @@ import { Slide, useScrollTrigger } from '@mui/material';
 
 import { Link } from 'react-router-dom';
 
+import logo from '../../assets/logo/00.svg'
+
 const pages = [
   { name: 'Get a Coach', link: '/getacoach' },
   { name: 'Tools', link: '/tools' },
@@ -56,8 +58,11 @@ function ResponsiveAppBar(props) {
               component="div"
               sx={{ my: 'max(1vh, 10px)', display: { xs: 'none', md: 'flex' }, textTransform: 'none', fontFamily: "'Felona st'", fontSize: 'max(3.5vh, 19px)' }}
             >
-              <Link style={{ color: 'black', textDecoration: 'none' }} to='/'>{props.brand}</Link>
-              
+              {/* <Link style={{ color: 'black', textDecoration: 'none' }} to='/'>{props.brand}</Link> */}
+              <Link style={{ color: 'black', textDecoration: 'none' }} to='/'>
+                <img src={logo} style={{ width: '5em' }} />
+              </Link>
+
             </Typography>
 
             <Typography
@@ -66,9 +71,12 @@ function ResponsiveAppBar(props) {
               component="div"
               sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none', textTransform: 'none' }, fontFamily: "'Felona st'" }}
             >
-              <Link style={{ color: 'black', textDecoration: 'none' }} to='/'>{props.brand}</Link>
+              {/* <Link style={{ color: 'black', textDecoration: 'none' }} to='/'>{props.brand}</Link> */}
+              <Link style={{ color: 'black', textDecoration: 'none' }} to='/'>
+                <img src={logo} style={{ width: '5em' }} />
+              </Link>
             </Typography>
-            
+
             {/* Mobile Screen */}
             <Box sx={{ flexGrow: 0, display: { xs: 'flex', md: 'none' } }}>
               <IconButton

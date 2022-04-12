@@ -11,9 +11,15 @@
 (DONE) BecomeACoach, All Forms Blocks, Add ribbons image to the left side (Background Image)
 
 
+(DONE, No Mouse for Mobile, so no hover effect) 2. Mouse hover Effect missed in Pricing plan table button
+(DONE) 7. Get a coach next, previous not working properly
+(DONE) 5. Tools page should be like XD doc, some shade need to be applied in calculator surrounding
+(DONE) 6. mobile version not updated
+(DONE) 1. Logo need to be added
+(DONE) 3. Advanced plan page need to be created
+(DONE) 4. Buy now button need to be linked with Registration form
 
 
 
-(Better to Add after the Alignment) #1. Website Logo (Top and Bottom)
-(CONFUSED HERE) #8. Select Trainers -> 42nd Adobe XD Slide -> Register Page -> Filled info will be to a mailid
 (Difficult to change Badge Colors, Expected SVG ) GetACoach, Plan Tablets - Badge Colors
+

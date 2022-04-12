@@ -12,6 +12,7 @@ import AboutUs from "./pages/AboutUs";
 import ContactUs from "./pages/ContactUs";
 import BasicPlans from "./pages/BasicPlans";
 import IntermediatePlans from "./pages/IntermediatePlans";
+import AdvancedPlans from "./pages/AdvancedPlans";
 
 function App() {
   const [bheight, setBHeight] = useState('100vh')
@@ -49,6 +50,7 @@ function App() {
 
           <Route path="/basicplans" element={<BasicPlans bheight={bheight} />} />
           <Route path="/intermediateplans" element={<IntermediatePlans bheight={bheight} />} />
+          <Route path="/advancedplans" element={<AdvancedPlans bheight={bheight} />} />
           
           <Route path="/aboutus" element={<AboutUs bheight={bheight} />} />
           <Route path="/contactus" element={<ContactUs bheight={bheight} />} />

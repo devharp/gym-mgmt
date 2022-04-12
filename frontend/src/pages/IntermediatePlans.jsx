@@ -4,6 +4,7 @@ import NavBar from "../components/navbar/NavBar";
 import img00 from '../assets/plans/00.svg'
 import img01 from '../assets/plans/01.svg'
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 function Plans(props) {
 
@@ -50,7 +51,9 @@ function Plans(props) {
                                     </div>
                                 </div>
                                 <div className="position-absolute pb-3 pe-3" style={{ top: '100%', left: '100%', transform: 'translate(-100%, -100%)', width: 'max-content' }}>
-                                    <div className='px-2 py-1' style={{ borderRadius: '5px', fontSize: `calc(18/1080 * ${props.bheight})`, fontWeight: '500', letterSpacing: `calc(2.7/1080 * ${props.bheight})`, backgroundColor: '#FBE551' }}>Buy Now</div>
+                                    <Link to='/register' style={{ textDecoration: 'none' }}>
+                                        <div className='px-2 py-1' style={{ color: 'black', borderRadius: '5px', fontSize: `calc(18/1080 * ${props.bheight})`, fontWeight: '500', letterSpacing: `calc(2.7/1080 * ${props.bheight})`, backgroundColor: '#FBE551' }}>Buy Now</div>
+                                    </Link>
                                 </div>
                             </div>
                         </div>
@@ -104,7 +107,9 @@ function Plans(props) {
                                 </div>
                             </div>
                             <div className="position-absolute pb-3 pe-3" style={{ top: '100%', left: '100%', transform: 'translate(-100%, -100%)', width: 'max-content' }}>
-                                <div className='px-2 py-1' style={{ borderRadius: '5px', fontSize: `calc(8/640 * ${props.bheight})`, fontWeight: '500', letterSpacing: `calc(1.2/640 * ${props.bheight})`, backgroundColor: '#FBE551' }}>Buy Now</div>
+                                <Link to='/register' style={{ textDecoration: 'none' }}>
+                                    <div className='px-2 py-1' style={{ color: 'black', borderRadius: '5px', fontSize: `calc(8/640 * ${props.bheight})`, fontWeight: '500', letterSpacing: `calc(1.2/640 * ${props.bheight})`, backgroundColor: '#FBE551' }}>Buy Now</div>
+                                </Link>
                             </div>
                         </div>
                     </div>

@@ -15,7 +15,7 @@ import img02 from '../assets/getacoach/02.svg'
 
 function Tools(props) {
     const [result, setResult] = useState('');
-    const [calc, setCalc] = useState(0);
+    const [calc, setCalc] = useState(-1);
 
     const [openmodal, setOpenModal] = useState(false);
 
@@ -42,9 +42,9 @@ function Tools(props) {
         function CalculatorsButtons(props) {
             return (
                 <div className={props.className}>
-                    <button style={{ ...props.eStyle, backgroundColor: `${(calc != 0) ? '#FBE551' : 'rgba(180, 180, 180, 0.2)'}`, color: `${(calc != 0) ? 'black' : 'rgba(0, 0, 0, 0.5)'}` }} variant='contained' className={props.eClassName} disabled={(calc != 0) ? false : true} onClick={() => { setCalc(0) }}>BMR Calculator</button>
-                    <button style={{ ...props.eStyle, backgroundColor: `${(calc != 1) ? '#FBE551' : 'rgba(180, 180, 180, 0.2)'}`, color: `${(calc != 1) ? 'black' : 'rgba(0, 0, 0, 0.5)'}` }} variant='contained' className={props.eClassName} disabled={(calc != 1) ? false : true} onClick={() => { setCalc(1) }}>Body Fat Calculator</button>
-                    <button style={{ ...props.eStyle, backgroundColor: `${(calc != 2) ? '#FBE551' : 'rgba(180, 180, 180, 0.2)'}`, color: `${(calc != 2) ? 'black' : 'rgba(0, 0, 0, 0.5)'}` }} variant='contained' className={props.eClassName} disabled={(calc != 2) ? false : true} onClick={() => { setCalc(2) }}>Ideal Weight Calculator</button>
+                    <button style={{ ...props.eStyle, backgroundColor: `${((calc + 1) != 0) ? '#FBE551' : 'rgba(180, 180, 180, 0.2)'}`, color: `${((calc + 1) != 0) ? 'black' : 'rgba(0, 0, 0, 0.5)'}` }} variant='contained' className={props.eClassName} disabled={((calc + 1) != 0) ? false : true} onClick={() => { setCalc(-1) }}>BMR Calculator</button>
+                    <button style={{ ...props.eStyle, backgroundColor: `${((calc + 1) != 1) ? '#FBE551' : 'rgba(180, 180, 180, 0.2)'}`, color: `${((calc + 1) != 1) ? 'black' : 'rgba(0, 0, 0, 0.5)'}` }} variant='contained' className={props.eClassName} disabled={((calc + 1) != 1) ? false : true} onClick={() => { setCalc(0) }}>Body Fat Calculator</button>
+                    <button style={{ ...props.eStyle, backgroundColor: `${((calc + 1) != 2) ? '#FBE551' : 'rgba(180, 180, 180, 0.2)'}`, color: `${((calc + 1) != 2) ? 'black' : 'rgba(0, 0, 0, 0.5)'}` }} variant='contained' className={props.eClassName} disabled={((calc + 1) != 2) ? false : true} onClick={() => { setCalc(1) }}>Ideal Weight Calculator</button>
                 </div>
             );
         }
@@ -157,7 +157,7 @@ function Tools(props) {
                 );
             }
             return (
-                <div className={`flex-column ${(calc == 0) ? 'd-flex' : 'd-none'}`} style={{ width: 'max-content' }}>
+                <div className={`flex-column ${((calc + 1) == 0) ? 'd-flex' : 'd-none'} p-5`} style={{ width: 'max-content', backgroundColor: 'white' }}>
                     <CalculatorTitle />
                     <div className="d-flex my-5">
                         <InputValues />
@@ -291,7 +291,7 @@ function Tools(props) {
                 );
             }
             return (
-                <div className={`flex-column ${(calc == 1) ? 'd-flex' : 'd-none'}`} style={{ width: 'max-content' }}>
+                <div className={`flex-column ${((calc + 1) == 1) ? 'd-flex' : 'd-none'} p-5`} style={{ width: 'max-content', backgroundColor: 'white' }}>
                     <CalculatorTitle />
                     <div className="d-flex my-5">
                         <InputValues />
@@ -402,7 +402,7 @@ function Tools(props) {
                 );
             }
             return (
-                <div className={`flex-column ${(calc == 2) ? 'd-flex' : 'd-none'}`} style={{ width: 'max-content' }}>
+                <div className={`flex-column ${((calc + 1) == 2) ? 'd-flex' : 'd-none'} p-5`} style={{ width: 'max-content', backgroundColor: 'white' }}>
                     <CalculatorTitle />
                     <div className="d-flex my-5">
                         <InputValues />
@@ -481,7 +481,7 @@ function Tools(props) {
                     <>
                         <div className="d-flex flex-row align-items-center">
                             <div className="d-flex" style={{ fontSize: `calc(18/640 * ${props.bheight})`, letterSpacing: `calc(1.8/640 * ${props.bheight})`, fontWeight: '500' }}>BMR Calculator
-                                <div onClick={handleBMRModalOpen} className="ms-2 d-flex justify-content-center align-items-center" style={{ userSelect: 'none', cursor: 'pointer', color: 'rgb(4, 199, 244)', fontSize: '1em', border: 'rgb(4, 199, 244) solid 3px', borderRadius: '0.75em', height: '1.5em', width: '1.5em' }}>i</div>
+                                <div onClick={handleBMRModalOpen} className="ms-2 d-flex justify-content-center align-items-center" style={{ fontFamily: 'consolas', userSelect: 'none', cursor: 'pointer', color: 'rgb(4, 199, 244)', fontSize: '1em', border: 'rgb(4, 199, 244) solid 2px', borderRadius: '0.75em', height: '1.2em', width: '1.2em' }}><i>i</i></div>
                             </div>
                         </div>
                     </>
@@ -599,7 +599,7 @@ function Tools(props) {
                     <>
                         <div className="d-flex flex-row align-items-center">
                             <div className="d-flex" style={{ fontSize: `calc(18/640 * ${props.bheight})`, letterSpacing: `calc(1.8/640 * ${props.bheight})`, fontWeight: '500' }}>Body Fat Calculator
-                                <div onClick={handleBFModalOpen} className="ms-2 d-flex justify-content-center align-items-center" style={{ userSelect: 'none', cursor: 'pointer', color: 'rgb(4, 199, 244)', fontSize: '1em', border: 'rgb(4, 199, 244) solid 3px', borderRadius: '0.75em', height: '1.5em', width: '1.5em' }}>i</div>
+                                <div onClick={handleBFModalOpen} className="ms-2 d-flex justify-content-center align-items-center" style={{ fontFamily: 'consolas', userSelect: 'none', cursor: 'pointer', color: 'rgb(4, 199, 244)', fontSize: '1em', border: 'rgb(4, 199, 244) solid 2px', borderRadius: '0.75em', height: '1.2em', width: '1.2em' }}><i>i</i></div>
                             </div>
                         </div>
                     </>
@@ -683,7 +683,9 @@ function Tools(props) {
                     <>
                         <div className="d-flex flex-row align-items-center">
                             <div className="d-flex" style={{ fontSize: `calc(18/640 * ${props.bheight})`, letterSpacing: `calc(1.8/640 * ${props.bheight})`, fontWeight: '500' }}>Ideal Weight Calculator
-                                <div onClick={handleIWModalOpen} className="ms-2 d-flex justify-content-center align-items-center" style={{ userSelect: 'none', cursor: 'pointer', color: 'rgb(4, 199, 244)', fontSize: '1em', border: 'rgb(4, 199, 244) solid 3px', borderRadius: '0.75em', height: '1.5em', width: '1.5em' }}>i</div>
+                                {/* <div onClick={handleIWModalOpen} className="ms-2 d-flex justify-content-center align-items-center" style={{ userSelect: 'none', cursor: 'pointer', color: 'rgb(4, 199, 244)', fontSize: '1em', border: 'rgb(4, 199, 244) solid 3px', borderRadius: '0.75em', height: '1.5em', width: '1.5em' }}>i</div> */}
+                                <div onClick={handleIWModalOpen} className="ms-2 d-flex justify-content-center align-items-center" style={{ fontFamily: 'consolas', userSelect: 'none', cursor: 'pointer', color: 'rgb(4, 199, 244)', fontSize: '1em', border: 'rgb(4, 199, 244) solid 2px', borderRadius: '0.75em', height: '1.2em', width: '1.2em' }}><i>i</i></div>
+                                
                             </div>
                         </div>
                     </>

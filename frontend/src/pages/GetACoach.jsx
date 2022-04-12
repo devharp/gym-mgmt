@@ -29,8 +29,26 @@ import oldlady from '../assets/getacoach/oldlady.svg'
 
 import { useState } from 'react'
 import { Link } from "react-router-dom";
+import { useEffect } from "react";
+
+let SelectedOptions = {
+    weightloss: false,
+    weightgain: false,
+    bodytoning: false,
+    generalfitness: false,
+    pcod: false,
+    diabetes: false,
+    thyroid: false,
+    osteoporosis: false,
+    prepregnancy: false,
+    trimester: false,
+    postpregnancy: false,
+    teen: false
+}
 
 function GetACoach(props) {
+
+
     const [block0, setBlock0] = useState('d-flex');
     const [block1, setBlock1] = useState('d-none');
     const [block2, setBlock2] = useState('d-none');
@@ -69,15 +87,48 @@ function GetACoach(props) {
 
     function Desktop() {
         function ImageBlock(props) {
-            let mouse_button_clicked = false;
-            const [imgbstate, setImgBState] = useState(false);
 
-            const [mouseover, setMouseOver] = useState(0);
+            const [imgbstate, setImgBState] = useState(props.defState);
 
             function imgBlockClicked() {
-                mouse_button_clicked = !mouse_button_clicked;
-                if(mouse_button_clicked === false){
-                    setImgBState(!imgbstate);
+                setImgBState(!imgbstate);
+                switch (props.label) {
+                    case 'Weight Loss':
+                        SelectedOptions.weightloss = !SelectedOptions.weightloss;
+                        break;
+                    case 'Weight Gain':
+                        SelectedOptions.weightgain = !SelectedOptions.weightgain;
+                        break;
+                    case 'Body Toning':
+                        SelectedOptions.bodytoning = !SelectedOptions.bodytoning;
+                        break;
+                    case 'General Fitness':
+                        SelectedOptions.generalfitness = !SelectedOptions.generalfitness;
+                        break;
+                    case 'PCOD':
+                        SelectedOptions.pcod = !SelectedOptions.pcod;
+                        break;
+                    case 'Diabetes':
+                        SelectedOptions.diabetes = !SelectedOptions.diabetes;
+                        break;
+                    case 'Thyroid':
+                        SelectedOptions.thyroid = !SelectedOptions.thyroid;
+                        break;
+                    case 'Osteoporosis':
+                        SelectedOptions.osteoporosis = !SelectedOptions.osteoporosis;
+                        break;
+                    case 'Pre-Pregnancy':
+                        SelectedOptions.prepregnancy = !SelectedOptions.prepregnancy;
+                        break;
+                    case 'Trimester':
+                        SelectedOptions.trimester = !SelectedOptions.trimester;
+                        break;
+                    case 'Post-Pregnancy':
+                        SelectedOptions.postpregnancy = !SelectedOptions.postpregnancy;
+                        break;
+                    case 'Teen':
+                        SelectedOptions.teen = !SelectedOptions.teen;
+                        break;
                 }
             }
 
@@ -96,7 +147,15 @@ function GetACoach(props) {
                             return 20;
                         }
                         else if (imgbstate === true) {
-                            return 17;
+                            return 22;
+                        }
+                        break;
+                    case 'height':
+                        if (imgbstate === false) {
+                            return 220;
+                        }
+                        else if (imgbstate === true) {
+                            return 230;
                         }
                         break;
                     default:
@@ -104,44 +163,47 @@ function GetACoach(props) {
                 }
             }
 
-            function onMouseEnterBlock(state) {
-                
-                // setMouseOver(state);
 
-                if (mouse_button_clicked === false) {
-                    if (state === true) {
-                        setImgBState(true);
-                        setMouseOver(state);
-                    }
-
-                    else if (state === false) {
-                        setImgBState(false);
-                        setMouseOver(state);
-                    }
-                }
-            }
             return (
                 <>
                     <div className="" style={{ backgroundColor: 'none' }}>
-                        <div className='d-flex flex-column align-items-center mx-3' onMouseLeave={() => { onMouseEnterBlock(false) }} onMouseOver={() => { onMouseEnterBlock(true) }} onClick={imgBlockClicked} style={{
-                            backgroundColor: getValueOfState('backgroundColor'),
-                            width: 'max-content',
-                            padding: `calc(0.8/100 * ${props.bheight})`,
-                            boxShadow: '0px 14px 8px #00000029',
-                            cursor: 'pointer'
-                        }}>
-                            <div className='d-flex justify-content-center w-100' style={{
+                        <Box className='d-flex flex-column align-items-center mx-3'
+                            onClick={imgBlockClicked}
+                            sx={{
+                                backgroundColor: getValueOfState('backgroundColor'),
+                                // backgroundColor: '#FFF',
+                                width: 'max-content',
+                                height: `calc(${getValueOfState('height')}/1080 * ${props.bheight})`,
+                                padding: `calc(0.8/100 * ${props.bheight})`,
+                                boxShadow: '0px 14px 8px #00000029',
+                                cursor: 'pointer',
+                                // fontSize: `calc(20/1920 * 100vw)`,
+                                fontSize: `calc(${getValueOfState('fontSize')}/1080 * ${props.bheight})`,
+                                '&:hover':
+                                {
+                                    backgroundColor: '#FBE551',
+                                    fontSize: `calc(22/1080 * ${props.bheight})`,
+                                    height: `calc(230/1080 * ${props.bheight})`,
+                                }
+                            }}>
+                            <div className='d-flex justify-content-center align-items-center w-100' style={{
                                 backgroundColor: '#FFF5CC',
                                 // backgroundColor: '#F00',
-                                maxHeight: `calc(10vw)`,
-                                maxWidth: `calc(10vw)`,
-                                height: `calc(${(mouseover === true) ? (180) : (150)}/1080 * ${props.bheight})`, flexShrink: '0'
+                                maxHeight: `calc(200px)`,
+                                maxWidth: `calc(200px)`,
+                                height: `calc(220/1080 * ${props.bheight})`,
+
                             }}>
-                                <img src={props.src} style={{ width: `calc(150/1080 * ${props.bheight})` }} alt="" />
+                                <img src={props.src} style={{ maxHeight: '100px', width: `calc(120/1080 * ${props.bheight})` }} alt="" />
                             </div>
                             {/* <div className="d-flex align-items-center flex-grow-1" style={{ fontSize: `calc(22/1080 * ${props.bheight})`, fontWeight: '500', marginTop: `calc(0.5/100 * ${props.bheight})` }}>India's First Woman Only</div> */}
-                            <div className="d-flex align-items-center flex-grow-1" style={{ userSelect: 'none', fontSize: `calc(${getValueOfState('fontSize')}/1920 * 100vw)`, fontWeight: '500', marginTop: `calc(0.5/100 * ${props.bheight})` }}>{props.label}</div>
-                        </div>
+                            <div className="d-flex align-items-center flex-grow-1"
+                                style={{
+                                    userSelect: 'none',
+                                    fontSize: '1em',
+                                    fontWeight: '500', marginTop: `calc(0.5/100 * ${props.bheight})`
+                                }}>{props.label}</div>
+                        </Box>
                     </div>
                 </>
             );
@@ -168,11 +230,11 @@ function GetACoach(props) {
 
                         </div>
                         <div className="d-flex flex-column mb-2">
-                            <div className="d-flex mb-3 align-items-center" style={{ height: `calc(300/1080 * ${props.bheight})`, width: `calc(850/1080 * ${props.bheight})` }}>
-                                <ImageBlock src={img10} label='Weight Loss' bheight={props.bheight} />
-                                <ImageBlock src={img11} label='Weight Gain' bheight={props.bheight} />
-                                <ImageBlock src={img12} label='Body Toning' bheight={props.bheight} />
-                                <ImageBlock src={img13} label='General Fitness' bheight={props.bheight} />
+                            <div className="d-flex mb-3 justify-content-between align-items-center" style={{ height: `calc(300/1080 * ${props.bheight})`, width: `calc(850/1080 * ${props.bheight})` }}>
+                                <ImageBlock defState={SelectedOptions.weightloss} src={img10} label='Weight Loss' bheight={props.bheight} />
+                                <ImageBlock defState={SelectedOptions.weightgain} src={img11} label='Weight Gain' bheight={props.bheight} />
+                                <ImageBlock defState={SelectedOptions.bodytoning} src={img12} label='Body Toning' bheight={props.bheight} />
+                                <ImageBlock defState={SelectedOptions.generalfitness} src={img13} label='General Fitness' bheight={props.bheight} />
                             </div>
                             <div className="d-flex justify-content-end mx-3">
                                 <Button sx={{ '&:hover': { backgroundColor: 'rgb(4, 199, 244)' }, backgroundColor: 'rgb(4, 199, 244)' }} endIcon={<ArrowForward />} onClick={() => { handleClick('block0Next') }} variant="contained">Next</Button>
@@ -212,17 +274,17 @@ function GetACoach(props) {
                                 <div className="d-flex align-items-center">
                                     <div onClick={() => { setOptionPane(0) }} style={{ borderRadius: '50%', cursor: 'pointer', backgroundColor: ((optionpane === 0) ? '#FBE551' : '#DCDCDC') }}><NavigateBefore /></div>
                                 </div>
-                                <div className={`${((optionpane === 0) ? 'd-flex' : 'd-none')} flex-row mb-3 align-items-center`} style={{ height: `calc(300/1080 * ${props.bheight})`, width: `calc(850/1080 * ${props.bheight})` }}>
-                                    <ImageBlock src={img14} bheight={props.bheight} label='PCOD' />
-                                    <ImageBlock src={img15} bheight={props.bheight} label='Diabetes' />
-                                    <ImageBlock src={img16} bheight={props.bheight} label='Thyroid' />
-                                    <ImageBlock src={img17} bheight={props.bheight} label='Osteoporosis' />
+                                <div className={`${((optionpane === 0) ? 'd-flex' : 'd-none')} flex-row mb-3 justify-content-between align-items-center`} style={{ height: `calc(300/1080 * ${props.bheight})`, width: `calc(850/1080 * ${props.bheight})` }}>
+                                    <ImageBlock defState={SelectedOptions.pcod} src={img14} bheight={props.bheight} label='PCOD' />
+                                    <ImageBlock defState={SelectedOptions.diabetes} src={img15} bheight={props.bheight} label='Diabetes' />
+                                    <ImageBlock defState={SelectedOptions.thyroid} src={img16} bheight={props.bheight} label='Thyroid' />
+                                    <ImageBlock defState={SelectedOptions.osteoporosis} src={img17} bheight={props.bheight} label='Osteoporosis' />
                                 </div>
-                                <div className={`${((optionpane === 1) ? 'd-flex' : 'd-none')} flex-row mb-3 align-items-center`} style={{ height: `calc(300/1080 * ${props.bheight})`, width: `calc(850/1080 * ${props.bheight})` }}>
-                                    <ImageBlock src={img18} bheight={props.bheight} label='Pre-Pregnancy' />
-                                    <ImageBlock src={img19} bheight={props.bheight} label='Trimester' />
-                                    <ImageBlock src={img110} bheight={props.bheight} label='Post-Pregnancy' />
-                                    <ImageBlock src={img111} bheight={props.bheight} label='Teen' />
+                                <div className={`${((optionpane === 1) ? 'd-flex' : 'd-none')} flex-row mb-3 justify-content-between align-items-center`} style={{ height: `calc(300/1080 * ${props.bheight})`, width: `calc(850/1080 * ${props.bheight})` }}>
+                                    <ImageBlock defState={SelectedOptions.prepregnancy} src={img18} bheight={props.bheight} label='Pre-Pregnancy' />
+                                    <ImageBlock defState={SelectedOptions.trimester} src={img19} bheight={props.bheight} label='Trimester' />
+                                    <ImageBlock defState={SelectedOptions.postpregnancy} src={img110} bheight={props.bheight} label='Post-Pregnancy' />
+                                    <ImageBlock defState={SelectedOptions.teen} src={img111} bheight={props.bheight} label='Teen' />
                                 </div>
                                 <div className="d-flex align-items-center">
                                     <div onClick={() => { setOptionPane(1) }} style={{ borderRadius: '50%', cursor: 'pointer', backgroundColor: ((optionpane === 1) ? '#FBE551' : '#DCDCDC') }}><NavigateNext /></div>
@@ -449,10 +511,48 @@ function GetACoach(props) {
 
     function Mobile() {
         function ImageBlock(props) {
-            const [imgbstate, setImgBState] = useState(false);
+            const [imgbstate, setImgBState] = useState(props.defState);
 
             function imgBlockClicked() {
                 setImgBState(!imgbstate);
+                switch (props.label) {
+                    case 'Weight Loss':
+                        SelectedOptions.weightloss = !SelectedOptions.weightloss;
+                        break;
+                    case 'Weight Gain':
+                        SelectedOptions.weightgain = !SelectedOptions.weightgain;
+                        break;
+                    case 'Body Toning':
+                        SelectedOptions.bodytoning = !SelectedOptions.bodytoning;
+                        break;
+                    case 'General Fitness':
+                        SelectedOptions.generalfitness = !SelectedOptions.generalfitness;
+                        break;
+                    case 'PCOD':
+                        SelectedOptions.pcod = !SelectedOptions.pcod;
+                        break;
+                    case 'Diabetes':
+                        SelectedOptions.diabetes = !SelectedOptions.diabetes;
+                        break;
+                    case 'Thyroid':
+                        SelectedOptions.thyroid = !SelectedOptions.thyroid;
+                        break;
+                    case 'Osteoporosis':
+                        SelectedOptions.osteoporosis = !SelectedOptions.osteoporosis;
+                        break;
+                    case 'Pre-Pregnancy':
+                        SelectedOptions.prepregnancy = !SelectedOptions.prepregnancy;
+                        break;
+                    case 'Trimester':
+                        SelectedOptions.trimester = !SelectedOptions.trimester;
+                        break;
+                    case 'Post-Pregnancy':
+                        SelectedOptions.postpregnancy = !SelectedOptions.postpregnancy;
+                        break;
+                    case 'Teen':
+                        SelectedOptions.teen = !SelectedOptions.teen;
+                        break;
+                }
             }
 
             function getValueOfState(key) {
@@ -513,13 +613,13 @@ function GetACoach(props) {
                         <div className="d-flex flex-column mb-2">
                             <div className='d-flex flex-column align-items-center'>
                                 <div className="d-flex flex-row">
-                                    <ImageBlock bheight={props.bheight} src={img10} label='Weight Loss' />
-                                    <ImageBlock bheight={props.bheight} src={img11} label='Weight Gain' />
+                                    <ImageBlock defState={SelectedOptions.weightloss} bheight={props.bheight} src={img10} label='Weight Loss' />
+                                    <ImageBlock defState={SelectedOptions.weightgain} bheight={props.bheight} src={img11} label='Weight Gain' />
 
                                 </div>
                                 <div className="d-flex flex-row">
-                                    <ImageBlock bheight={props.bheight} src={img12} label='Body Toning' />
-                                    <ImageBlock bheight={props.bheight} src={img13} label='General Fitness' />
+                                    <ImageBlock defState={SelectedOptions.bodytoning} bheight={props.bheight} src={img12} label='Body Toning' />
+                                    <ImageBlock defState={SelectedOptions.generalfitness} bheight={props.bheight} src={img13} label='General Fitness' />
 
                                 </div>
                                 <div className="d-flex justify-content-end px-3" style={{ width: '100%' }}>
@@ -554,20 +654,20 @@ function GetACoach(props) {
                             <div className="d-flex flex-column mb-2">
                                 <div className='d-flex flex-column align-items-center'>
                                     <div className="d-flex flex-row">
-                                        <ImageBlock bheight={props.bheight} src={img14} label='PCOD' />
-                                        <ImageBlock bheight={props.bheight} src={img15} label='Diabetes' />
+                                        <ImageBlock defState={SelectedOptions.pcod} bheight={props.bheight} src={img14} label='PCOD' />
+                                        <ImageBlock defState={SelectedOptions.diabetes} bheight={props.bheight} src={img15} label='Diabetes' />
                                     </div>
                                     <div className="d-flex flex-row">
-                                        <ImageBlock bheight={props.bheight} src={img16} label='Thyroid' />
-                                        <ImageBlock bheight={props.bheight} src={img17} label='Osteoporosis' />
+                                        <ImageBlock defState={SelectedOptions.thyroid} bheight={props.bheight} src={img16} label='Thyroid' />
+                                        <ImageBlock defState={SelectedOptions.osteoporosis} bheight={props.bheight} src={img17} label='Osteoporosis' />
                                     </div>
                                     <div className="d-flex flex-row">
-                                        <ImageBlock bheight={props.bheight} src={img18} label='Pre-Pregnancy' />
-                                        <ImageBlock bheight={props.bheight} src={img19} label='Trimester' />
+                                        <ImageBlock defState={SelectedOptions.prepregnancy} bheight={props.bheight} src={img18} label='Pre-Pregnancy' />
+                                        <ImageBlock defState={SelectedOptions.trimester} bheight={props.bheight} src={img19} label='Trimester' />
                                     </div>
                                     <div className="d-flex flex-row">
-                                        <ImageBlock bheight={props.bheight} src={img110} label='Post-Pregnancy' />
-                                        <ImageBlock bheight={props.bheight} src={img111} label='Teen' />
+                                        <ImageBlock defState={SelectedOptions.postpregnancy} bheight={props.bheight} src={img110} label='Post-Pregnancy' />
+                                        <ImageBlock defState={SelectedOptions.teen} bheight={props.bheight} src={img111} label='Teen' />
                                     </div>
 
 
@@ -623,13 +723,50 @@ function GetACoach(props) {
         function Block1() {
 
             function PlanTablet(props) {
+                const [tabbg, setTabBg] = useState(350);
+
+                function badgeColor() {
+                    switch (props.badge) {
+                        case 'bronze':
+                            return 'none'
+                        case 'silver':
+                            return 'sepia(100%)'
+                        case 'gold':
+                            return 'sepia(100%) hue-rotate(350deg) saturate(400%)';
+                            break;
+                        default:
+                            break;
+
+                    }
+                }
+                function mouseOnTablet() {
+                    // const elem = document.getElementById('plan-tablet-headbg');
+                    // elem.style.transform = `translateX(0)`;
+                    setTabBg(-100);
+                }
+
+                function mouseLeaveTablet() {
+                    // const elem = document.getElementById('plan-tablet-headbg');
+                    // elem.style.transform = `translateX(calc(350/1080 * ${props.bheight} * 0.79))`;
+                    setTabBg(350);
+                }
                 return (
                     <>
                         <div className="my-5 d-flex justify-content-center">
                             <div style={{ height: `calc(477/1080 * ${props.bheight})`, borderRadius: `calc(20/1080 * ${props.bheight})`, width: `calc(477/1080 * ${props.bheight} * 0.79)`, backgroundColor: '#FFF5CC', boxShadow: `0px 0px calc(10/640 * ${props.bheight}) rgba(0, 0, 0, 0.3)` }}>
-                                <div className='d-flex flex-column px-3 py-3 justify-content-between' style={{ height: '100%' }}>
-                                    <div style={{ fontSize: `calc(36/1080 * ${props.bheight})`, letterSpacing: `calc(1.8/1080 * ${props.bheight})`, fontWeight: '500' }}>{props.name}</div>
-                                    <div style={{ fontSize: `calc(24/1080 * ${props.bheight})`, fontWeight: '500' }}>
+                                <div className='d-flex flex-column py-3 justify-content-between' style={{ height: '100%' }}>
+                                    <div className="position-absolute" style={{ backgroundColor: 'none', height: `calc(52/1080 * ${props.bheight})`, width: `calc(477/1080 * ${props.bheight} * 0.79)`, overflow: 'hidden' }}>
+                                        <div style={{
+                                            borderRadius: `calc(26/1080 * ${props.bheight})`,
+                                            height: '100%',
+                                            width: '100%',
+                                            backgroundColor: '#FBE551', transform: `translateX(calc(${tabbg}/1080 * ${props.bheight} * 0.79))`, transition: '0.3s'
+                                        }}>
+
+                                        </div>
+                                    </div>
+                                    <div className="px-3" style={{ fontSize: `calc(36/1080 * ${props.bheight})`, letterSpacing: `calc(1.8/1080 * ${props.bheight})`, fontWeight: '500' }}>{props.name}</div>
+                                    <div className="px-3" style={{ fontSize: `calc(24/1080 * ${props.bheight})`, fontWeight: '500' }}>
                                         <div className='d-flex flex-row align-items-center'>
                                             <img className="me-3 my-3" src={arrowltr} style={{ height: `calc(32/1080 * ${props.bheight})`, width: `calc(32/1080 * ${props.bheight})` }} alt="" />
                                             <div>
@@ -652,9 +789,9 @@ function GetACoach(props) {
                                     </div>
                                     <div>
                                         <div className='d-flex flex-row justify-content-center w-100' style={{ width: 'max-content' }}>
-                                            <Link to='/trainers' style={{ textDecoration: 'none' }}>
+                                            <Link to={props.to} style={{ textDecoration: 'none' }}>
                                                 <Button className='p-1' variant='contained' size='small' sx={{ '&:hover': { backgroundColor: 'rgb(4, 199, 244)' }, backgroundColor: 'rgb(4, 199, 244)', fontSize: `calc(18/1080 * ${props.bheight})` }}>
-                                                    Select Trainers
+                                                    Select Plans
                                                 </Button>
                                             </Link>
                                         </div>
@@ -706,9 +843,9 @@ function GetACoach(props) {
                             </div>
                         </div>
                         <div className='' style={{ backgroundColor: 'none' }}>
-                            <PlanTablet years='2' badgeColor='bronze' name='Basic' bheight={props.bheight} />
-                            <PlanTablet years='5' badgeColor='silver' name='Intermediate' bheight={props.bheight} />
-                            <PlanTablet years='8' badgeColor='gold' name='Advanced' bheight={props.bheight} />
+                            <PlanTablet to='/basicplans' years='2' badgeColor='bronze' name='Basic' bheight={props.bheight} />
+                            <PlanTablet to='/intermediateplans' years='5' badgeColor='silver' name='Intermediate' bheight={props.bheight} />
+                            <PlanTablet to='/advanceplans' years='8' badgeColor='gold' name='Advanced' bheight={props.bheight} />
                         </div>
                     </div>
                 </>
